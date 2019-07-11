@@ -35,11 +35,33 @@ namespace ProjAanwezigheidslijst
                     //OplIdComboBox.ValueMember = opl.Id;
                     //OplIdComboBox.DisplayMember = opl.Opleiding;
 
-                    dlnmrComboBox.Items.Add(dn.Naam + " " + dn.GeboorteDatum + " " + dn.Woonplaats + " " + dn.BadgeNummer);
+                    dlnmrComboBox.Items.Add(dn.Id +" "+dn.Naam + " " + dn.GeboorteDatum + " " + dn.Woonplaats + " " + dn.BadgeNummer);
 
                 }
 
                
+
+            }
+        }
+
+        private void WijzigDeelnemerForm_Click(object sender, EventArgs e)
+        {
+
+            int gekozenId = int.Parse(IdTextBox.Text);
+
+
+
+            using (var ctx = new AanwezigheidslijstContext())
+            {
+                Deelnemers deelnemers = ctx.Deelnemers.FirstOrDefault(a => a.Id == gekozenId);
+                var deelnemer = ctx.Deelnemers.Select(dlnmr => new {
+                    dlnmr.Id,
+                    dlnmr.Naam,
+                    dlnmr.GeboorteDatum,
+                    dlnmr.Woonplaats,
+                    dlnmr.BadgeNummer
+                    
+                });
 
             }
         }
