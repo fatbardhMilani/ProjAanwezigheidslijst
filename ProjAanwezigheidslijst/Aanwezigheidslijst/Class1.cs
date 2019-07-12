@@ -17,7 +17,7 @@ namespace Aanwezigheidslijst
         public DateTime GeboorteDatum { get; set; }
         public string Woonplaats { get; set; }
         public int BadgeNummer { get; set; }
-        public Stopwatch Timer { get; set; }
+        //public Stopwatch Timer { get; set; }
 
         public override string ToString()
         {
