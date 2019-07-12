@@ -98,6 +98,12 @@
     <Compile Include="TijdregistratieForm.Designer.cs">
       <DependentUpon>TijdregistratieForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToevoegenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToevoegenForm.Designer.cs">
+      <DependentUpon>ToevoegenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewDeelnemerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="TijdregistratieForm.resx">
       <DependentUpon>TijdregistratieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToevoegenForm.resx">
+      <DependentUpon>ToevoegenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewDeelnemerForm.resx">
       <DependentUpon>ViewDeelnemerForm.cs</DependentUpon>

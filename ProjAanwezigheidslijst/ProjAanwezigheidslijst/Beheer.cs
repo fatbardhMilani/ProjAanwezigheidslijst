@@ -29,6 +29,11 @@ namespace ProjAanwezigheidslijst
             {
                 var result = dlg.ShowDialog();
             }
+
+            using (var dlg = new ToevoegenForm())
+            {
+                var result = dlg.ShowDialog();
+            }
         }
 
         private void VieuwButton_Click(object sender, EventArgs e)
