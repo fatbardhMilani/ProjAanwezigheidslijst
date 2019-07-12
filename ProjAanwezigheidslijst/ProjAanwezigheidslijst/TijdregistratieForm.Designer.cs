@@ -31,8 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.KiesOplComboBox = new System.Windows.Forms.ComboBox();
             this.timeLabel = new System.Windows.Forms.Label();
-            this.BadgeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.oplInfolistBox = new System.Windows.Forms.ListBox();
+            this.selectOplButton = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // label1
@@ -60,31 +61,40 @@
             this.timeLabel.Size = new System.Drawing.Size(0, 20);
             this.timeLabel.TabIndex = 3;
             // 
-            // BadgeFlowLayoutPanel
-            // 
-            this.BadgeFlowLayoutPanel.Location = new System.Drawing.Point(594, 88);
-            this.BadgeFlowLayoutPanel.Name = "BadgeFlowLayoutPanel";
-            this.BadgeFlowLayoutPanel.Size = new System.Drawing.Size(904, 412);
-            this.BadgeFlowLayoutPanel.TabIndex = 4;
-            this.BadgeFlowLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BadgeFlowLayoutPanel_Paint);
-            // 
             // oplInfolistBox
             // 
             this.oplInfolistBox.FormattingEnabled = true;
             this.oplInfolistBox.ItemHeight = 20;
             this.oplInfolistBox.Location = new System.Drawing.Point(17, 88);
             this.oplInfolistBox.Name = "oplInfolistBox";
-            this.oplInfolistBox.Size = new System.Drawing.Size(447, 424);
+            this.oplInfolistBox.Size = new System.Drawing.Size(1481, 84);
             this.oplInfolistBox.TabIndex = 5;
-            this.oplInfolistBox.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
+            // 
+            // selectOplButton
+            // 
+            this.selectOplButton.Location = new System.Drawing.Point(359, 37);
+            this.selectOplButton.Name = "selectOplButton";
+            this.selectOplButton.Size = new System.Drawing.Size(105, 45);
+            this.selectOplButton.TabIndex = 6;
+            this.selectOplButton.Text = "Select";
+            this.selectOplButton.UseVisualStyleBackColor = true;
+            this.selectOplButton.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 179);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1481, 321);
+            this.flowLayoutPanel1.TabIndex = 7;
             // 
             // TijdregistratieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1510, 512);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.selectOplButton);
             this.Controls.Add(this.oplInfolistBox);
-            this.Controls.Add(this.BadgeFlowLayoutPanel);
             this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.KiesOplComboBox);
             this.Controls.Add(this.label1);
@@ -101,7 +111,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox KiesOplComboBox;
         private System.Windows.Forms.Label timeLabel;
-        private System.Windows.Forms.FlowLayoutPanel BadgeFlowLayoutPanel;
         private System.Windows.Forms.ListBox oplInfolistBox;
+        private System.Windows.Forms.Button selectOplButton;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

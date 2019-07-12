@@ -74,18 +74,6 @@
     <Compile Include="ToevoegenForm.Designer.cs">
       <DependentUpon>ToevoegenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewDeelnemerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ViewDeelnemerForm.Designer.cs">
-      <DependentUpon>ViewDeelnemerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewFom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ViewFom.Designer.cs">
-      <DependentUpon>ViewFom.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewTabForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,12 +103,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToevoegenForm.resx">
       <DependentUpon>ToevoegenForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewDeelnemerForm.resx">
-      <DependentUpon>ViewDeelnemerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewFom.resx">
-      <DependentUpon>ViewFom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewTabForm.resx">
       <DependentUpon>ViewTabForm.cs</DependentUpon>

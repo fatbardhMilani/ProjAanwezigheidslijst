@@ -41,7 +41,7 @@ namespace ProjAanwezigheidslijst
                     //OplIdComboBox.ValueMember = opl.Id;
                     //OplIdComboBox.DisplayMember = opl.Opleiding;
 
-                    KiesOplComboBox.Items.Add(opl.Id + " " + opl.Opleiding);
+                    KiesOplComboBox.Items.Add(opl.Id);
                     
                 }
             }
@@ -61,12 +61,35 @@ namespace ProjAanwezigheidslijst
                     dynamicButton.Width = 150;
                     dynamicButton.BackColor = Color.Red;
 
-                    BadgeFlowLayoutPanel.Controls.Add(dynamicButton);
-                    //this.opleidingInfoButton.Click += new System.EventHandler(this.DynamicButton_Click);
+                    flowLayoutPanel1.Controls.Add(dynamicButton);
+                    dynamicButton.Click += new EventHandler(DynamicButtonClickEvent); // eigen event gemaakt
+
                 }
             }
             
             /// delenemers ophalen en forloop om voo elke deelnemer uit database een badge knop te maken/////
+        }
+
+        private void DynamicButtonClickEvent(object sender, EventArgs e)// eigen event maken
+        {
+            if (oplInfolistBox.Text!="")
+            {
+                Button btn = sender as Button;
+                if (btn.BackColor == Color.Red)
+                {
+                    btn.BackColor = Color.Green;
+                }
+                else if (btn.BackColor == Color.Green)
+                {
+                    btn.BackColor = Color.Red;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecteer een opleiding");
+            }
+            
+         
         }
 
         //private void DynamicButton_Click(object sender, EventArgs e)
@@ -74,7 +97,7 @@ namespace ProjAanwezigheidslijst
         //    Button dynamicButton = sender as Button;
         //    this.dynamicButton.Click += new System.EventHandler(this.DynamicButton_Click);
         //}
-        
+
         private void timer1_Tick(object sender, EventArgs e)
 
         {
@@ -83,16 +106,18 @@ namespace ProjAanwezigheidslijst
 
         }
 
-        private void BadgeFlowLayoutPanel_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
+        
 
-       
-
-        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            oplInfolistBox.Items.Add(KiesOplComboBox.Text);
+            int selectOpl = int.Parse(KiesOplComboBox.Text);
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var deelnemer = context.Opleidingsinformaties.SingleOrDefault(dlnmr => dlnmr.Id == selectOpl);
+                oplInfolistBox.Items.Add(deelnemer.Id + " " + deelnemer.Opleidingsinstelling + " " + deelnemer.Opleiding);
+
+            }
         }
     }
 }

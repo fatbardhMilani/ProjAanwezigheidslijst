@@ -61,6 +61,10 @@ namespace Aanwezigheidslijst
         public int Opleidingscode { get; set; }
         public DateTime StartDatum { get; set; }
         public DateTime EindDatume { get; set; }
+        public override string ToString()
+        {
+            return Opleiding;
+        }
     }
 
 
