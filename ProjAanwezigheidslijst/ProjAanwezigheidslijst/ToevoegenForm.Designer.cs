@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.docentTab = new System.Windows.Forms.TabControl();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -78,24 +78,24 @@
             this.label21 = new System.Windows.Forms.Label();
             this.bedrijfDocentTextBox = new System.Windows.Forms.TextBox();
             this.naamDocentTexBox = new System.Windows.Forms.TextBox();
-            this.docentTab.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // docentTab
+            // tabControl1
             // 
-            this.docentTab.Controls.Add(this.tabPage1);
-            this.docentTab.Controls.Add(this.tabPage2);
-            this.docentTab.Controls.Add(this.tabPage3);
-            this.docentTab.Controls.Add(this.tabPage4);
-            this.docentTab.Location = new System.Drawing.Point(13, 13);
-            this.docentTab.Name = "docentTab";
-            this.docentTab.SelectedIndex = 0;
-            this.docentTab.Size = new System.Drawing.Size(827, 508);
-            this.docentTab.TabIndex = 0;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Location = new System.Drawing.Point(13, 13);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(827, 508);
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -586,11 +586,11 @@
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(853, 632);
             this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.docentTab);
+            this.Controls.Add(this.tabControl1);
             this.Name = "ToevoegenForm";
             this.Text = "Toevoegen";
             this.Load += new System.EventHandler(this.ToevoegenForm_Load);
-            this.docentTab.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -605,7 +605,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl docentTab;
+        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;

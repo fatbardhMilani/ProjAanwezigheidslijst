@@ -16,6 +16,11 @@ namespace Aanwezigheidslijst
         public DateTime GeboorteDatum { get; set; }
         public string Woonplaats { get; set; }
         public int BadgeNummer { get; set; }
+
+        public override string ToString()
+        {
+            return "Id: " + Id + "\n" + "Naam: " + Naam + "\n" + "Geboorte datum: " + GeboorteDatum + "\n" + "Woonplaats: " + Woonplaats + "\n" + "Badgenummer: " + BadgeNummer;
+        }
     }
 
     public class DeelnemersOpleidingen

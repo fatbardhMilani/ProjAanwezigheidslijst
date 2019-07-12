@@ -34,7 +34,7 @@ namespace ProjAanwezigheidslijst
 
         private void VieuwButton_Click(object sender, EventArgs e)
         {
-            using (var dlg = new ViewFom())
+            using (var dlg = new ViewTabForm())
             {
                 var result = dlg.ShowDialog();
             }

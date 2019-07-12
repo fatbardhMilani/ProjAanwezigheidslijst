@@ -86,6 +86,12 @@
     <Compile Include="ViewFom.Designer.cs">
       <DependentUpon>ViewFom.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewTabForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTabForm.Designer.cs">
+      <DependentUpon>ViewTabForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WijzigDeelnemerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewFom.resx">
       <DependentUpon>ViewFom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTabForm.resx">
+      <DependentUpon>ViewTabForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WijzigDeelnemerForm.resx">
       <DependentUpon>WijzigDeelnemerForm.cs</DependentUpon>
