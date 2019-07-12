@@ -60,36 +60,6 @@
     <Compile Include="Beheer.Designer.cs">
       <DependentUpon>Beheer.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateDeelnemerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateDeelnemerForm.Designer.cs">
-      <DependentUpon>CreateDeelnemerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CreateDocentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateDocentForm.Designer.cs">
-      <DependentUpon>CreateDocentForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CreateFeestdagenForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateFeestdagenForm.Designer.cs">
-      <DependentUpon>CreateFeestdagenForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CreateForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateForm.Designer.cs">
-      <DependentUpon>CreateForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CreateOpleidingsInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateOpleidingsInfo.Designer.cs">
-      <DependentUpon>CreateOpleidingsInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TijdregistratieForm.cs">
@@ -124,21 +94,6 @@
     </Compile>
     <EmbeddedResource Include="Beheer.resx">
       <DependentUpon>Beheer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreateDeelnemerForm.resx">
-      <DependentUpon>CreateDeelnemerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreateDocentForm.resx">
-      <DependentUpon>CreateDocentForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreateFeestdagenForm.resx">
-      <DependentUpon>CreateFeestdagenForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreateForm.resx">
-      <DependentUpon>CreateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreateOpleidingsInfo.resx">
-      <DependentUpon>CreateOpleidingsInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -25,10 +25,6 @@ namespace ProjAanwezigheidslijst
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
-            using (var dlg = new CreateForm())
-            {
-                var result = dlg.ShowDialog();
-            }
 
             using (var dlg = new ToevoegenForm())
             {
