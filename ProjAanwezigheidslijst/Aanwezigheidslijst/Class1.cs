@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace Aanwezigheidslijst
 {
@@ -16,6 +17,7 @@ namespace Aanwezigheidslijst
         public DateTime GeboorteDatum { get; set; }
         public string Woonplaats { get; set; }
         public int BadgeNummer { get; set; }
+        public Stopwatch Timer { get; set; }
 
         public override string ToString()
         {

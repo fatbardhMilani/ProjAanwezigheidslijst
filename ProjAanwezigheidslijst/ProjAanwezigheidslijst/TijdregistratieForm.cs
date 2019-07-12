@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace ProjAanwezigheidslijst
 {
     public partial class TijdregistratieForm : Form
     {
-
+        Stopwatch Stopwatch = new Stopwatch();
         Timer timer1 = new Timer();
         public TijdregistratieForm()
         {
@@ -72,9 +73,10 @@ namespace ProjAanwezigheidslijst
 
         private void DynamicButtonClickEvent(object sender, EventArgs e)// eigen event maken
         {
+            Button btn = sender as Button;
             if (oplInfolistBox.Text!="")
             {
-                Button btn = sender as Button;
+                
                 if (btn.BackColor == Color.Red)
                 {
                     btn.BackColor = Color.Green;
@@ -88,8 +90,41 @@ namespace ProjAanwezigheidslijst
             {
                 MessageBox.Show("Selecteer een opleiding");
             }
-            
-         
+
+            //foreach (Button button in flowLayoutPanel1)
+            //{
+
+            //}
+            if (btn.BackColor == Color.Green)
+            {
+                Stopwatch.Start();
+            }
+            else if (btn.BackColor == Color.Red)
+            {
+                Stopwatch.Stop();
+                var timespan = Stopwatch.Elapsed;
+                string strTimeSpan = timespan.ToString();
+                MessageBox.Show(strTimeSpan);
+            }
+
+            //DateTime dt = new DateTime();
+
+
+            ////dt = dt.TimeOfDay + Stopwatch.Elapsed;
+
+            //int selectOpl = int.Parse(KiesOplComboBox.Text);
+
+            //using (var context = new AanwezigheidslijstContext())
+            //{
+            //    var opleidingsInfo = context.Tijdsregistraties.Add(new Tijdsregistratie
+            //    {
+            //        //DateTime = Stopwatch.Elapsed.TotalSeconds,
+            //        //Opleiding = KiesOplComboBox.SelectedItem,
+            //    });
+            //    context.SaveChanges();
+            //    this.DialogResult = DialogResult.OK;
+            //}
+
         }
 
         //private void DynamicButton_Click(object sender, EventArgs e)
