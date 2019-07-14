@@ -327,11 +327,11 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Silver;
             this.tabPage2.Controls.Add(this.label22);
-            this.tabPage2.Controls.Add(this.naamZoekTextBox);
-            this.tabPage2.Controls.Add(this.ZoekenButton);
             this.tabPage2.Controls.Add(this.saveChangeDeelnemerButton);
             this.tabPage2.Controls.Add(this.GeboortedatumDateTimePicker);
+            this.tabPage2.Controls.Add(this.naamZoekTextBox);
             this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.ZoekenButton);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label13);
@@ -359,7 +359,7 @@
             // 
             // GeboortedatumDateTimePicker
             // 
-            this.GeboortedatumDateTimePicker.Location = new System.Drawing.Point(31, 75);
+            this.GeboortedatumDateTimePicker.Location = new System.Drawing.Point(31, 316);
             this.GeboortedatumDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.GeboortedatumDateTimePicker.Name = "GeboortedatumDateTimePicker";
             this.GeboortedatumDateTimePicker.Size = new System.Drawing.Size(505, 31);
@@ -368,7 +368,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(577, 185);
+            this.label10.Location = new System.Drawing.Point(577, 426);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(157, 25);
@@ -378,7 +378,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(577, 129);
+            this.label11.Location = new System.Drawing.Point(577, 370);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(126, 25);
@@ -388,7 +388,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(577, 75);
+            this.label12.Location = new System.Drawing.Point(577, 316);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(160, 25);
@@ -398,7 +398,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(577, 19);
+            this.label13.Location = new System.Drawing.Point(577, 260);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(68, 25);
@@ -407,7 +407,7 @@
             // 
             // badgeNummerTexBox
             // 
-            this.badgeNummerTexBox.Location = new System.Drawing.Point(31, 185);
+            this.badgeNummerTexBox.Location = new System.Drawing.Point(31, 426);
             this.badgeNummerTexBox.Margin = new System.Windows.Forms.Padding(4);
             this.badgeNummerTexBox.Name = "badgeNummerTexBox";
             this.badgeNummerTexBox.Size = new System.Drawing.Size(507, 31);
@@ -415,7 +415,7 @@
             // 
             // woonplaatsTextBox
             // 
-            this.woonplaatsTextBox.Location = new System.Drawing.Point(31, 129);
+            this.woonplaatsTextBox.Location = new System.Drawing.Point(31, 370);
             this.woonplaatsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.woonplaatsTextBox.Name = "woonplaatsTextBox";
             this.woonplaatsTextBox.Size = new System.Drawing.Size(507, 31);
@@ -423,7 +423,7 @@
             // 
             // naamTextBox
             // 
-            this.naamTextBox.Location = new System.Drawing.Point(31, 19);
+            this.naamTextBox.Location = new System.Drawing.Point(31, 260);
             this.naamTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.naamTextBox.Name = "naamTextBox";
             this.naamTextBox.Size = new System.Drawing.Size(507, 31);
@@ -620,7 +620,7 @@
             // 
             // ZoekenButton
             // 
-            this.ZoekenButton.Location = new System.Drawing.Point(582, 338);
+            this.ZoekenButton.Location = new System.Drawing.Point(582, 54);
             this.ZoekenButton.Name = "ZoekenButton";
             this.ZoekenButton.Size = new System.Drawing.Size(211, 59);
             this.ZoekenButton.TabIndex = 33;
@@ -630,7 +630,7 @@
             // 
             // naamZoekTextBox
             // 
-            this.naamZoekTextBox.Location = new System.Drawing.Point(31, 338);
+            this.naamZoekTextBox.Location = new System.Drawing.Point(31, 54);
             this.naamZoekTextBox.Name = "naamZoekTextBox";
             this.naamZoekTextBox.Size = new System.Drawing.Size(507, 31);
             this.naamZoekTextBox.TabIndex = 34;
@@ -638,7 +638,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(31, 307);
+            this.label22.Location = new System.Drawing.Point(31, 23);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(406, 25);
             this.label22.TabIndex = 35;

@@ -29,8 +29,6 @@ namespace ProjAanwezigheidslijst
                 GeboortedatumDateTimePicker.Value = deelnemer.GeboorteDatum;
                 woonplaatsTextBox.Text = deelnemer.Woonplaats;
                 badgeNummerTexBox.Text = deelnemer.BadgeNummer.ToString();
-               
-
             }
         }
 

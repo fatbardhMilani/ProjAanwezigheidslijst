@@ -43,12 +43,18 @@ namespace ProjAanwezigheidslijst
 
             using (var context = new AanwezigheidslijstContext())
             {
+                
                 var deelnemer = context.Deelnemers.SingleOrDefault(dlnmr => dlnmr.Naam == zoekNaam);
-                ZoekListBox.Items.Add(deelnemer.Id + " " + deelnemer.Naam + " " + deelnemer.GeboorteDatum + " " + deelnemer.Woonplaats + " " + deelnemer.BadgeNummer);
-
+                if (deelnemer != null)
+                {
+                    ZoekListBox.Items.Add(deelnemer.Id + " " + deelnemer.Naam + " " + deelnemer.GeboorteDatum + " " + deelnemer.Woonplaats + " " + deelnemer.BadgeNummer);
+                }
+                else
+                {
+                    MessageBox.Show("Geen resultaat gevonden");
+                }
             }
         }
-
         private void Control1_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (Control1.SelectedIndex)
@@ -205,5 +211,6 @@ namespace ProjAanwezigheidslijst
                     break;
             }
         }
+
     }
 }
