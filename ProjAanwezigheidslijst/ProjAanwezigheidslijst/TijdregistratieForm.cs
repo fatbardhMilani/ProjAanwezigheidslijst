@@ -90,59 +90,27 @@ namespace ProjAanwezigheidslijst
             {
                 MessageBox.Show("Selecteer een opleiding");
             }
-
-            //foreach (Button button in flowLayoutPanel1)
-            //{
-
-            //}
             if (btn.BackColor == Color.Green)
             {
-                Stopwatch.Start();
+                DateTime beginTijd = DateTime.Now;
+                MessageBox.Show(beginTijd.ToString());
+               
             }
             else if (btn.BackColor == Color.Red)
             {
-                Stopwatch.Stop();
-                var timespan = Stopwatch.Elapsed;
-                string strTimeSpan = timespan.ToString();
-                MessageBox.Show(strTimeSpan);
+                DateTime eindTijd = DateTime.Now;
+                //TimeSpan verlopenTijd= b
+                
+                MessageBox.Show(eindTijd.ToString());
             }
-
-            //DateTime dt = new DateTime();
-
-
-            ////dt = dt.TimeOfDay + Stopwatch.Elapsed;
-
-            //int selectOpl = int.Parse(KiesOplComboBox.Text);
-
-            //using (var context = new AanwezigheidslijstContext())
-            //{
-            //    var opleidingsInfo = context.Tijdsregistraties.Add(new Tijdsregistratie
-            //    {
-            //        //DateTime = Stopwatch.Elapsed.TotalSeconds,
-            //        //Opleiding = KiesOplComboBox.SelectedItem,
-            //    });
-            //    context.SaveChanges();
-            //    this.DialogResult = DialogResult.OK;
-            //}
-
         }
 
-        //private void DynamicButton_Click(object sender, EventArgs e)
-        //{
-        //    Button dynamicButton = sender as Button;
-        //    this.dynamicButton.Click += new System.EventHandler(this.DynamicButton_Click);
-        //}
 
         private void timer1_Tick(object sender, EventArgs e)
 
         {
-
             this.timeLabel.Text = DateTime.Now.ToString();
-
         }
-
-        
-
         private void Button1_Click(object sender, EventArgs e)
         {
             int selectOpl = int.Parse(KiesOplComboBox.Text);
@@ -151,7 +119,6 @@ namespace ProjAanwezigheidslijst
             {
                 var deelnemer = context.Opleidingsinformaties.SingleOrDefault(dlnmr => dlnmr.Id == selectOpl);
                 oplInfolistBox.Items.Add(deelnemer.Id + " " + deelnemer.Opleidingsinstelling + " " + deelnemer.Opleiding);
-
             }
         }
     }

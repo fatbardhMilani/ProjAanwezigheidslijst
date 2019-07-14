@@ -32,11 +32,7 @@ namespace ProjAanwezigheidslijst
 
                 foreach (var dn in deelnemer)
                 {
-                    //OplIdComboBox.ValueMember = opl.Id;
-                    //OplIdComboBox.DisplayMember = opl.Opleiding;
-
                     dlnmrListBox.Items.Add(dn.Naam + " " + dn.GeboorteDatum + " " + dn.Woonplaats + " " + dn.BadgeNummer);
-
                 }
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace ProjAanwezigheidslijst
 {
-    partial class ToevoegenForm
+    partial class WijzigenForm
     {
         /// <summary>
         /// Required designer variable.
@@ -50,7 +50,7 @@
             this.opleidingTextBox = new System.Windows.Forms.TextBox();
             this.opleidingsInstellingTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.createDeelnemerButton = new System.Windows.Forms.Button();
+            this.saveChangeDeelnemerButton = new System.Windows.Forms.Button();
             this.GeboortedatumDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -77,7 +77,9 @@
             this.label21 = new System.Windows.Forms.Label();
             this.bedrijfDocentTextBox = new System.Windows.Forms.TextBox();
             this.naamDocentTexBox = new System.Windows.Forms.TextBox();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.ZoekenButton = new System.Windows.Forms.Button();
+            this.naamZoekTextBox = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -91,12 +93,12 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(17, 16);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Location = new System.Drawing.Point(13, 13);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1103, 635);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -122,9 +124,9 @@
             this.tabPage1.Controls.Add(this.opleidingsInstellingTextBox);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(8, 39);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1087, 588);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Opleiding Informatie";
@@ -133,13 +135,12 @@
             // 
             this.CreateOpleidingsInfoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateOpleidingsInfoButton.Location = new System.Drawing.Point(31, 512);
-            this.CreateOpleidingsInfoButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateOpleidingsInfoButton.Margin = new System.Windows.Forms.Padding(4);
             this.CreateOpleidingsInfoButton.Name = "CreateOpleidingsInfoButton";
             this.CreateOpleidingsInfoButton.Size = new System.Drawing.Size(211, 68);
             this.CreateOpleidingsInfoButton.TabIndex = 38;
             this.CreateOpleidingsInfoButton.Text = "Create";
             this.CreateOpleidingsInfoButton.UseVisualStyleBackColor = true;
-            this.CreateOpleidingsInfoButton.Click += new System.EventHandler(this.CreateOpleidingsInfoButton_Click);
             // 
             // label9
             // 
@@ -245,7 +246,7 @@
             // 
             this.EindDateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EindDateTimePicker2.Location = new System.Drawing.Point(31, 455);
-            this.EindDateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EindDateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.EindDateTimePicker2.Name = "EindDateTimePicker2";
             this.EindDateTimePicker2.Size = new System.Drawing.Size(507, 32);
             this.EindDateTimePicker2.TabIndex = 28;
@@ -254,7 +255,7 @@
             // 
             this.StartDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartDateTimePicker.Location = new System.Drawing.Point(31, 401);
-            this.StartDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StartDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.StartDateTimePicker.Name = "StartDateTimePicker";
             this.StartDateTimePicker.Size = new System.Drawing.Size(507, 32);
             this.StartDateTimePicker.TabIndex = 27;
@@ -263,7 +264,7 @@
             // 
             this.OpleidingsCodeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OpleidingsCodeTextBox.Location = new System.Drawing.Point(31, 348);
-            this.OpleidingsCodeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OpleidingsCodeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.OpleidingsCodeTextBox.Name = "OpleidingsCodeTextBox";
             this.OpleidingsCodeTextBox.Size = new System.Drawing.Size(507, 32);
             this.OpleidingsCodeTextBox.TabIndex = 26;
@@ -272,7 +273,7 @@
             // 
             this.OeNummerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OeNummerTextBox.Location = new System.Drawing.Point(31, 294);
-            this.OeNummerTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OeNummerTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.OeNummerTextBox.Name = "OeNummerTextBox";
             this.OeNummerTextBox.Size = new System.Drawing.Size(507, 32);
             this.OeNummerTextBox.TabIndex = 25;
@@ -281,7 +282,7 @@
             // 
             this.referentieOpleidingsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.referentieOpleidingsTextBox.Location = new System.Drawing.Point(31, 238);
-            this.referentieOpleidingsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.referentieOpleidingsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.referentieOpleidingsTextBox.Name = "referentieOpleidingsTextBox";
             this.referentieOpleidingsTextBox.Size = new System.Drawing.Size(507, 32);
             this.referentieOpleidingsTextBox.TabIndex = 24;
@@ -290,7 +291,7 @@
             // 
             this.OpleidingsplaatsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OpleidingsplaatsTextBox.Location = new System.Drawing.Point(31, 185);
-            this.OpleidingsplaatsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OpleidingsplaatsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.OpleidingsplaatsTextBox.Name = "OpleidingsplaatsTextBox";
             this.OpleidingsplaatsTextBox.Size = new System.Drawing.Size(507, 32);
             this.OpleidingsplaatsTextBox.TabIndex = 23;
@@ -299,7 +300,7 @@
             // 
             this.contactpersoonTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactpersoonTextBox.Location = new System.Drawing.Point(31, 129);
-            this.contactpersoonTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.contactpersoonTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.contactpersoonTextBox.Name = "contactpersoonTextBox";
             this.contactpersoonTextBox.Size = new System.Drawing.Size(507, 32);
             this.contactpersoonTextBox.TabIndex = 22;
@@ -308,7 +309,7 @@
             // 
             this.opleidingTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.opleidingTextBox.Location = new System.Drawing.Point(31, 75);
-            this.opleidingTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.opleidingTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.opleidingTextBox.Name = "opleidingTextBox";
             this.opleidingTextBox.Size = new System.Drawing.Size(507, 32);
             this.opleidingTextBox.TabIndex = 21;
@@ -317,7 +318,7 @@
             // 
             this.opleidingsInstellingTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.opleidingsInstellingTextBox.Location = new System.Drawing.Point(31, 19);
-            this.opleidingsInstellingTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.opleidingsInstellingTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.opleidingsInstellingTextBox.Name = "opleidingsInstellingTextBox";
             this.opleidingsInstellingTextBox.Size = new System.Drawing.Size(507, 32);
             this.opleidingsInstellingTextBox.TabIndex = 20;
@@ -325,7 +326,10 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Silver;
-            this.tabPage2.Controls.Add(this.createDeelnemerButton);
+            this.tabPage2.Controls.Add(this.label22);
+            this.tabPage2.Controls.Add(this.naamZoekTextBox);
+            this.tabPage2.Controls.Add(this.ZoekenButton);
+            this.tabPage2.Controls.Add(this.saveChangeDeelnemerButton);
             this.tabPage2.Controls.Add(this.GeboortedatumDateTimePicker);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label11);
@@ -335,28 +339,28 @@
             this.tabPage2.Controls.Add(this.woonplaatsTextBox);
             this.tabPage2.Controls.Add(this.naamTextBox);
             this.tabPage2.Location = new System.Drawing.Point(8, 39);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1087, 588);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Deelnemers";
             // 
-            // createDeelnemerButton
+            // saveChangeDeelnemerButton
             // 
-            this.createDeelnemerButton.Location = new System.Drawing.Point(31, 512);
-            this.createDeelnemerButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.createDeelnemerButton.Name = "createDeelnemerButton";
-            this.createDeelnemerButton.Size = new System.Drawing.Size(211, 68);
-            this.createDeelnemerButton.TabIndex = 32;
-            this.createDeelnemerButton.Text = "Create";
-            this.createDeelnemerButton.UseVisualStyleBackColor = true;
-            this.createDeelnemerButton.Click += new System.EventHandler(this.CreateDeelnemerButton_Click);
+            this.saveChangeDeelnemerButton.Location = new System.Drawing.Point(31, 512);
+            this.saveChangeDeelnemerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.saveChangeDeelnemerButton.Name = "saveChangeDeelnemerButton";
+            this.saveChangeDeelnemerButton.Size = new System.Drawing.Size(211, 68);
+            this.saveChangeDeelnemerButton.TabIndex = 32;
+            this.saveChangeDeelnemerButton.Text = "Save changes";
+            this.saveChangeDeelnemerButton.UseVisualStyleBackColor = true;
+            this.saveChangeDeelnemerButton.Click += new System.EventHandler(this.SaveChangeDeelnemerButton_Click);
             // 
             // GeboortedatumDateTimePicker
             // 
             this.GeboortedatumDateTimePicker.Location = new System.Drawing.Point(31, 75);
-            this.GeboortedatumDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GeboortedatumDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.GeboortedatumDateTimePicker.Name = "GeboortedatumDateTimePicker";
             this.GeboortedatumDateTimePicker.Size = new System.Drawing.Size(505, 31);
             this.GeboortedatumDateTimePicker.TabIndex = 31;
@@ -404,7 +408,7 @@
             // badgeNummerTexBox
             // 
             this.badgeNummerTexBox.Location = new System.Drawing.Point(31, 185);
-            this.badgeNummerTexBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.badgeNummerTexBox.Margin = new System.Windows.Forms.Padding(4);
             this.badgeNummerTexBox.Name = "badgeNummerTexBox";
             this.badgeNummerTexBox.Size = new System.Drawing.Size(507, 31);
             this.badgeNummerTexBox.TabIndex = 26;
@@ -412,7 +416,7 @@
             // woonplaatsTextBox
             // 
             this.woonplaatsTextBox.Location = new System.Drawing.Point(31, 129);
-            this.woonplaatsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.woonplaatsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.woonplaatsTextBox.Name = "woonplaatsTextBox";
             this.woonplaatsTextBox.Size = new System.Drawing.Size(507, 31);
             this.woonplaatsTextBox.TabIndex = 25;
@@ -420,7 +424,7 @@
             // naamTextBox
             // 
             this.naamTextBox.Location = new System.Drawing.Point(31, 19);
-            this.naamTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.naamTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.naamTextBox.Name = "naamTextBox";
             this.naamTextBox.Size = new System.Drawing.Size(507, 31);
             this.naamTextBox.TabIndex = 24;
@@ -440,7 +444,7 @@
             this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Controls.Add(this.label19);
             this.tabPage3.Location = new System.Drawing.Point(8, 39);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1087, 588);
             this.tabPage3.TabIndex = 2;
@@ -470,7 +474,7 @@
             // 
             this.OplIdComboBox.FormattingEnabled = true;
             this.OplIdComboBox.Location = new System.Drawing.Point(31, 185);
-            this.OplIdComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OplIdComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.OplIdComboBox.Name = "OplIdComboBox";
             this.OplIdComboBox.Size = new System.Drawing.Size(505, 33);
             this.OplIdComboBox.TabIndex = 49;
@@ -479,7 +483,7 @@
             // 
             this.namiddagCheckBox.AutoSize = true;
             this.namiddagCheckBox.Location = new System.Drawing.Point(508, 128);
-            this.namiddagCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.namiddagCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.namiddagCheckBox.Name = "namiddagCheckBox";
             this.namiddagCheckBox.Size = new System.Drawing.Size(28, 27);
             this.namiddagCheckBox.TabIndex = 48;
@@ -489,7 +493,7 @@
             // 
             this.voormiddagCheckBox.AutoSize = true;
             this.voormiddagCheckBox.Location = new System.Drawing.Point(508, 72);
-            this.voormiddagCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.voormiddagCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.voormiddagCheckBox.Name = "voormiddagCheckBox";
             this.voormiddagCheckBox.Size = new System.Drawing.Size(28, 27);
             this.voormiddagCheckBox.TabIndex = 47;
@@ -498,7 +502,7 @@
             // nietOplDagDateTimePicker
             // 
             this.nietOplDagDateTimePicker.Location = new System.Drawing.Point(31, 19);
-            this.nietOplDagDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nietOplDagDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.nietOplDagDateTimePicker.Name = "nietOplDagDateTimePicker";
             this.nietOplDagDateTimePicker.Size = new System.Drawing.Size(505, 31);
             this.nietOplDagDateTimePicker.TabIndex = 46;
@@ -506,13 +510,12 @@
             // createNietOplDagButton
             // 
             this.createNietOplDagButton.Location = new System.Drawing.Point(31, 512);
-            this.createNietOplDagButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.createNietOplDagButton.Margin = new System.Windows.Forms.Padding(4);
             this.createNietOplDagButton.Name = "createNietOplDagButton";
             this.createNietOplDagButton.Size = new System.Drawing.Size(211, 68);
             this.createNietOplDagButton.TabIndex = 44;
             this.createNietOplDagButton.Text = "Create";
             this.createNietOplDagButton.UseVisualStyleBackColor = true;
-            this.createNietOplDagButton.Click += new System.EventHandler(this.CreateNietOplDagButton_Click);
             // 
             // label16
             // 
@@ -563,7 +566,7 @@
             this.tabPage4.Controls.Add(this.bedrijfDocentTextBox);
             this.tabPage4.Controls.Add(this.naamDocentTexBox);
             this.tabPage4.Location = new System.Drawing.Point(8, 39);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1087, 588);
             this.tabPage4.TabIndex = 3;
@@ -572,13 +575,12 @@
             // createDocentButton
             // 
             this.createDocentButton.Location = new System.Drawing.Point(31, 512);
-            this.createDocentButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.createDocentButton.Margin = new System.Windows.Forms.Padding(4);
             this.createDocentButton.Name = "createDocentButton";
             this.createDocentButton.Size = new System.Drawing.Size(211, 68);
             this.createDocentButton.TabIndex = 34;
             this.createDocentButton.Text = "Create";
             this.createDocentButton.UseVisualStyleBackColor = true;
-            this.createDocentButton.Click += new System.EventHandler(this.CreateDocentButton_Click);
             // 
             // label20
             // 
@@ -603,7 +605,7 @@
             // bedrijfDocentTextBox
             // 
             this.bedrijfDocentTextBox.Location = new System.Drawing.Point(31, 75);
-            this.bedrijfDocentTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bedrijfDocentTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.bedrijfDocentTextBox.Name = "bedrijfDocentTextBox";
             this.bedrijfDocentTextBox.Size = new System.Drawing.Size(507, 31);
             this.bedrijfDocentTextBox.TabIndex = 31;
@@ -611,36 +613,45 @@
             // naamDocentTexBox
             // 
             this.naamDocentTexBox.Location = new System.Drawing.Point(31, 19);
-            this.naamDocentTexBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.naamDocentTexBox.Margin = new System.Windows.Forms.Padding(4);
             this.naamDocentTexBox.Name = "naamDocentTexBox";
             this.naamDocentTexBox.Size = new System.Drawing.Size(507, 31);
             this.naamDocentTexBox.TabIndex = 30;
             // 
-            // cancelButton
+            // ZoekenButton
             // 
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButton.Location = new System.Drawing.Point(904, 708);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(211, 68);
-            this.cancelButton.TabIndex = 39;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            this.ZoekenButton.Location = new System.Drawing.Point(582, 338);
+            this.ZoekenButton.Name = "ZoekenButton";
+            this.ZoekenButton.Size = new System.Drawing.Size(211, 59);
+            this.ZoekenButton.TabIndex = 33;
+            this.ZoekenButton.Text = "Zoeken";
+            this.ZoekenButton.UseVisualStyleBackColor = true;
+            this.ZoekenButton.Click += new System.EventHandler(this.ZoekenButton_Click);
             // 
-            // ToevoegenForm
+            // naamZoekTextBox
+            // 
+            this.naamZoekTextBox.Location = new System.Drawing.Point(31, 338);
+            this.naamZoekTextBox.Name = "naamZoekTextBox";
+            this.naamZoekTextBox.Size = new System.Drawing.Size(507, 31);
+            this.naamZoekTextBox.TabIndex = 34;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(31, 307);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(406, 25);
+            this.label22.TabIndex = 35;
+            this.label22.Text = "Geef naam van deelnemer om te zoeken:";
+            // 
+            // WijzigenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(1137, 790);
-            this.Controls.Add(this.cancelButton);
+            this.ClientSize = new System.Drawing.Size(1359, 832);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "ToevoegenForm";
-            this.Text = "Toevoegen";
-            this.Load += new System.EventHandler(this.ToevoegenForm_Load);
+            this.Name = "WijzigenForm";
+            this.Text = "WijzigenForm";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -658,10 +669,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button CreateOpleidingsInfoButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -681,7 +688,11 @@
         private System.Windows.Forms.TextBox contactpersoonTextBox;
         private System.Windows.Forms.TextBox opleidingTextBox;
         private System.Windows.Forms.TextBox opleidingsInstellingTextBox;
-        private System.Windows.Forms.Button createDeelnemerButton;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox naamZoekTextBox;
+        private System.Windows.Forms.Button ZoekenButton;
+        private System.Windows.Forms.Button saveChangeDeelnemerButton;
         private System.Windows.Forms.DateTimePicker GeboortedatumDateTimePicker;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -690,6 +701,7 @@
         private System.Windows.Forms.TextBox badgeNummerTexBox;
         private System.Windows.Forms.TextBox woonplaatsTextBox;
         private System.Windows.Forms.TextBox naamTextBox;
+        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox OplIdComboBox;
@@ -701,6 +713,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button createDocentButton;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;

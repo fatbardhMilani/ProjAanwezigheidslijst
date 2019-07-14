@@ -39,5 +39,13 @@ namespace ProjAanwezigheidslijst
                 var result = dlg.ShowDialog();
             }
         }
+
+        private void ChangeButton_Click(object sender, EventArgs e)
+        {
+            using (var dlg = new WijzigenForm())
+            {
+                var result = dlg.ShowDialog();
+            }
+        }
     }
 }
