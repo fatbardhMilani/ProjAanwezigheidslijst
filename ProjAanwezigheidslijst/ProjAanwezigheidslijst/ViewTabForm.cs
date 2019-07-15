@@ -212,5 +212,62 @@ namespace ProjAanwezigheidslijst
             }
         }
 
+        //////////////////WIJZIGEN///////////////
+
+        private void WijzigZoekButton_Click(object sender, EventArgs e)
+        {
+            string zoekNaam = wijzigNaamTextBox.Text;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var deelnemer = context.Deelnemers.SingleOrDefault(dlnmr => dlnmr.Naam == zoekNaam);
+
+                naamTextBox.Text = deelnemer.Naam;
+                GeboortedatumDateTimePicker.Value = deelnemer.GeboorteDatum;
+                woonplaatsTextBox.Text = deelnemer.Woonplaats;
+                badgeNummerTexBox.Text = deelnemer.BadgeNummer.ToString();
+            }
+        }
+
+        private void ZoekListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void SaveChangeDeelnemerButton_Click_1(object sender, EventArgs e)
+        {
+            string zoekNaam = wijzigNaamTextBox.Text;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var deelnemer = context.Deelnemers.SingleOrDefault(dlnmr => dlnmr.Naam == zoekNaam);
+
+                deelnemer.Naam = naamTextBox.Text;
+                deelnemer.GeboorteDatum = GeboortedatumDateTimePicker.Value;
+                deelnemer.Woonplaats = woonplaatsTextBox.Text;
+                deelnemer.BadgeNummer = int.Parse(badgeNummerTexBox.Text);
+
+                context.SaveChanges();
+                MessageBox.Show("Deelnemer gewijzigd");
+                naamTextBox.Clear();
+                GeboortedatumDateTimePicker.ResetText();
+                woonplaatsTextBox.Clear();
+                badgeNummerTexBox.Clear();
+            }
+        }
+
+        private void DeleteDeelnemerButton_Click(object sender, EventArgs e)
+        {
+            string verwijderNaam = wijzigNaamTextBox.Text;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var deelnemer = context.Deelnemers.SingleOrDefault(dlnmr => dlnmr.Naam == verwijderNaam);
+                context.Deelnemers.Remove(deelnemer);
+
+                context.SaveChanges();
+                MessageBox.Show("Deelnemer verwijderd");
+            }
+        }
     }
 }

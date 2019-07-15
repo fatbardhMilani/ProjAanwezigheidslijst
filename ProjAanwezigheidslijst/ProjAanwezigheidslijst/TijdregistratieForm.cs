@@ -12,6 +12,20 @@ using Aanwezigheidslijst;
 
 namespace ProjAanwezigheidslijst
 {
+    public  class TijdAanwezig
+    {
+        public DateTime BeginTijd { get; set; }
+        public DateTime EindTIjd { get; set; }
+        public TimeSpan TotaalTijd { get; set; }
+
+        public TijdAanwezig(DateTime beginTijd, DateTime eindTijd, TimeSpan totaalTijd)
+        {
+            BeginTijd = beginTijd;
+            EindTIjd = eindTijd;
+            TotaalTijd = totaalTijd;
+        }
+    }
+
     public partial class TijdregistratieForm : Form
     {
         Stopwatch Stopwatch = new Stopwatch();
@@ -74,6 +88,10 @@ namespace ProjAanwezigheidslijst
         private void DynamicButtonClickEvent(object sender, EventArgs e)// eigen event maken
         {
             Button btn = sender as Button;
+            DateTime beginTijd;
+            DateTime eindTijd;
+            TimeSpan tijdAanwezig;
+
             if (oplInfolistBox.Text!="")
             {
                 
@@ -92,17 +110,26 @@ namespace ProjAanwezigheidslijst
             }
             if (btn.BackColor == Color.Green)
             {
-                DateTime beginTijd = DateTime.Now;
-                MessageBox.Show(beginTijd.ToString());
-               
+                DateTime beginTijda = DateTime.Now;
+                MessageBox.Show(beginTijda.ToString());
+                beginTijd = beginTijda;
             }
             else if (btn.BackColor == Color.Red)
             {
-                DateTime eindTijd = DateTime.Now;
-                //TimeSpan verlopenTijd= b
-                
+                eindTijd = DateTime.Now;
                 MessageBox.Show(eindTijd.ToString());
+
+
             }
+            //if (beginTijd != null && eindTijd != null)
+            {
+               // TimeSpan tijdAanwzeig = eindTijd - beginTijd;
+                //MessageBox.Show(tijdAanwzeig.ToString());
+            }
+
+
+            //TijdAanwezig totTijdAanwezig = new TijdAanwezig(beginTijd, eindTijd, tijdAanwezig);
+
         }
 
 

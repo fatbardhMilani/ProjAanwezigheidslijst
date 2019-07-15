@@ -64,7 +64,7 @@
             this.changeButton.TabIndex = 2;
             this.changeButton.Text = "Change";
             this.changeButton.UseVisualStyleBackColor = true;
-            this.changeButton.Click += new System.EventHandler(this.ChangeButton_Click);
+
             // 
             // BeheerForm
             // 

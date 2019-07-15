@@ -62,9 +62,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TijdregistratieForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="TijdregistratieForm.cs" />
     <Compile Include="TijdregistratieForm.Designer.cs">
       <DependentUpon>TijdregistratieForm.cs</DependentUpon>
     </Compile>
@@ -79,18 +77,6 @@
     </Compile>
     <Compile Include="ViewTabForm.Designer.cs">
       <DependentUpon>ViewTabForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WijzigDeelnemerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WijzigDeelnemerForm.Designer.cs">
-      <DependentUpon>WijzigDeelnemerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WijzigenForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WijzigenForm.Designer.cs">
-      <DependentUpon>WijzigenForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Beheer.resx">
       <DependentUpon>Beheer.cs</DependentUpon>
@@ -112,12 +98,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewTabForm.resx">
       <DependentUpon>ViewTabForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WijzigDeelnemerForm.resx">
-      <DependentUpon>WijzigDeelnemerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WijzigenForm.resx">
-      <DependentUpon>WijzigenForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

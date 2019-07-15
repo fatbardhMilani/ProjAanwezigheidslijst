@@ -37,15 +37,12 @@ namespace ProjAanwezigheidslijst
             using (var dlg = new ViewTabForm())
             {
                 var result = dlg.ShowDialog();
+                switch (result)
+                {
+                   
+                }
             }
         }
 
-        private void ChangeButton_Click(object sender, EventArgs e)
-        {
-            using (var dlg = new WijzigenForm())
-            {
-                var result = dlg.ShowDialog();
-            }
-        }
     }
 }
