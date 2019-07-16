@@ -23,6 +23,7 @@ namespace Aanwezigheidslijst
         {
             return "Id: " + Id + "\n" + "Naam: " + Naam + "\n" + "Geboorte datum: " + GeboorteDatum + "\n" + "Woonplaats: " + Woonplaats + "\n" + "Badgenummer: " + BadgeNummer;
         }
+
     }
 
     public class DeelnemersOpleidingen

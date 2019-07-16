@@ -11,6 +11,7 @@ using Aanwezigheidslijst;
 
 namespace ProjAanwezigheidslijst
 {
+    
     public partial class ViewTabForm : Form
     {
         public ViewTabForm()
@@ -212,7 +213,7 @@ namespace ProjAanwezigheidslijst
             }
         }
 
-        //////////////////WIJZIGEN///////////////
+        //////////////////WIJZIGEN DEELNEMER///////////////
 
         private void WijzigZoekButton_Click(object sender, EventArgs e)
         {
@@ -227,11 +228,6 @@ namespace ProjAanwezigheidslijst
                 woonplaatsTextBox.Text = deelnemer.Woonplaats;
                 badgeNummerTexBox.Text = deelnemer.BadgeNummer.ToString();
             }
-        }
-
-        private void ZoekListBox_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
         }
 
         private void SaveChangeDeelnemerButton_Click_1(object sender, EventArgs e)
@@ -269,5 +265,126 @@ namespace ProjAanwezigheidslijst
                 MessageBox.Show("Deelnemer verwijderd");
             }
         }
+
+        //////////////////WIJZIGEN OPLEIDINGSINFORMATIE///////////////
+
+
+        private void WijzigOplInfobutton_Click(object sender, EventArgs e)
+        {
+            string zoekOplInfo = wijzigOplInfoTextBox.Text;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var oplInfo = context.Opleidingsinformaties.SingleOrDefault(opl => opl.Opleiding == zoekOplInfo);
+
+                opleidingsInstellingTextBox.Text = oplInfo.Opleidingsinstelling;
+                opleidingTextBox.Text = oplInfo.Opleiding;
+                contactpersoonTextBox.Text = oplInfo.Contactpersoon;
+                OpleidingsplaatsTextBox.Text = oplInfo.Opleidingsplaats;
+                referentieOpleidingsTextBox.Text = oplInfo.ReferentieOpleidingsplaats;
+                OeNummerTextBox.Text = oplInfo.OeNummer.ToString();
+                OpleidingsCodeTextBox.Text = oplInfo.Opleidingscode.ToString();
+                StartDateTimePicker.Value = oplInfo.StartDatum;
+                EindDateTimePicker2.Value = oplInfo.EindDatume;
+
+            }
+        }
+
+        private void SaveChangeOplInfoButton_Click(object sender, EventArgs e)
+        {
+            string zoekOplInfo = wijzigOplInfoTextBox.Text;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var oplInfo = context.Opleidingsinformaties.SingleOrDefault(opl => opl.Opleiding == zoekOplInfo);
+
+                oplInfo.Opleidingsinstelling = opleidingsInstellingTextBox.Text;
+                oplInfo.Opleiding = opleidingTextBox.Text;
+                oplInfo.Contactpersoon = contactpersoonTextBox.Text;
+                oplInfo.Opleidingsplaats = OpleidingsplaatsTextBox.Text;
+                oplInfo.ReferentieOpleidingsplaats = referentieOpleidingsTextBox.Text;
+                oplInfo.OeNummer = int.Parse(OeNummerTextBox.Text);
+                oplInfo.Opleidingscode = int.Parse(OpleidingsCodeTextBox.Text);
+                oplInfo.StartDatum = StartDateTimePicker.Value;
+                oplInfo.EindDatume = EindDateTimePicker2.Value;
+
+                context.SaveChanges();
+                MessageBox.Show("Opleidingsinformatie gewijzigd");
+                wijzigOplInfoTextBox.Clear();
+                opleidingsInstellingTextBox.Clear();
+                opleidingTextBox.Clear();
+                contactpersoonTextBox.Clear();
+                OpleidingsplaatsTextBox.Clear();
+                referentieOpleidingsTextBox.Clear();
+                OeNummerTextBox.Clear();
+                OpleidingsCodeTextBox.Clear();
+                StartDateTimePicker.ResetText();
+                EindDateTimePicker2.ResetText();
+            }
+        }
+
+        private void DeleteOplInfoButton_Click(object sender, EventArgs e) ///Fix id nietopldagen om te kunnen verwijderen
+        {
+            string zoekOplInfo = wijzigNaamTextBox.Text;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var oplInfo = context.Opleidingsinformaties.SingleOrDefault(opl => opl.Opleiding == zoekOplInfo);
+                context.Opleidingsinformaties.Remove(oplInfo);
+
+                context.SaveChanges();
+                MessageBox.Show("Opleidingsinformatie verwijderd");
+            }
+        }
+
+        //////////////////WIJZIGEN DOCENTEN///////////////
+        private void WijzigDocButton_Click(object sender, EventArgs e)
+        {
+            string zoekDoc = wijzigZoekDocTextBox.Text;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var docent = context.Docentens.SingleOrDefault(doc => doc.Naam == zoekDoc);
+
+                naamDocTextBox.Text = docent.Naam;
+                naamBedrijfTextBox.Text = docent.Bedrijf;
+            }
+        }
+
+        private void SaveChangeDocButton_Click(object sender, EventArgs e)
+        {
+            string zoekDoc = wijzigZoekDocTextBox.Text;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var docent = context.Docentens.SingleOrDefault(doc => doc.Naam == zoekDoc);
+
+                docent.Naam = naamDocTextBox.Text;
+                docent.Bedrijf = naamBedrijfTextBox.Text;
+
+                context.SaveChanges();
+                MessageBox.Show("Docent gewijzigd");
+                naamDocTextBox.Clear();
+                naamBedrijfTextBox.Clear();
+            }
+        }
+
+        private void DeleteDocButton_Click(object sender, EventArgs e)
+        {
+            string zoekDoc = wijzigZoekDocTextBox.Text;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var docent = context.Docentens.SingleOrDefault(doc => doc.Naam == zoekDoc);
+                context.Docentens.Remove(docent);
+
+                context.SaveChanges();
+                MessageBox.Show("Docent verwijderd");
+            }
+        }
+        //////////////////WIJZIGEN DEELNEMERSOPlEIDINGEN///////////////
+        //////////////////WIJZIGEN VAKDAGEN///////////////
+        //////////////////WIJZIGEN TIJDSREGISTRATE(moet niet denk ik)///////////////
+        //////////////////WIJZIGEN DOCENTENOPL///////////////
     }
 }

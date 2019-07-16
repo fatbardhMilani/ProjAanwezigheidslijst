@@ -12,20 +12,6 @@ using Aanwezigheidslijst;
 
 namespace ProjAanwezigheidslijst
 {
-    public  class TijdAanwezig
-    {
-        public DateTime BeginTijd { get; set; }
-        public DateTime EindTIjd { get; set; }
-        public TimeSpan TotaalTijd { get; set; }
-
-        public TijdAanwezig(DateTime beginTijd, DateTime eindTijd, TimeSpan totaalTijd)
-        {
-            BeginTijd = beginTijd;
-            EindTIjd = eindTijd;
-            TotaalTijd = totaalTijd;
-        }
-    }
-
     public partial class TijdregistratieForm : Form
     {
         Stopwatch Stopwatch = new Stopwatch();
@@ -53,11 +39,7 @@ namespace ProjAanwezigheidslijst
 
                 foreach (var opl in oplId)
                 {
-                    //OplIdComboBox.ValueMember = opl.Id;
-                    //OplIdComboBox.DisplayMember = opl.Opleiding;
-
-                    KiesOplComboBox.Items.Add(opl.Id);
-                    
+                    KiesOplComboBox.Items.Add(opl.Id);   
                 }
             }
 
@@ -84,17 +66,17 @@ namespace ProjAanwezigheidslijst
             
             /// delenemers ophalen en forloop om voo elke deelnemer uit database een badge knop te maken/////
         }
-
+        DateTime beginTijd;
+        DateTime eindTijd;
+        //TimeSpan tijdAanwezig;
         private void DynamicButtonClickEvent(object sender, EventArgs e)// eigen event maken
         {
             Button btn = sender as Button;
-            DateTime beginTijd;
-            DateTime eindTijd;
-            TimeSpan tijdAanwezig;
+            
 
             if (oplInfolistBox.Text!="")
             {
-                
+
                 if (btn.BackColor == Color.Red)
                 {
                     btn.BackColor = Color.Green;
@@ -103,6 +85,7 @@ namespace ProjAanwezigheidslijst
                 {
                     btn.BackColor = Color.Red;
                 }
+                
             }
             else
             {
@@ -110,24 +93,42 @@ namespace ProjAanwezigheidslijst
             }
             if (btn.BackColor == Color.Green)
             {
-                DateTime beginTijda = DateTime.Now;
-                MessageBox.Show(beginTijda.ToString());
-                beginTijd = beginTijda;
+                beginTijd = DateTime.Now;
+                MessageBox.Show(beginTijd.ToString());
+                
             }
             else if (btn.BackColor == Color.Red)
             {
                 eindTijd = DateTime.Now;
                 MessageBox.Show(eindTijd.ToString());
 
-
+                //tijdAanwezig = eindTijd - beginTijd;
             }
-            //if (beginTijd != null && eindTijd != null)
+            if (beginTijd != default(DateTime) && eindTijd != default(DateTime))
             {
-               // TimeSpan tijdAanwzeig = eindTijd - beginTijd;
-                //MessageBox.Show(tijdAanwzeig.ToString());
+                TimeSpan tijdAanwzeig = eindTijd - beginTijd;
+                
+                MessageBox.Show(tijdAanwzeig.ToString());
+                eindTijd = default(DateTime);
+
+
+                DateTime today = eindTijd;
+                DateTime answer = today.Add(tijdAanwzeig);
+                MessageBox.Show(answer.ToString());//beginTijd.Add(tijdAanwzeig);
+
+                //using (var context = new AanwezigheidslijstContext())
+                //{
+                //    var deelnmrOpl = context.Tijdsregistraties.Add(new Tijdsregistratie
+                //    {
+                //        DateTime = totaal,
+                        
+                //    });
+                //    context.SaveChanges();
+                //    this.DialogResult = DialogResult.OK;
+                //}
             }
 
-
+            
             //TijdAanwezig totTijdAanwezig = new TijdAanwezig(beginTijd, eindTijd, tijdAanwezig);
 
         }
@@ -148,5 +149,7 @@ namespace ProjAanwezigheidslijst
                 oplInfolistBox.Items.Add(deelnemer.Id + " " + deelnemer.Opleidingsinstelling + " " + deelnemer.Opleiding);
             }
         }
+        
+
     }
 }
