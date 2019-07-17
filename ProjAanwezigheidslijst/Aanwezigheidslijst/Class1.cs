@@ -17,11 +17,10 @@ namespace Aanwezigheidslijst
         public DateTime GeboorteDatum { get; set; }
         public string Woonplaats { get; set; }
         public int BadgeNummer { get; set; }
-        
 
         public override string ToString()
         {
-            return "Id: " + Id + "\n" + "Naam: " + Naam + "\n" + "Geboorte datum: " + GeboorteDatum + "\n" + "Woonplaats: " + Woonplaats + "\n" + "Badgenummer: " + BadgeNummer;
+            return Naam;
         }
 
     }
@@ -84,6 +83,11 @@ namespace Aanwezigheidslijst
         public int Id { get; set; }
         public string Naam { get; set; }
         public string Bedrijf { get; set; }
+
+        public override string ToString()
+        {
+            return Naam;
+        }
     }
 
     public class AanwezigheidslijstContext : DbContext

@@ -23,13 +23,7 @@ namespace ProjAanwezigheidslijst
         {
             using (var context = new AanwezigheidslijstContext())
             {
-                var deelnemer = context.Deelnemers.Select(dlnmr => new {
-                    dlnmr.Id,
-                    dlnmr.Naam,
-                    dlnmr.GeboorteDatum,
-                    dlnmr.Woonplaats,
-                    dlnmr.BadgeNummer
-                });
+                var deelnemer = context.Deelnemers;
 
                 foreach (var dn in deelnemer)
                 {
@@ -63,23 +57,36 @@ namespace ProjAanwezigheidslijst
                 case 0:
                     
                     dlnmrListBox.Items.Clear();
-                    
+
                     using (var context = new AanwezigheidslijstContext())
                     {
-                        var deelnemer = context.Deelnemers.Select(dlnmr => new
-                        {
-                            dlnmr.Id,
-                            dlnmr.Naam,
-                            dlnmr.GeboorteDatum,
-                            dlnmr.Woonplaats,
-                            dlnmr.BadgeNummer
-                        });
+                        var deelnemer = context.Deelnemers;
 
                         foreach (var dn in deelnemer)
                         {
                             dlnmrListBox.Items.Add(dn.Naam + " " + dn.GeboorteDatum + " " + dn.Woonplaats + " " + dn.BadgeNummer);
                         }
                     }
+
+                    //using (var context = new AanwezigheidslijstContext()) //// oude manier
+                    //{
+                    //    var deelnemer = context.Deelnemers.Select(dlnmr => new
+                    //    {
+                    //        dlnmr.Id,
+                    //        dlnmr.Naam,
+                    //        dlnmr.GeboorteDatum,
+                    //        dlnmr.Woonplaats,
+                    //        dlnmr.BadgeNummer
+                    //    });
+
+                    //    foreach (var dn in deelnemer)
+                    //    {
+                    //        dlnmrListBox.Items.Add(dn.Naam + " " + dn.GeboorteDatum + " " + dn.Woonplaats + " " + dn.BadgeNummer);
+                    //    }
+                    //}
+
+
+
                     break;
 
                 case 1:
@@ -93,7 +100,7 @@ namespace ProjAanwezigheidslijst
                             dlnmr.Id,
                             dlnmr.Deelnemer.Naam,
                             dlnmr.Opleiding.Opleiding,
-                            
+
                         });
 
                         foreach (var dn in deelnemer)
@@ -101,6 +108,7 @@ namespace ProjAanwezigheidslijst
                             dlnmrOplListBox.Items.Add(dn.Id + " " + dn.Naam + " " + dn.Opleiding);
                         }
                     }
+
                     break;
 
                 case 2:
@@ -109,28 +117,43 @@ namespace ProjAanwezigheidslijst
 
                     using (var context = new AanwezigheidslijstContext())
                     {
-                        var deelnemer = context.NietOpleidingsDagens.Select(dlnmr => new
-                        {
-                            dlnmr.Id,
-                            dlnmr.Datum,
-                            dlnmr.Voormiddag,
-                            dlnmr.Namiddag,
-                            dlnmr.Opleiding.Opleiding
-
-                        });
+                        var deelnemer = context.NietOpleidingsDagens;
 
                         foreach (var dn in deelnemer)
                         {
                             vakDagListBox.Items.Add(dn.Id + " " + dn.Datum + " " + dn.Voormiddag+" "+dn.Namiddag+" "+dn.Opleiding);
                         }
                     }
+
+
+                    //using (var context = new AanwezigheidslijstContext())
+                    //{
+                    //    var deelnemer = context.Deelnemers;
+
+                    //    foreach (var dn in deelnemer)
+                    //    {
+                    //        comboBox2.Items.Add(dn);
+                    //    }
+                    //}
+                    //using (var ctx = new AanwezigheidslijstContext())
+                    //{
+                    //    var opleiding = ctx.Opleidingsinformaties;
+
+                    //    foreach (var opl in opleiding)
+                    //    {
+                    //        comboBox1.Items.Add(opl);
+                    //    }
+
+                    //}
+
                     break;
 
                 case 3:
 
                     tijdsRegListBox.Items.Clear();
 
-                    using (var context = new AanwezigheidslijstContext())
+
+                    using (var context = new AanwezigheidslijstContext()) /// oude manier
                     {
                         var deelnemer = context.Tijdsregistraties.Select(dlnmr => new
                         {
@@ -153,19 +176,7 @@ namespace ProjAanwezigheidslijst
 
                     using (var context = new AanwezigheidslijstContext())
                     {
-                        var deelnemer = context.Opleidingsinformaties.Select(dlnmr => new
-                        {
-                            dlnmr.Id,
-                            dlnmr.Opleidingsinstelling,
-                            dlnmr.Opleiding,
-                            dlnmr.Opleidingsplaats,
-                            dlnmr.ReferentieOpleidingsplaats,
-                            dlnmr.OeNummer,
-                            dlnmr.Opleidingscode,
-                            dlnmr.StartDatum,
-                            dlnmr.EindDatume
-                        });
-
+                        var deelnemer = context.Opleidingsinformaties;
                         foreach (var dn in deelnemer)
                         {
                             oplInfoListBox.Items.Add(dn.Id + " " + dn.Opleidingsinstelling + " " + dn.Opleiding + " " + dn.Opleidingsplaats+" "+
@@ -199,12 +210,7 @@ namespace ProjAanwezigheidslijst
 
                     using (var context = new AanwezigheidslijstContext())
                     {
-                        var deelnemer = context.Docentens.Select(dlnmr => new {
-                            dlnmr.Id,
-                            dlnmr.Naam,
-                            dlnmr.Bedrijf,
-                        });
-
+                        var deelnemer = context.Docentens;
                         foreach (var dn in deelnemer)
                         {
                             docListBox.Items.Add(dn.Id + " " + dn.Naam + " " + dn.Bedrijf);
@@ -385,7 +391,6 @@ namespace ProjAanwezigheidslijst
         }
         //////////////////WIJZIGEN DEELNEMERSOPlEIDINGEN///////////////
         //////////////////WIJZIGEN VAKDAGEN///////////////
-        //////////////////WIJZIGEN TIJDSREGISTRATE(moet niet denk ik)///////////////
         //////////////////WIJZIGEN DOCENTENOPL///////////////
     }
 }

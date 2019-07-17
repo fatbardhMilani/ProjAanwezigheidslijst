@@ -133,9 +133,7 @@ namespace ProjAanwezigheidslijst
                 string opleidingsplaats = OpleidingsplaatsTextBox.Text;
                 string referentieOpleiding = referentieOpleidingsTextBox.Text;
                 int oeNummer = int.Parse(OeNummerTextBox.Text);
-                //int intOeNummer = int.Parse(oeNummer);
                 int opleidingsCode = int.Parse(OpleidingsCodeTextBox.Text);
-                //int intOpleidingsCode = int.Parse(opleidingsCode);
                 DateTime startDatum = StartDateTimePicker.Value.Date;
                 DateTime eindDatum = EindDateTimePicker2.Value.Date;
 
@@ -160,6 +158,89 @@ namespace ProjAanwezigheidslijst
             else
             {
                 MessageBox.Show("alle velden moeten ingevuld zijn");
+            }
+        }
+
+        private void CreateDlnmrOplButton_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text != "" && comboBox2.Text != "") ///// OP OUDE MANIER KON JE ENKEL MET ID WERKEN!!////
+            {
+                var dn = comboBox2.SelectedItem as Deelnemers;
+                var op = comboBox1.SelectedItem as Opleidingsinformatie;
+                var opleidingNaam = op.Id;
+                var deelnemerNaam = dn.Id;
+
+                using (var context = new AanwezigheidslijstContext())
+                {
+                    var opleiding = context.Opleidingsinformaties.SingleOrDefault(a => a.Id == opleidingNaam);
+                    var deelnemer = context.Deelnemers.SingleOrDefault(d => d.Id == deelnemerNaam);
+
+                    var opleidingsInfo = context.DeelnemersOpleidingens.Add(new DeelnemersOpleidingen
+                    {
+                        Opleiding = opleiding,
+                        Deelnemer = deelnemer,
+
+                    });
+                    context.SaveChanges();
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
+            else
+            {
+                MessageBox.Show("alle velden moeten ingevuld zijn");
+            }
+        }
+
+
+
+        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControl1.SelectedIndex)
+            {
+                case 4:
+
+                    comboBox1.Items.Clear();
+                    comboBox2.Items.Clear();
+
+                    using (var context = new AanwezigheidslijstContext())
+                    {
+                        var deelnemer = context.Deelnemers;
+
+                        foreach (var dn in deelnemer)
+                        {
+                            comboBox2.Items.Add(dn);
+                        }
+                    }
+                    using (var ctx = new AanwezigheidslijstContext())
+                    {
+                        var opleiding = ctx.Opleidingsinformaties;
+
+                        foreach (var opl in opleiding)
+                        {
+                            comboBox1.Items.Add(opl);
+                        }
+
+                    }
+
+                    //dlnmrOplListBox.Items.Clear(); ///////OUDE MANIER VAN TONEN HIERBOVEN VEEL KORTER EN MAKKELIJKER WERKEN VIA NAAM EN ID ACHTERLIGGGEND
+
+                    //using (var context = new AanwezigheidslijstContext())
+                    //{
+                    //    var deelnemer = context.DeelnemersOpleidingens.Select(dlnmr => new
+                    //    {
+                    //        dlnmr.Id,
+                    //        dlnmr.Deelnemer.Naam,
+                    //        dlnmr.Opleiding.Opleiding,
+
+                    //    });
+
+                    //    foreach (var dn in deelnemer)
+                    //    {
+                    //        dlnmrOplListBox.Items.Add(dn.Id + " " + dn.Naam + " " + dn.Opleiding);
+                    //    }
+                    //}
+
+                    break;
             }
         }
     }

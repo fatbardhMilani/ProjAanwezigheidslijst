@@ -41,31 +41,33 @@ namespace ProjAanwezigheidslijst
                 }
             }
 
-            using (var context = new AanwezigheidslijstContext())
-            {
-                var deelnemer = context.Deelnemers.Select(deelnemers => new { deelnemers.Naam});
+            //var opleidingId = KiesOplComboBox.SelectedItem;
 
-                foreach (var dlnmr in deelnemer)
-                {
-                    Button dynamicButton = new Button();
+            //using (var context = new AanwezigheidslijstContext())
+            //{
+            //    var deelnemer = context.Deelnemers.Select(deelnemers => new { deelnemers.Naam});
 
-                    dynamicButton.Text = dlnmr.Naam;
-                    dynamicButton.Location = new Point(20, 150);
-                    dynamicButton.Height = 40;
-                    dynamicButton.Width = 150;
-                    dynamicButton.BackColor = Color.Red;
+            //    foreach (var dlnmr in deelnemer)
+            //    {
+            //        Button dynamicButton = new Button();
 
-                    flowLayoutPanel1.Controls.Add(dynamicButton);
-                    dynamicButton.Click += new EventHandler(DynamicButtonClickEvent);
-                }
-            }
+            //        dynamicButton.Text = dlnmr.Naam;
+            //        dynamicButton.Location = new Point(20, 150);
+            //        dynamicButton.Height = 40;
+            //        dynamicButton.Width = 150;
+            //        dynamicButton.BackColor = Color.Red;
+
+            //        flowLayoutPanel1.Controls.Add(dynamicButton);
+            //        dynamicButton.Click += new EventHandler(DynamicButtonClickEvent);
+            //    }
+            //}
         }
 
 
         DateTime beginTijd;
         DateTime eindTijd;
         
-        private void DynamicButtonClickEvent(object sender, EventArgs e)// eigen event maken
+        private void DynamicButtonClickEvent(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             
@@ -99,7 +101,7 @@ namespace ProjAanwezigheidslijst
                 MessageBox.Show(eindTijd.ToString());
             }
 
-            if (beginTijd != default(DateTime) && eindTijd != default(DateTime))
+            if (beginTijd != default(DateTime) && eindTijd != default(DateTime))        ///////////////BUG eerste uitgebadged krijgt laatste tijd
             {
                 TimeSpan tijdAanwzeig = eindTijd - beginTijd;
                 
@@ -110,12 +112,10 @@ namespace ProjAanwezigheidslijst
                 DateTime answer = today.Add(tijdAanwzeig);
                 MessageBox.Show(answer.ToString());
 
-
                 var opleidingId = KiesOplComboBox.SelectedItem;
                 var deelnemerNaam = btn.Text;
 
-
-                using (var context = new AanwezigheidslijstContext())                   /////////////BUG neemt laatst geselecteerde opleiding als oplid ookal ervoor ingechecked en voor elke deelnemer///////////////
+                using (var context = new AanwezigheidslijstContext())                   /////////////BUG neemt laatst geselecteerde opleiding als opleiding ookal ervoor ingechecked en voor elke deelnemer///////////////
                 {
                     var opleiding = context.Opleidingsinformaties.SingleOrDefault(a => a.Id == (int)opleidingId);
                     var deelnemer = context.Deelnemers.SingleOrDefault(d => d.Naam == deelnemerNaam);
@@ -123,20 +123,6 @@ namespace ProjAanwezigheidslijst
                     var deelnmrOpl = context.Tijdsregistraties.Add(new Tijdsregistratie
                     {
                         DateTime = answer,
-                        Opleiding = opleiding,
-                        Deelnemer = deelnemer
-                    });
-                    context.SaveChanges();
-                    this.DialogResult = DialogResult.OK;
-                }
-
-                using (var context = new AanwezigheidslijstContext())
-                {
-                    var opleiding = context.Opleidingsinformaties.SingleOrDefault(a => a.Id == (int)opleidingId);
-                    var deelnemer = context.Deelnemers.SingleOrDefault(d => d.Naam == deelnemerNaam);
-
-                    var deelnmrOpl = context.DeelnemersOpleidingens.Add(new DeelnemersOpleidingen
-                    {
                         Opleiding = opleiding,
                         Deelnemer = deelnemer
                     });
@@ -154,6 +140,45 @@ namespace ProjAanwezigheidslijst
         private void Button1_Click(object sender, EventArgs e)
         {
             int selectOpl = int.Parse(KiesOplComboBox.Text);
+
+
+
+            //var opleidingId = KiesOplComboBox.SelectedItem;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var dln = context.Opleidingsinformaties.SingleOrDefault(d => d.Id == selectOpl);
+
+
+                var deelnemer = from d in context.Deelnemers /// join opl id op deelnemer id
+                                join dopleiding in context.DeelnemersOpleidingens on d.Id equals dopleiding.Deelnemer.Id
+                                where dopleiding.Opleiding.Id == dln.Id
+                                select d;
+                            
+
+                    foreach (var dlnmr in deelnemer.Distinct())
+                    {
+                        if (dlnmr.Naam == null)
+                        {
+                            continue;
+                        }
+                        Button dynamicButton = new Button();
+
+                        dynamicButton.Text = dlnmr.Naam;
+                        dynamicButton.Location = new Point(20, 150);
+                        dynamicButton.Height = 40;
+                        dynamicButton.Width = 150;
+                        dynamicButton.BackColor = Color.Red;
+
+                        flowLayoutPanel1.Controls.Add(dynamicButton);
+                        dynamicButton.Click += new EventHandler(DynamicButtonClickEvent);
+                    }
+                
+                
+            }
+
+
+
 
             using (var context = new AanwezigheidslijstContext())
             {
