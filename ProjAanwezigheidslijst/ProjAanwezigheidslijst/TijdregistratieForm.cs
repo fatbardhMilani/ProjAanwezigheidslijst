@@ -14,7 +14,6 @@ namespace ProjAanwezigheidslijst
 {
     public partial class TijdregistratieForm : Form
     {
-        Stopwatch Stopwatch = new Stopwatch();
         Timer timer1 = new Timer();
         public TijdregistratieForm()
         {
@@ -32,7 +31,6 @@ namespace ProjAanwezigheidslijst
 
         private void TijdregistratieForm_Load(object sender, EventArgs e)
         {
-
             using (var context = new AanwezigheidslijstContext())
             {
                 var oplId = context.Opleidingsinformaties.Select(opleiding => new { opleiding.Id, opleiding.Opleiding });
@@ -42,7 +40,6 @@ namespace ProjAanwezigheidslijst
                     KiesOplComboBox.Items.Add(opl.Id);   
                 }
             }
-
 
             using (var context = new AanwezigheidslijstContext())
             {
@@ -59,27 +56,26 @@ namespace ProjAanwezigheidslijst
                     dynamicButton.BackColor = Color.Red;
 
                     flowLayoutPanel1.Controls.Add(dynamicButton);
-                    dynamicButton.Click += new EventHandler(DynamicButtonClickEvent); // eigen event gemaakt
-
+                    dynamicButton.Click += new EventHandler(DynamicButtonClickEvent);
                 }
             }
-            
-            /// delenemers ophalen en forloop om voo elke deelnemer uit database een badge knop te maken/////
         }
+
+
         DateTime beginTijd;
         DateTime eindTijd;
-        //TimeSpan tijdAanwezig;
+        
         private void DynamicButtonClickEvent(object sender, EventArgs e)// eigen event maken
         {
             Button btn = sender as Button;
             
-
             if (oplInfolistBox.Text!="")
             {
 
                 if (btn.BackColor == Color.Red)
                 {
                     btn.BackColor = Color.Green;
+                    KiesOplComboBox.ResetText();
                 }
                 else if (btn.BackColor == Color.Green)
                 {
@@ -101,9 +97,8 @@ namespace ProjAanwezigheidslijst
             {
                 eindTijd = DateTime.Now;
                 MessageBox.Show(eindTijd.ToString());
-
-                //tijdAanwezig = eindTijd - beginTijd;
             }
+
             if (beginTijd != default(DateTime) && eindTijd != default(DateTime))
             {
                 TimeSpan tijdAanwzeig = eindTijd - beginTijd;
@@ -111,34 +106,51 @@ namespace ProjAanwezigheidslijst
                 MessageBox.Show(tijdAanwzeig.ToString());
                 eindTijd = default(DateTime);
 
-
-                DateTime today = eindTijd;
+                DateTime today = DateTime.Now.Date;
                 DateTime answer = today.Add(tijdAanwzeig);
-                MessageBox.Show(answer.ToString());//beginTijd.Add(tijdAanwzeig);
+                MessageBox.Show(answer.ToString());
 
-                //using (var context = new AanwezigheidslijstContext())
-                //{
-                //    var deelnmrOpl = context.Tijdsregistraties.Add(new Tijdsregistratie
-                //    {
-                //        DateTime = totaal,
-                        
-                //    });
-                //    context.SaveChanges();
-                //    this.DialogResult = DialogResult.OK;
-                //}
+
+                var opleidingId = KiesOplComboBox.SelectedItem;
+                var deelnemerNaam = btn.Text;
+
+
+                using (var context = new AanwezigheidslijstContext())                   /////////////BUG neemt laatst geselecteerde opleiding als oplid ookal ervoor ingechecked en voor elke deelnemer///////////////
+                {
+                    var opleiding = context.Opleidingsinformaties.SingleOrDefault(a => a.Id == (int)opleidingId);
+                    var deelnemer = context.Deelnemers.SingleOrDefault(d => d.Naam == deelnemerNaam);
+
+                    var deelnmrOpl = context.Tijdsregistraties.Add(new Tijdsregistratie
+                    {
+                        DateTime = answer,
+                        Opleiding = opleiding,
+                        Deelnemer = deelnemer
+                    });
+                    context.SaveChanges();
+                    this.DialogResult = DialogResult.OK;
+                }
+
+                using (var context = new AanwezigheidslijstContext())
+                {
+                    var opleiding = context.Opleidingsinformaties.SingleOrDefault(a => a.Id == (int)opleidingId);
+                    var deelnemer = context.Deelnemers.SingleOrDefault(d => d.Naam == deelnemerNaam);
+
+                    var deelnmrOpl = context.DeelnemersOpleidingens.Add(new DeelnemersOpleidingen
+                    {
+                        Opleiding = opleiding,
+                        Deelnemer = deelnemer
+                    });
+                    context.SaveChanges();
+                    this.DialogResult = DialogResult.OK;
+                }
             }
-
-            
-            //TijdAanwezig totTijdAanwezig = new TijdAanwezig(beginTijd, eindTijd, tijdAanwezig);
-
         }
 
-
         private void timer1_Tick(object sender, EventArgs e)
-
         {
             this.timeLabel.Text = DateTime.Now.ToString();
         }
+
         private void Button1_Click(object sender, EventArgs e)
         {
             int selectOpl = int.Parse(KiesOplComboBox.Text);
@@ -149,7 +161,5 @@ namespace ProjAanwezigheidslijst
                 oplInfolistBox.Items.Add(deelnemer.Id + " " + deelnemer.Opleidingsinstelling + " " + deelnemer.Opleiding);
             }
         }
-        
-
     }
 }

@@ -90,9 +90,10 @@ namespace ProjAanwezigheidslijst
                     {
                         var deelnemer = context.DeelnemersOpleidingens.Select(dlnmr => new
                         {
+                            dlnmr.Id,
                             dlnmr.Deelnemer.Naam,
                             dlnmr.Opleiding.Opleiding,
-                            dlnmr.Id,
+                            
                         });
 
                         foreach (var dn in deelnemer)
