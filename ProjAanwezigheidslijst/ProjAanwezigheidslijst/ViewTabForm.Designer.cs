@@ -55,11 +55,10 @@
             this.label29 = new System.Windows.Forms.Label();
             this.DlnmrOplNaamTextBox = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.dlnmrOplTextBox = new System.Windows.Forms.TextBox();
-            this.deleteDlnmrButton = new System.Windows.Forms.Button();
+            this.deleteDlnmrOplButton = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.wijzigDlnmrOplZoekButton = new System.Windows.Forms.Button();
-            this.wijzigNaamZoekTextBox = new System.Windows.Forms.TextBox();
+            this.wijzigDlnmrOplZoekTextBox = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dlnmrOplZoekListBox = new System.Windows.Forms.ListBox();
             this.dlnmrOplZoekButton = new System.Windows.Forms.Button();
@@ -78,8 +77,7 @@
             this.vakWijzigDatumdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.vakOplWijzigTextBox = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.deleteVakDagButton = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.wijzigVakDagZoekButton = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
@@ -161,6 +159,8 @@
             this.docZoekTextBox = new System.Windows.Forms.TextBox();
             this.docListBox = new System.Windows.Forms.ListBox();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.wijzigDlnmrOplComboBox = new System.Windows.Forms.ComboBox();
+            this.wVakDagOplcomboBox = new System.Windows.Forms.ComboBox();
             this.Control1.SuspendLayout();
             this.DlnmrTabPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -408,15 +408,15 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.wijzigDlnmrOplComboBox);
             this.groupBox3.Controls.Add(this.saveChangeDlnmrOplButton);
             this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.DlnmrOplNaamTextBox);
             this.groupBox3.Controls.Add(this.label28);
-            this.groupBox3.Controls.Add(this.dlnmrOplTextBox);
-            this.groupBox3.Controls.Add(this.deleteDlnmrButton);
+            this.groupBox3.Controls.Add(this.deleteDlnmrOplButton);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.wijzigDlnmrOplZoekButton);
-            this.groupBox3.Controls.Add(this.wijzigNaamZoekTextBox);
+            this.groupBox3.Controls.Add(this.wijzigDlnmrOplZoekTextBox);
             this.groupBox3.Location = new System.Drawing.Point(658, 9);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
@@ -434,6 +434,7 @@
             this.saveChangeDlnmrOplButton.TabIndex = 54;
             this.saveChangeDlnmrOplButton.Text = "Save changes";
             this.saveChangeDlnmrOplButton.UseVisualStyleBackColor = true;
+            this.saveChangeDlnmrOplButton.Click += new System.EventHandler(this.SaveChangeDlnmrOplButton_Click);
             // 
             // label29
             // 
@@ -460,21 +461,15 @@
             this.label28.TabIndex = 51;
             this.label28.Text = "Opleiding";
             // 
-            // dlnmrOplTextBox
+            // deleteDlnmrOplButton
             // 
-            this.dlnmrOplTextBox.Location = new System.Drawing.Point(14, 283);
-            this.dlnmrOplTextBox.Name = "dlnmrOplTextBox";
-            this.dlnmrOplTextBox.Size = new System.Drawing.Size(381, 26);
-            this.dlnmrOplTextBox.TabIndex = 50;
-            // 
-            // deleteDlnmrButton
-            // 
-            this.deleteDlnmrButton.Location = new System.Drawing.Point(423, 121);
-            this.deleteDlnmrButton.Name = "deleteDlnmrButton";
-            this.deleteDlnmrButton.Size = new System.Drawing.Size(128, 35);
-            this.deleteDlnmrButton.TabIndex = 49;
-            this.deleteDlnmrButton.Text = "Verwijderen";
-            this.deleteDlnmrButton.UseVisualStyleBackColor = true;
+            this.deleteDlnmrOplButton.Location = new System.Drawing.Point(423, 121);
+            this.deleteDlnmrOplButton.Name = "deleteDlnmrOplButton";
+            this.deleteDlnmrOplButton.Size = new System.Drawing.Size(128, 35);
+            this.deleteDlnmrOplButton.TabIndex = 49;
+            this.deleteDlnmrOplButton.Text = "Verwijderen";
+            this.deleteDlnmrOplButton.UseVisualStyleBackColor = true;
+            this.deleteDlnmrOplButton.Click += new System.EventHandler(this.DeleteDlnmrOplButton_Click);
             // 
             // label22
             // 
@@ -493,13 +488,14 @@
             this.wijzigDlnmrOplZoekButton.TabIndex = 47;
             this.wijzigDlnmrOplZoekButton.Text = "Wijzigen";
             this.wijzigDlnmrOplZoekButton.UseVisualStyleBackColor = true;
+            this.wijzigDlnmrOplZoekButton.Click += new System.EventHandler(this.WijzigDlnmrOplZoekButton_Click);
             // 
-            // wijzigNaamZoekTextBox
+            // wijzigDlnmrOplZoekTextBox
             // 
-            this.wijzigNaamZoekTextBox.Location = new System.Drawing.Point(14, 84);
-            this.wijzigNaamZoekTextBox.Name = "wijzigNaamZoekTextBox";
-            this.wijzigNaamZoekTextBox.Size = new System.Drawing.Size(380, 26);
-            this.wijzigNaamZoekTextBox.TabIndex = 46;
+            this.wijzigDlnmrOplZoekTextBox.Location = new System.Drawing.Point(14, 84);
+            this.wijzigDlnmrOplZoekTextBox.Name = "wijzigDlnmrOplZoekTextBox";
+            this.wijzigDlnmrOplZoekTextBox.Size = new System.Drawing.Size(380, 26);
+            this.wijzigDlnmrOplZoekTextBox.TabIndex = 46;
             // 
             // label16
             // 
@@ -563,6 +559,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.wVakDagOplcomboBox);
             this.groupBox4.Controls.Add(this.saveChangeVakDagButton);
             this.groupBox4.Controls.Add(this.WijzigZoekdateTimePicker);
             this.groupBox4.Controls.Add(this.label32);
@@ -574,8 +571,7 @@
             this.groupBox4.Controls.Add(this.vakWijzigDatumdateTimePicker);
             this.groupBox4.Controls.Add(this.label31);
             this.groupBox4.Controls.Add(this.label30);
-            this.groupBox4.Controls.Add(this.vakOplWijzigTextBox);
-            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.deleteVakDagButton);
             this.groupBox4.Controls.Add(this.label23);
             this.groupBox4.Controls.Add(this.wijzigVakDagZoekButton);
             this.groupBox4.Location = new System.Drawing.Point(658, 9);
@@ -595,6 +591,7 @@
             this.saveChangeVakDagButton.TabIndex = 63;
             this.saveChangeVakDagButton.Text = "Save changes";
             this.saveChangeVakDagButton.UseVisualStyleBackColor = true;
+            this.saveChangeVakDagButton.Click += new System.EventHandler(this.SaveChangeVakDagButton_Click);
             // 
             // WijzigZoekdateTimePicker
             // 
@@ -682,21 +679,14 @@
             this.label30.TabIndex = 53;
             this.label30.Text = "Opleiding";
             // 
-            // vakOplWijzigTextBox
+            // deleteVakDagButton
             // 
-            this.vakOplWijzigTextBox.Location = new System.Drawing.Point(14, 238);
-            this.vakOplWijzigTextBox.Name = "vakOplWijzigTextBox";
-            this.vakOplWijzigTextBox.Size = new System.Drawing.Size(381, 26);
-            this.vakOplWijzigTextBox.TabIndex = 52;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(423, 121);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 35);
-            this.button4.TabIndex = 49;
-            this.button4.Text = "Verwijderen";
-            this.button4.UseVisualStyleBackColor = true;
+            this.deleteVakDagButton.Location = new System.Drawing.Point(423, 121);
+            this.deleteVakDagButton.Name = "deleteVakDagButton";
+            this.deleteVakDagButton.Size = new System.Drawing.Size(128, 35);
+            this.deleteVakDagButton.TabIndex = 49;
+            this.deleteVakDagButton.Text = "Verwijderen";
+            this.deleteVakDagButton.UseVisualStyleBackColor = true;
             // 
             // label23
             // 
@@ -715,6 +705,7 @@
             this.wijzigVakDagZoekButton.TabIndex = 47;
             this.wijzigVakDagZoekButton.Text = "Wijzigen";
             this.wijzigVakDagZoekButton.UseVisualStyleBackColor = true;
+            this.wijzigVakDagZoekButton.Click += new System.EventHandler(this.WijzigVakDagZoekButton_Click);
             // 
             // label17
             // 
@@ -1497,6 +1488,22 @@
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
+            // wijzigDlnmrOplComboBox
+            // 
+            this.wijzigDlnmrOplComboBox.FormattingEnabled = true;
+            this.wijzigDlnmrOplComboBox.Location = new System.Drawing.Point(14, 283);
+            this.wijzigDlnmrOplComboBox.Name = "wijzigDlnmrOplComboBox";
+            this.wijzigDlnmrOplComboBox.Size = new System.Drawing.Size(380, 28);
+            this.wijzigDlnmrOplComboBox.TabIndex = 55;
+            // 
+            // wVakDagOplcomboBox
+            // 
+            this.wVakDagOplcomboBox.FormattingEnabled = true;
+            this.wVakDagOplcomboBox.Location = new System.Drawing.Point(14, 238);
+            this.wVakDagOplcomboBox.Name = "wVakDagOplcomboBox";
+            this.wVakDagOplcomboBox.Size = new System.Drawing.Size(383, 28);
+            this.wVakDagOplcomboBox.TabIndex = 64;
+            // 
             // ViewTabForm
             // 
             this.AcceptButton = this.saveChangeDeelnemerButton;
@@ -1631,14 +1638,12 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox DlnmrOplNaamTextBox;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox dlnmrOplTextBox;
-        private System.Windows.Forms.Button deleteDlnmrButton;
+        private System.Windows.Forms.Button deleteDlnmrOplButton;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button wijzigDlnmrOplZoekButton;
-        private System.Windows.Forms.TextBox wijzigNaamZoekTextBox;
+        private System.Windows.Forms.TextBox wijzigDlnmrOplZoekTextBox;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox vakOplWijzigTextBox;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button deleteVakDagButton;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button wijzigVakDagZoekButton;
         private System.Windows.Forms.Button button6;
@@ -1677,5 +1682,7 @@
         private System.Windows.Forms.TextBox naamDocTextBox;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox naamBedrijfTextBox;
+        private System.Windows.Forms.ComboBox wijzigDlnmrOplComboBox;
+        private System.Windows.Forms.ComboBox wVakDagOplcomboBox;
     }
 }

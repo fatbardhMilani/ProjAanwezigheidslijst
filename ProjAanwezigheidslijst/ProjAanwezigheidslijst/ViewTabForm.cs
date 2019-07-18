@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Aanwezigheidslijst;
+using System.Data.Entity;
 
 namespace ProjAanwezigheidslijst
 {
@@ -259,13 +260,14 @@ namespace ProjAanwezigheidslijst
             }
         }
 
-        private void DeleteDeelnemerButton_Click(object sender, EventArgs e)
+        private void DeleteDeelnemerButton_Click(object sender, EventArgs e) /////////////deelnemers met een opleiding kunnen verwijderen///////
         {
             string verwijderNaam = wijzigNaamTextBox.Text;
 
             using (var context = new AanwezigheidslijstContext())
             {
                 var deelnemer = context.Deelnemers.SingleOrDefault(dlnmr => dlnmr.Naam == verwijderNaam);
+                
                 context.Deelnemers.Remove(deelnemer);
 
                 context.SaveChanges();
@@ -357,7 +359,7 @@ namespace ProjAanwezigheidslijst
                 naamBedrijfTextBox.Text = docent.Bedrijf;
             }
         }
-
+        
         private void SaveChangeDocButton_Click(object sender, EventArgs e)
         {
             string zoekDoc = wijzigZoekDocTextBox.Text;
@@ -389,8 +391,116 @@ namespace ProjAanwezigheidslijst
                 MessageBox.Show("Docent verwijderd");
             }
         }
+
+
         //////////////////WIJZIGEN DEELNEMERSOPlEIDINGEN///////////////
+
+        private void WijzigDlnmrOplZoekButton_Click(object sender, EventArgs e)//////// FK opleiding weizgd niet/////
+        {
+            string zoekDlnmr = wijzigDlnmrOplZoekTextBox.Text;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var deelnemer = context.DeelnemersOpleidingens.Include(x => x.Deelnemer).Include(x => x.Opleiding).SingleOrDefault(dlnmr => dlnmr.Deelnemer.Naam == zoekDlnmr);// Include gebruiken omdat we met klassen werken en daar de klasses meegeven// in namespace using.data.entity
+
+                DlnmrOplNaamTextBox.Text = deelnemer.Deelnemer.Naam;
+            }
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var opl = context.Opleidingsinformaties;
+                foreach (var op in opl)
+                {
+                    wijzigDlnmrOplComboBox.Items.Add(op.Opleiding);
+                }
+            }
+            
+        }
+
+        private void SaveChangeDlnmrOplButton_Click(object sender, EventArgs e)
+        {
+            
+            string zoekDlnmr = wijzigDlnmrOplZoekTextBox.Text;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var deelnemer = context.DeelnemersOpleidingens.Include(x => x.Deelnemer).Include(x => x.Opleiding).SingleOrDefault(dlnmr => dlnmr.Deelnemer.Naam == zoekDlnmr);
+
+                deelnemer.Deelnemer.Naam = DlnmrOplNaamTextBox.Text;
+                deelnemer.Opleiding.Opleiding = wijzigDlnmrOplComboBox.Text;
+
+                context.SaveChanges();
+                MessageBox.Show("Deelnemer opleiding gewijzigd");
+                
+            }
+            DlnmrOplNaamTextBox.Clear();
+            wijzigDlnmrOplComboBox.Items.Clear();
+        }
+
+        private void DeleteDlnmrOplButton_Click(object sender, EventArgs e)
+        {
+            string zoekDlnmr = wijzigDlnmrOplZoekTextBox.Text;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var deelnemer = context.DeelnemersOpleidingens.Include(x => x.Deelnemer).SingleOrDefault(dlnmr => dlnmr.Deelnemer.Naam == zoekDlnmr);
+                context.DeelnemersOpleidingens.Remove(deelnemer);
+
+                context.SaveChanges();
+                MessageBox.Show("Docent verwijderd");
+            }
+        }
         //////////////////WIJZIGEN VAKDAGEN///////////////
+
+        private void WijzigVakDagZoekButton_Click(object sender, EventArgs e)
+        {
+            wVakDagOplcomboBox.Items.Clear();
+            DateTime zoekVakDag = WijzigZoekdateTimePicker.Value.Date;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var vakdag = context.NietOpleidingsDagens.SingleOrDefault(vd => vd.Datum == zoekVakDag);// Include gebruiken omdat we met klassen werken en daar de klasses meegeven// in namespace using.data.entity
+
+                vakWijzigDatumdateTimePicker.Value = vakdag.Datum;
+                voormiddagCheckBox.Checked = vakdag.Voormiddag;
+                namiddagCheckBox.Checked = vakdag.Namiddag;
+            }
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var opl = context.Opleidingsinformaties;
+                foreach (var op in opl)
+                {
+                    wVakDagOplcomboBox.Items.Add(op.Opleiding);
+                }
+            }
+
+        }
+
+        private void SaveChangeVakDagButton_Click(object sender, EventArgs e)
+        {
+            DateTime zoekVakDag = WijzigZoekdateTimePicker.Value.Date;
+
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var vakDag = context.NietOpleidingsDagens.Include(x => x.Opleiding).SingleOrDefault(vd => vd.Datum == zoekVakDag);
+
+                vakDag.Datum = vakWijzigDatumdateTimePicker.Value;
+                vakDag.Voormiddag = voormiddagCheckBox.Checked;
+                vakDag.Namiddag = namiddagCheckBox.Checked;
+                vakDag.Opleiding.Opleiding = wVakDagOplcomboBox.Text;
+
+
+                context.SaveChanges();
+                MessageBox.Show("Deelnemer opleiding gewijzigd");
+            }
+
+            vakWijzigDatumdateTimePicker.ResetText();
+            voormiddagCheckBox.ResetText();
+            namiddagCheckBox.ResetText();
+            wVakDagOplcomboBox.Items.Clear();
+        }
+
         //////////////////WIJZIGEN DOCENTENOPL///////////////
     }
 }
