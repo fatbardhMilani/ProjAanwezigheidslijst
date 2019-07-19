@@ -107,6 +107,7 @@ namespace ProjAanwezigheidslijst
                         foreach (var dn in deelnemer)
                         {
                             dlnmrOplListBox.Items.Add(dn.Id + " " + dn.Naam + " " + dn.Opleiding);
+                            comboBox1.Items.Add(dn.Naam);
                         }
                     }
 
@@ -403,9 +404,8 @@ namespace ProjAanwezigheidslijst
             {
                 var deelnemer = context.DeelnemersOpleidingens.Include(x => x.Deelnemer).Include(x => x.Opleiding).SingleOrDefault(dlnmr => dlnmr.Deelnemer.Naam == zoekDlnmr);// Include gebruiken omdat we met klassen werken en daar de klasses meegeven// in namespace using.data.entity
 
-                DlnmrOplNaamTextBox.Text = deelnemer.Deelnemer.Naam;
+                comboBox1.Text = deelnemer.Deelnemer.Naam;
             }
-
             using (var context = new AanwezigheidslijstContext())
             {
                 var opl = context.Opleidingsinformaties;
@@ -414,27 +414,57 @@ namespace ProjAanwezigheidslijst
                     wijzigDlnmrOplComboBox.Items.Add(op.Opleiding);
                 }
             }
-            
         }
 
         private void SaveChangeDlnmrOplButton_Click(object sender, EventArgs e)
         {
+            string zoekOplInfo = wijzigDlnmrOplZoekTextBox.Text;
+
             
-            string zoekDlnmr = wijzigDlnmrOplZoekTextBox.Text;
+
+            var dn = comboBox1.SelectedItem as Deelnemers;
+            var op = wijzigDlnmrOplComboBox.SelectedItem as Opleidingsinformatie;
+            //var oplId = op.Id;
+            var dlnmrId = dn.Id;
+
+            using (var ctx = new AanwezigheidslijstContext())
+            {
+                //var opl = ctx.Opleidingsinformaties.SingleOrDefault(a => a.Id == oplId);
+                var dlnmr = ctx.Deelnemers.SingleOrDefault(d => d.Id == dlnmrId);
+
+                var dlnmrOpl = ctx.DeelnemersOpleidingens.Add(new DeelnemersOpleidingen
+                {
+                    //Opleiding = opl,
+                    Deelnemer = dlnmr,
+                });
+                ctx.SaveChanges();
+                this.DialogResult = DialogResult.OK;
+            }
 
             using (var context = new AanwezigheidslijstContext())
             {
-                var deelnemer = context.DeelnemersOpleidingens.Include(x => x.Deelnemer).Include(x => x.Opleiding).SingleOrDefault(dlnmr => dlnmr.Deelnemer.Naam == zoekDlnmr);
-
-                deelnemer.Deelnemer.Naam = DlnmrOplNaamTextBox.Text;
-                deelnemer.Opleiding.Opleiding = wijzigDlnmrOplComboBox.Text;
+                var oplInfo = context.DeelnemersOpleidingens.SingleOrDefault(opl => opl.Deelnemer.Naam == zoekOplInfo);
+                context.DeelnemersOpleidingens.Remove(oplInfo);
 
                 context.SaveChanges();
-                MessageBox.Show("Deelnemer opleiding gewijzigd");
-                
+
             }
-            DlnmrOplNaamTextBox.Clear();
-            wijzigDlnmrOplComboBox.Items.Clear();
+            //string zoekDlnmr = wijzigDlnmrOplZoekTextBox.Text;
+
+            //using (var context = new AanwezigheidslijstContext())
+            //{
+            //    var deelnemer = context.DeelnemersOpleidingens.Include(x => x.Deelnemer).Include(x => x.Opleiding).SingleOrDefault(dlnmr => dlnmr.Deelnemer.Naam == zoekDlnmr);
+
+            //    deelnemer.Deelnemer.Naam = DlnmrOplNaamTextBox.Text;
+            //    deelnemer.Opleiding.Opleiding = wijzigDlnmrOplComboBox.Text;
+
+            //    context.SaveChanges();
+            //    MessageBox.Show("Deelnemer opleiding gewijzigd");
+
+            //}
+            //DlnmrOplNaamTextBox.Clear();
+            //wijzigDlnmrOplComboBox.Items.Clear();
+
         }
 
         private void DeleteDlnmrOplButton_Click(object sender, EventArgs e)
