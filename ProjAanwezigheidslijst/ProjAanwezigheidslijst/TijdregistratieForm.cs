@@ -40,27 +40,6 @@ namespace ProjAanwezigheidslijst
                     KiesOplComboBox.Items.Add(opl.Id);   
                 }
             }
-
-            //var opleidingId = KiesOplComboBox.SelectedItem;
-
-            //using (var context = new AanwezigheidslijstContext())
-            //{
-            //    var deelnemer = context.Deelnemers.Select(deelnemers => new { deelnemers.Naam});
-
-            //    foreach (var dlnmr in deelnemer)
-            //    {
-            //        Button dynamicButton = new Button();
-
-            //        dynamicButton.Text = dlnmr.Naam;
-            //        dynamicButton.Location = new Point(20, 150);
-            //        dynamicButton.Height = 40;
-            //        dynamicButton.Width = 150;
-            //        dynamicButton.BackColor = Color.Red;
-
-            //        flowLayoutPanel1.Controls.Add(dynamicButton);
-            //        dynamicButton.Click += new EventHandler(DynamicButtonClickEvent);
-            //    }
-            //}
         }
 
 
@@ -140,10 +119,7 @@ namespace ProjAanwezigheidslijst
         private void Button1_Click(object sender, EventArgs e)
         {
             int selectOpl = int.Parse(KiesOplComboBox.Text);
-
-
-
-            //var opleidingId = KiesOplComboBox.SelectedItem;
+            var opleidingId = KiesOplComboBox.SelectedItem;
 
             using (var context = new AanwezigheidslijstContext())
             {
@@ -154,32 +130,26 @@ namespace ProjAanwezigheidslijst
                                 join dopleiding in context.DeelnemersOpleidingens on d.Id equals dopleiding.Deelnemer.Id
                                 where dopleiding.Opleiding.Id == dln.Id
                                 select d;
-                            
 
-                    foreach (var dlnmr in deelnemer.Distinct())
+
+                foreach (var dlnmr in deelnemer.Distinct())
+                {
+                    if (dlnmr.Naam == null)
                     {
-                        if (dlnmr.Naam == null)
-                        {
-                            continue;
-                        }
-                        Button dynamicButton = new Button();
-
-                        dynamicButton.Text = dlnmr.Naam;
-                        dynamicButton.Location = new Point(20, 150);
-                        dynamicButton.Height = 40;
-                        dynamicButton.Width = 150;
-                        dynamicButton.BackColor = Color.Red;
-
-                        flowLayoutPanel1.Controls.Add(dynamicButton);
-                        dynamicButton.Click += new EventHandler(DynamicButtonClickEvent);
+                        continue;
                     }
-                
-                
+                    Button dynamicButton = new Button();
+
+                    dynamicButton.Text = dlnmr.Naam;
+                    dynamicButton.Location = new Point(20, 150);
+                    dynamicButton.Height = 40;
+                    dynamicButton.Width = 150;
+                    dynamicButton.BackColor = Color.Red;
+
+                    flowLayoutPanel1.Controls.Add(dynamicButton);
+                    dynamicButton.Click += new EventHandler(DynamicButtonClickEvent);
+                }
             }
-
-
-
-
             using (var context = new AanwezigheidslijstContext())
             {
                 var deelnemer = context.Opleidingsinformaties.SingleOrDefault(dlnmr => dlnmr.Id == selectOpl);

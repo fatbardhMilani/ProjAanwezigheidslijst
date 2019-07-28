@@ -41,6 +41,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DeelnemerBeheer.cs" />
+    <Compile Include="DocentBeheer.cs" />
     <Compile Include="Migrations\201907100958136_Initail.cs" />
     <Compile Include="Migrations\201907100958136_Initail.Designer.cs">
       <DependentUpon>201907100958136_Initail.cs</DependentUpon>
@@ -78,7 +81,21 @@
     <Compile Include="Migrations\201907110845333_2.Designer.cs">
       <DependentUpon>201907110845333_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907221418547_new dlnmr &amp; doc DB.cs" />
+    <Compile Include="Migrations\201907221418547_new dlnmr &amp; doc DB.Designer.cs">
+      <DependentUpon>201907221418547_new dlnmr &amp; doc DB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907221538126_newDB.cs" />
+    <Compile Include="Migrations\201907221538126_newDB.Designer.cs">
+      <DependentUpon>201907221538126_newDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907221758188_newdata.cs" />
+    <Compile Include="Migrations\201907221758188_newdata.Designer.cs">
+      <DependentUpon>201907221758188_newdata.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="NietOplDagBeheer.cs" />
+    <Compile Include="OpleidingsInfoBeheer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +123,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907110845333_2.resx">
       <DependentUpon>201907110845333_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907221418547_new dlnmr &amp; doc DB.resx">
+      <DependentUpon>201907221418547_new dlnmr &amp; doc DB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907221538126_newDB.resx">
+      <DependentUpon>201907221538126_newDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907221758188_newdata.resx">
+      <DependentUpon>201907221758188_newdata.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

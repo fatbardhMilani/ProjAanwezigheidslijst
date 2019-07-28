@@ -17,6 +17,7 @@ namespace Aanwezigheidslijst
         public DateTime GeboorteDatum { get; set; }
         public string Woonplaats { get; set; }
         public int BadgeNummer { get; set; }
+        public Opleidingsinformatie Opleiding { get; set; }
 
         public override string ToString()
         {
@@ -40,6 +41,7 @@ namespace Aanwezigheidslijst
         public bool Voormiddag { get; set; }
         public bool Namiddag { get; set; }
         public Opleidingsinformatie Opleiding { get; set; }
+
     }
 
     public class Tijdsregistratie
@@ -83,6 +85,7 @@ namespace Aanwezigheidslijst
         public int Id { get; set; }
         public string Naam { get; set; }
         public string Bedrijf { get; set; }
+        public Opleidingsinformatie Opleiding { get; set; }
 
         public override string ToString()
         {
