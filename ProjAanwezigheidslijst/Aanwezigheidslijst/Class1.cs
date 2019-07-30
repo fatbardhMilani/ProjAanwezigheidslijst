@@ -50,6 +50,7 @@ namespace Aanwezigheidslijst
         public Opleidingsinformatie Opleiding { get; set; }
         public Deelnemers Deelnemer { get; set; }
 
+
     }
 
     public class Opleidingsinformatie

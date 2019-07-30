@@ -93,10 +93,15 @@
     <Compile Include="Migrations\201907221758188_newdata.Designer.cs">
       <DependentUpon>201907221758188_newdata.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907301341104_finalDB.cs" />
+    <Compile Include="Migrations\201907301341104_finalDB.Designer.cs">
+      <DependentUpon>201907301341104_finalDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NietOplDagBeheer.cs" />
     <Compile Include="OpleidingsInfoBeheer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TijdsRegBeheer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -132,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907221758188_newdata.resx">
       <DependentUpon>201907221758188_newdata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907301341104_finalDB.resx">
+      <DependentUpon>201907301341104_finalDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

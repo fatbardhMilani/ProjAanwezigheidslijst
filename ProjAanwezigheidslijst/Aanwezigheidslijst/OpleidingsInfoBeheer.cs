@@ -9,6 +9,19 @@ namespace Aanwezigheidslijst
 {
     public class OpleidingsInfoBeheer
     {
+        public static void OplInfoComBFill(ref ComboBox oplNaam)
+        {
+            using (var ctx = new AanwezigheidslijstContext())
+            {
+                var oplInfo = ctx.Opleidingsinformaties;
+
+                foreach (var opl in oplInfo)
+                {
+                    oplNaam.Items.Add(opl);
+                }
+            }
+        }
+
         public static Opleidingsinformatie OplInfoToev(string oplInst, string opl, string cntctPrsn, string oplPlts, string refOpl, int oeNmr, int oplCd, DateTime strtDat, DateTime eindDat )
         {
             using (var ctx = new AanwezigheidslijstContext())

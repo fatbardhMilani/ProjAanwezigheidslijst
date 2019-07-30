@@ -52,10 +52,6 @@ namespace ProjAanwezigheidslijst {
         
         private global::System.Data.DataRelation _relationFK_dbo_Tijdsregistraties_dbo_Opleidingsinformaties_OpleidingId_Id;
         
-        private global::System.Data.DataRelation _relationFK_dbo_Deelnemers_dbo_Opleidingsinformaties_Opleiding_Id;
-        
-        private global::System.Data.DataRelation _relationFK_dbo_Docentens_dbo_Opleidingsinformaties_Opleiding_Id;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -363,8 +359,6 @@ namespace ProjAanwezigheidslijst {
             this._relationFK_dbo_NietOpleidingsDagens_dbo_Opleidingsinformaties_OpleidingId_Id = this.Relations["FK_dbo.NietOpleidingsDagens_dbo.Opleidingsinformaties_OpleidingId_Id"];
             this._relationFK_dbo_Tijdsregistraties_dbo_Deelnemers_DeelnemerId_Id = this.Relations["FK_dbo.Tijdsregistraties_dbo.Deelnemers_DeelnemerId_Id"];
             this._relationFK_dbo_Tijdsregistraties_dbo_Opleidingsinformaties_OpleidingId_Id = this.Relations["FK_dbo.Tijdsregistraties_dbo.Opleidingsinformaties_OpleidingId_Id"];
-            this._relationFK_dbo_Deelnemers_dbo_Opleidingsinformaties_Opleiding_Id = this.Relations["FK_dbo.Deelnemers_dbo.Opleidingsinformaties_Opleiding_Id"];
-            this._relationFK_dbo_Docentens_dbo_Opleidingsinformaties_Opleiding_Id = this.Relations["FK_dbo.Docentens_dbo.Opleidingsinformaties_Opleiding_Id"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -417,14 +411,6 @@ namespace ProjAanwezigheidslijst {
                         this.tableOpleidingsinformaties.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableTijdsregistraties.Opleiding_IdColumn}, false);
             this.Relations.Add(this._relationFK_dbo_Tijdsregistraties_dbo_Opleidingsinformaties_OpleidingId_Id);
-            this._relationFK_dbo_Deelnemers_dbo_Opleidingsinformaties_Opleiding_Id = new global::System.Data.DataRelation("FK_dbo.Deelnemers_dbo.Opleidingsinformaties_Opleiding_Id", new global::System.Data.DataColumn[] {
-                        this.tableOpleidingsinformaties.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDeelnemers.Opleiding_IdColumn}, false);
-            this.Relations.Add(this._relationFK_dbo_Deelnemers_dbo_Opleidingsinformaties_Opleiding_Id);
-            this._relationFK_dbo_Docentens_dbo_Opleidingsinformaties_Opleiding_Id = new global::System.Data.DataRelation("FK_dbo.Docentens_dbo.Opleidingsinformaties_Opleiding_Id", new global::System.Data.DataColumn[] {
-                        this.tableOpleidingsinformaties.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDocentens.Opleiding_IdColumn}, false);
-            this.Relations.Add(this._relationFK_dbo_Docentens_dbo_Opleidingsinformaties_Opleiding_Id);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -562,8 +548,6 @@ namespace ProjAanwezigheidslijst {
             
             private global::System.Data.DataColumn columnBadgeNummer;
             
-            private global::System.Data.DataColumn columnOpleiding_Id;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DeelnemersDataTable() {
@@ -639,14 +623,6 @@ namespace ProjAanwezigheidslijst {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Opleiding_IdColumn {
-                get {
-                    return this.columnOpleiding_Id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -682,18 +658,14 @@ namespace ProjAanwezigheidslijst {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DeelnemersRow AddDeelnemersRow(string Naam, System.DateTime GeboorteDatum, string Woonplaats, int BadgeNummer, OpleidingsinformatiesRow _parentOpleidingsinformatiesRowByFK_dbo_Deelnemers_dbo_Opleidingsinformaties_Opleiding_Id) {
+            public DeelnemersRow AddDeelnemersRow(string Naam, System.DateTime GeboorteDatum, string Woonplaats, int BadgeNummer) {
                 DeelnemersRow rowDeelnemersRow = ((DeelnemersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Naam,
                         GeboorteDatum,
                         Woonplaats,
-                        BadgeNummer,
-                        null};
-                if ((_parentOpleidingsinformatiesRowByFK_dbo_Deelnemers_dbo_Opleidingsinformaties_Opleiding_Id != null)) {
-                    columnValuesArray[5] = _parentOpleidingsinformatiesRowByFK_dbo_Deelnemers_dbo_Opleidingsinformaties_Opleiding_Id[0];
-                }
+                        BadgeNummer};
                 rowDeelnemersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDeelnemersRow);
                 return rowDeelnemersRow;
@@ -728,7 +700,6 @@ namespace ProjAanwezigheidslijst {
                 this.columnGeboorteDatum = base.Columns["GeboorteDatum"];
                 this.columnWoonplaats = base.Columns["Woonplaats"];
                 this.columnBadgeNummer = base.Columns["BadgeNummer"];
-                this.columnOpleiding_Id = base.Columns["Opleiding_Id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -744,8 +715,6 @@ namespace ProjAanwezigheidslijst {
                 base.Columns.Add(this.columnWoonplaats);
                 this.columnBadgeNummer = new global::System.Data.DataColumn("BadgeNummer", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBadgeNummer);
-                this.columnOpleiding_Id = new global::System.Data.DataColumn("Opleiding_Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOpleiding_Id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1193,8 +1162,6 @@ namespace ProjAanwezigheidslijst {
             
             private global::System.Data.DataColumn columnBedrijf;
             
-            private global::System.Data.DataColumn columnOpleiding_Id;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DocentensDataTable() {
@@ -1254,14 +1221,6 @@ namespace ProjAanwezigheidslijst {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Opleiding_IdColumn {
-                get {
-                    return this.columnOpleiding_Id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1297,16 +1256,12 @@ namespace ProjAanwezigheidslijst {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DocentensRow AddDocentensRow(string Naam, string Bedrijf, OpleidingsinformatiesRow _parentOpleidingsinformatiesRowByFK_dbo_Docentens_dbo_Opleidingsinformaties_Opleiding_Id) {
+            public DocentensRow AddDocentensRow(string Naam, string Bedrijf) {
                 DocentensRow rowDocentensRow = ((DocentensRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Naam,
-                        Bedrijf,
-                        null};
-                if ((_parentOpleidingsinformatiesRowByFK_dbo_Docentens_dbo_Opleidingsinformaties_Opleiding_Id != null)) {
-                    columnValuesArray[3] = _parentOpleidingsinformatiesRowByFK_dbo_Docentens_dbo_Opleidingsinformaties_Opleiding_Id[0];
-                }
+                        Bedrijf};
                 rowDocentensRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDocentensRow);
                 return rowDocentensRow;
@@ -1339,7 +1294,6 @@ namespace ProjAanwezigheidslijst {
                 this.columnId = base.Columns["Id"];
                 this.columnNaam = base.Columns["Naam"];
                 this.columnBedrijf = base.Columns["Bedrijf"];
-                this.columnOpleiding_Id = base.Columns["Opleiding_Id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1351,8 +1305,6 @@ namespace ProjAanwezigheidslijst {
                 base.Columns.Add(this.columnNaam);
                 this.columnBedrijf = new global::System.Data.DataColumn("Bedrijf", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBedrijf);
-                this.columnOpleiding_Id = new global::System.Data.DataColumn("Opleiding_Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOpleiding_Id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -2898,33 +2850,6 @@ namespace ProjAanwezigheidslijst {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Opleiding_Id {
-                get {
-                    try {
-                        return ((int)(this[this.tableDeelnemers.Opleiding_IdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Opleiding_Id\' in table \'Deelnemers\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDeelnemers.Opleiding_IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OpleidingsinformatiesRow OpleidingsinformatiesRow {
-                get {
-                    return ((OpleidingsinformatiesRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.Deelnemers_dbo.Opleidingsinformaties_Opleiding_Id"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_dbo.Deelnemers_dbo.Opleidingsinformaties_Opleiding_Id"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNaamNull() {
                 return this.IsNull(this.tableDeelnemers.NaamColumn);
             }
@@ -2945,18 +2870,6 @@ namespace ProjAanwezigheidslijst {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetWoonplaatsNull() {
                 this[this.tableDeelnemers.WoonplaatsColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsOpleiding_IdNull() {
-                return this.IsNull(this.tableDeelnemers.Opleiding_IdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetOpleiding_IdNull() {
-                this[this.tableDeelnemers.Opleiding_IdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3145,33 +3058,6 @@ namespace ProjAanwezigheidslijst {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Opleiding_Id {
-                get {
-                    try {
-                        return ((int)(this[this.tableDocentens.Opleiding_IdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Opleiding_Id\' in table \'Docentens\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDocentens.Opleiding_IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OpleidingsinformatiesRow OpleidingsinformatiesRow {
-                get {
-                    return ((OpleidingsinformatiesRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.Docentens_dbo.Opleidingsinformaties_Opleiding_Id"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_dbo.Docentens_dbo.Opleidingsinformaties_Opleiding_Id"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNaamNull() {
                 return this.IsNull(this.tableDocentens.NaamColumn);
             }
@@ -3192,18 +3078,6 @@ namespace ProjAanwezigheidslijst {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetBedrijfNull() {
                 this[this.tableDocentens.BedrijfColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsOpleiding_IdNull() {
-                return this.IsNull(this.tableDocentens.Opleiding_IdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetOpleiding_IdNull() {
-                this[this.tableDocentens.Opleiding_IdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3674,28 +3548,6 @@ namespace ProjAanwezigheidslijst {
                 }
                 else {
                     return ((TijdsregistratiesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.Tijdsregistraties_dbo.Opleidingsinformaties_OpleidingId_Id"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DeelnemersRow[] GetDeelnemersRows() {
-                if ((this.Table.ChildRelations["FK_dbo.Deelnemers_dbo.Opleidingsinformaties_Opleiding_Id"] == null)) {
-                    return new DeelnemersRow[0];
-                }
-                else {
-                    return ((DeelnemersRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.Deelnemers_dbo.Opleidingsinformaties_Opleiding_Id"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DocentensRow[] GetDocentensRows() {
-                if ((this.Table.ChildRelations["FK_dbo.Docentens_dbo.Opleidingsinformaties_Opleiding_Id"] == null)) {
-                    return new DocentensRow[0];
-                }
-                else {
-                    return ((DocentensRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.Docentens_dbo.Opleidingsinformaties_Opleiding_Id"])));
                 }
             }
         }
@@ -4183,42 +4035,38 @@ namespace ProjAanwezigheidslijst.AanwezigheidslijstDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("GeboorteDatum", "GeboorteDatum");
             tableMapping.ColumnMappings.Add("Woonplaats", "Woonplaats");
             tableMapping.ColumnMappings.Add("BadgeNummer", "BadgeNummer");
-            tableMapping.ColumnMappings.Add("Opleiding_Id", "Opleiding_Id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Deelnemers] WHERE (([Id] = @Original_Id) AND ([GeboorteDatum] = @Original_GeboorteDatum) AND ([BadgeNummer] = @Original_BadgeNummer) AND ((@IsNull_Opleiding_Id = 1 AND [Opleiding_Id] IS NULL) OR ([Opleiding_Id] = @Original_Opleiding_Id)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Deelnemers] WHERE (([Id] = @Original_Id) AND ([GeboorteDatum] = @Ori" +
+                "ginal_GeboorteDatum) AND ([BadgeNummer] = @Original_BadgeNummer))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GeboorteDatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GeboorteDatum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BadgeNummer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BadgeNummer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Opleiding_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opleiding_Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Opleiding_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opleiding_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Deelnemers] ([Naam], [GeboorteDatum], [Woonplaats], [BadgeNummer], [Opleiding_Id]) VALUES (@Naam, @GeboorteDatum, @Woonplaats, @BadgeNummer, @Opleiding_Id);
-SELECT Id, Naam, GeboorteDatum, Woonplaats, BadgeNummer, Opleiding_Id FROM Deelnemers WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Deelnemers] ([Naam], [GeboorteDatum], [Woonplaats], [BadgeNummer]) V" +
+                "ALUES (@Naam, @GeboorteDatum, @Woonplaats, @BadgeNummer);\r\nSELECT Id, Naam, Gebo" +
+                "orteDatum, Woonplaats, BadgeNummer FROM Deelnemers WHERE (Id = SCOPE_IDENTITY())" +
+                "";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naam", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naam", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GeboorteDatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GeboorteDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Woonplaats", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Woonplaats", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BadgeNummer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BadgeNummer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Opleiding_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opleiding_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Deelnemers] SET [Naam] = @Naam, [GeboorteDatum] = @GeboorteDatum, [Woonplaats] = @Woonplaats, [BadgeNummer] = @BadgeNummer, [Opleiding_Id] = @Opleiding_Id WHERE (([Id] = @Original_Id) AND ([GeboorteDatum] = @Original_GeboorteDatum) AND ([BadgeNummer] = @Original_BadgeNummer) AND ((@IsNull_Opleiding_Id = 1 AND [Opleiding_Id] IS NULL) OR ([Opleiding_Id] = @Original_Opleiding_Id)));
-SELECT Id, Naam, GeboorteDatum, Woonplaats, BadgeNummer, Opleiding_Id FROM Deelnemers WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Deelnemers] SET [Naam] = @Naam, [GeboorteDatum] = @GeboorteDatum, [Woonplaats] = @Woonplaats, [BadgeNummer] = @BadgeNummer WHERE (([Id] = @Original_Id) AND ([GeboorteDatum] = @Original_GeboorteDatum) AND ([BadgeNummer] = @Original_BadgeNummer));
+SELECT Id, Naam, GeboorteDatum, Woonplaats, BadgeNummer FROM Deelnemers WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naam", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naam", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GeboorteDatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GeboorteDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Woonplaats", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Woonplaats", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BadgeNummer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BadgeNummer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Opleiding_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opleiding_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GeboorteDatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GeboorteDatum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BadgeNummer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BadgeNummer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Opleiding_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opleiding_Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Opleiding_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opleiding_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4235,13 +4083,11 @@ SELECT Id, Naam, GeboorteDatum, Woonplaats, BadgeNummer, Opleiding_Id FROM Deeln
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Naam, GeboorteDatum, Woonplaats, BadgeNummer,Opleiding_Id FROM dbo.Dee" +
-                "lnemers";
+            this._commandCollection[0].CommandText = "SELECT Id, Naam, GeboorteDatum, Woonplaats, BadgeNummer FROM Deelnemers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT BadgeNummer, GeboorteDatum, Id, Naam, Opleiding_Id, Woonplaats FROM Deelne" +
-                "mers";
+            this._commandCollection[1].CommandText = "SELECT BadgeNummer, GeboorteDatum, Id, Naam, Woonplaats FROM Deelnemers";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4315,18 +4161,10 @@ SELECT Id, Naam, GeboorteDatum, Woonplaats, BadgeNummer, Opleiding_Id FROM Deeln
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, System.DateTime Original_GeboorteDatum, int Original_BadgeNummer, global::System.Nullable<int> Original_Opleiding_Id) {
+        public virtual int Delete(int Original_Id, System.DateTime Original_GeboorteDatum, int Original_BadgeNummer) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_GeboorteDatum));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_BadgeNummer));
-            if ((Original_Opleiding_Id.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Opleiding_Id.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4347,7 +4185,7 @@ SELECT Id, Naam, GeboorteDatum, Woonplaats, BadgeNummer, Opleiding_Id FROM Deeln
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Naam, System.DateTime GeboorteDatum, string Woonplaats, int BadgeNummer, global::System.Nullable<int> Opleiding_Id) {
+        public virtual int Insert(string Naam, System.DateTime GeboorteDatum, string Woonplaats, int BadgeNummer) {
             if ((Naam == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4362,12 +4200,6 @@ SELECT Id, Naam, GeboorteDatum, Woonplaats, BadgeNummer, Opleiding_Id FROM Deeln
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Woonplaats));
             }
             this.Adapter.InsertCommand.Parameters[3].Value = ((int)(BadgeNummer));
-            if ((Opleiding_Id.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Opleiding_Id.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4388,7 +4220,7 @@ SELECT Id, Naam, GeboorteDatum, Woonplaats, BadgeNummer, Opleiding_Id FROM Deeln
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Naam, System.DateTime GeboorteDatum, string Woonplaats, int BadgeNummer, global::System.Nullable<int> Opleiding_Id, int Original_Id, System.DateTime Original_GeboorteDatum, int Original_BadgeNummer, global::System.Nullable<int> Original_Opleiding_Id, int Id) {
+        public virtual int Update(string Naam, System.DateTime GeboorteDatum, string Woonplaats, int BadgeNummer, int Original_Id, System.DateTime Original_GeboorteDatum, int Original_BadgeNummer, int Id) {
             if ((Naam == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4403,24 +4235,10 @@ SELECT Id, Naam, GeboorteDatum, Woonplaats, BadgeNummer, Opleiding_Id FROM Deeln
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Woonplaats));
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(BadgeNummer));
-            if ((Opleiding_Id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Opleiding_Id.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_GeboorteDatum));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_BadgeNummer));
-            if ((Original_Opleiding_Id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Opleiding_Id.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_GeboorteDatum));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_BadgeNummer));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4441,8 +4259,8 @@ SELECT Id, Naam, GeboorteDatum, Woonplaats, BadgeNummer, Opleiding_Id FROM Deeln
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Naam, System.DateTime GeboorteDatum, string Woonplaats, int BadgeNummer, global::System.Nullable<int> Opleiding_Id, int Original_Id, System.DateTime Original_GeboorteDatum, int Original_BadgeNummer, global::System.Nullable<int> Original_Opleiding_Id) {
-            return this.Update(Naam, GeboorteDatum, Woonplaats, BadgeNummer, Opleiding_Id, Original_Id, Original_GeboorteDatum, Original_BadgeNummer, Original_Opleiding_Id, Original_Id);
+        public virtual int Update(string Naam, System.DateTime GeboorteDatum, string Woonplaats, int BadgeNummer, int Original_Id, System.DateTime Original_GeboorteDatum, int Original_BadgeNummer) {
+            return this.Update(Naam, GeboorteDatum, Woonplaats, BadgeNummer, Original_Id, Original_GeboorteDatum, Original_BadgeNummer, Original_Id);
         }
     }
     
@@ -4928,37 +4746,27 @@ SELECT Id, Deelnemer_Id, Opleiding_Id FROM DeelnemersOpleidingens WHERE (Id = @I
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Naam", "Naam");
             tableMapping.ColumnMappings.Add("Bedrijf", "Bedrijf");
-            tableMapping.ColumnMappings.Add("Opleiding_Id", "Opleiding_Id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Docentens] WHERE (([Id] = @Original_Id) AND ((@IsNull_Opleidin" +
-                "g_Id = 1 AND [Opleiding_Id] IS NULL) OR ([Opleiding_Id] = @Original_Opleiding_Id" +
-                ")))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Docentens] WHERE (([Id] = @Original_Id))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Opleiding_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opleiding_Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Opleiding_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opleiding_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Docentens] ([Naam], [Bedrijf], [Opleiding_Id]) VALUES (@Naam, " +
-                "@Bedrijf, @Opleiding_Id);\r\nSELECT Id, Naam, Bedrijf, Opleiding_Id FROM Docentens" +
-                " WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Docentens] ([Naam], [Bedrijf]) VALUES (@Naam, @Bedrijf);\r\nSELECT Id," +
+                " Naam, Bedrijf FROM Docentens WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naam", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naam", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Bedrijf", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bedrijf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Opleiding_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opleiding_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Docentens] SET [Naam] = @Naam, [Bedrijf] = @Bedrijf, [Opleiding_Id] = @Opleiding_Id WHERE (([Id] = @Original_Id) AND ((@IsNull_Opleiding_Id = 1 AND [Opleiding_Id] IS NULL) OR ([Opleiding_Id] = @Original_Opleiding_Id)));
-SELECT Id, Naam, Bedrijf, Opleiding_Id FROM Docentens WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Docentens] SET [Naam] = @Naam, [Bedrijf] = @Bedrijf WHERE (([Id] = @Origi" +
+                "nal_Id));\r\nSELECT Id, Naam, Bedrijf FROM Docentens WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naam", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naam", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Bedrijf", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bedrijf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Opleiding_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opleiding_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Opleiding_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opleiding_Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Opleiding_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opleiding_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4975,7 +4783,7 @@ SELECT Id, Naam, Bedrijf, Opleiding_Id FROM Docentens WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Naam, Bedrijf,Opleiding_Id FROM dbo.Docentens";
+            this._commandCollection[0].CommandText = "SELECT Id, Naam, Bedrijf FROM Docentens";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5036,16 +4844,8 @@ SELECT Id, Naam, Bedrijf, Opleiding_Id FROM Docentens WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, global::System.Nullable<int> Original_Opleiding_Id) {
+        public virtual int Delete(int Original_Id) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            if ((Original_Opleiding_Id.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Opleiding_Id.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5066,7 +4866,7 @@ SELECT Id, Naam, Bedrijf, Opleiding_Id FROM Docentens WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Naam, string Bedrijf, global::System.Nullable<int> Opleiding_Id) {
+        public virtual int Insert(string Naam, string Bedrijf) {
             if ((Naam == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -5078,12 +4878,6 @@ SELECT Id, Naam, Bedrijf, Opleiding_Id FROM Docentens WHERE (Id = @Id)";
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Bedrijf));
-            }
-            if ((Opleiding_Id.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Opleiding_Id.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5105,7 +4899,7 @@ SELECT Id, Naam, Bedrijf, Opleiding_Id FROM Docentens WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Naam, string Bedrijf, global::System.Nullable<int> Opleiding_Id, int Original_Id, global::System.Nullable<int> Original_Opleiding_Id, int Id) {
+        public virtual int Update(string Naam, string Bedrijf, int Original_Id, int Id) {
             if ((Naam == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -5118,22 +4912,8 @@ SELECT Id, Naam, Bedrijf, Opleiding_Id FROM Docentens WHERE (Id = @Id)";
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Bedrijf));
             }
-            if ((Opleiding_Id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Opleiding_Id.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
-            if ((Original_Opleiding_Id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Opleiding_Id.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5154,8 +4934,8 @@ SELECT Id, Naam, Bedrijf, Opleiding_Id FROM Docentens WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Naam, string Bedrijf, global::System.Nullable<int> Opleiding_Id, int Original_Id, global::System.Nullable<int> Original_Opleiding_Id) {
-            return this.Update(Naam, Bedrijf, Opleiding_Id, Original_Id, Original_Opleiding_Id, Original_Id);
+        public virtual int Update(string Naam, string Bedrijf, int Original_Id) {
+            return this.Update(Naam, Bedrijf, Original_Id, Original_Id);
         }
     }
     
@@ -6868,15 +6648,6 @@ SELECT Id, DateTime, Deelnemer_Id, Opleiding_Id FROM Tijdsregistraties WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(AanwezigheidslijstDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._opleidingsinformatiesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Opleidingsinformaties.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._opleidingsinformatiesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._deelnemersTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Deelnemers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -6892,6 +6663,15 @@ SELECT Id, DateTime, Deelnemer_Id, Opleiding_Id FROM Tijdsregistraties WHERE (Id
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._docentensTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._opleidingsinformatiesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Opleidingsinformaties.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._opleidingsinformatiesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -6941,14 +6721,6 @@ SELECT Id, DateTime, Deelnemer_Id, Opleiding_Id FROM Tijdsregistraties WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(AanwezigheidslijstDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._opleidingsinformatiesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Opleidingsinformaties.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._opleidingsinformatiesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._deelnemersTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Deelnemers.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -6962,6 +6734,14 @@ SELECT Id, DateTime, Deelnemer_Id, Opleiding_Id FROM Tijdsregistraties WHERE (Id
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._docentensTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._opleidingsinformatiesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Opleidingsinformaties.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._opleidingsinformatiesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -7039,6 +6819,14 @@ SELECT Id, DateTime, Deelnemer_Id, Opleiding_Id FROM Tijdsregistraties WHERE (Id
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._opleidingsinformatiesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Opleidingsinformaties.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._opleidingsinformatiesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._docentensTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Docentens.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -7052,14 +6840,6 @@ SELECT Id, DateTime, Deelnemer_Id, Opleiding_Id FROM Tijdsregistraties WHERE (Id
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._deelnemersTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._opleidingsinformatiesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Opleidingsinformaties.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._opleidingsinformatiesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

@@ -9,6 +9,17 @@ namespace Aanwezigheidslijst
 {
     public class DocentBeheer
     {
+        public static void DocNaamComBFill(ref ComboBox naam)
+        {
+            using (var ctx = new AanwezigheidslijstContext())
+            {
+                var zoekDoc = ctx.Docentens;
+                foreach (var doc in zoekDoc)
+                {
+                    naam.Items.Add(doc);
+                }
+            }
+        }
         public static Docenten DocToev(string naam, string bedrijf)
         {
             var docent = new Docenten()
