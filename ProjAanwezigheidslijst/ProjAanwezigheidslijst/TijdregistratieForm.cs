@@ -80,7 +80,7 @@ namespace ProjAanwezigheidslijst
                 MessageBox.Show(eindTijd.ToString());
             }
 
-            if (beginTijd != default(DateTime) && eindTijd != default(DateTime))        ///////////////BUG eerste uitgebadged krijgt laatste tijd
+            if (beginTijd != default(DateTime) && eindTijd != default(DateTime))        
             {
                 TimeSpan tijdAanwzeig = eindTijd - beginTijd;
                 
@@ -94,7 +94,7 @@ namespace ProjAanwezigheidslijst
                 var opleidingId = KiesOplComboBox.SelectedItem;
                 var deelnemerNaam = btn.Text;
 
-                using (var context = new AanwezigheidslijstContext())                   /////////////BUG neemt laatst geselecteerde opleiding als opleiding ookal ervoor ingechecked en voor elke deelnemer///////////////
+                using (var context = new AanwezigheidslijstContext())    
                 {
                     var opleiding = context.Opleidingsinformaties.SingleOrDefault(a => a.Id == (int)opleidingId);
                     var deelnemer = context.Deelnemers.SingleOrDefault(d => d.Naam == deelnemerNaam);

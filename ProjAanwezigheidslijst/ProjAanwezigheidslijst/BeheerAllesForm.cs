@@ -26,24 +26,34 @@ namespace ProjAanwezigheidslijst
 
         private void BeheerAllesForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet1.Deelnemers' table. You can move, or remove it, as needed.
-            this.deelnemersTableAdapter.Fill(this.aanwezigheidslijstDataSet1.Deelnemers);
-            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.Tijdsregistraties' table. You can move, or remove it, as needed.
-            this.tijdsregistratiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Tijdsregistraties);
-            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.DocetenOpleidingens' table. You can move, or remove it, as needed.
-            this.docetenOpleidingensTableAdapter.Fill(this.aanwezigheidslijstDataSet.DocetenOpleidingens);
-            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.DeelnemersOpleidingens' table. You can move, or remove it, as needed.
-            this.deelnemersOpleidingensTableAdapter.Fill(this.aanwezigheidslijstDataSet.DeelnemersOpleidingens);
-            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.NietOpleidingsDagens' table. You can move, or remove it, as needed.
-            this.nietOpleidingsDagensTableAdapter.Fill(this.aanwezigheidslijstDataSet.NietOpleidingsDagens);
-            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.Opleidingsinformaties' table. You can move, or remove it, as needed.
-            this.opleidingsinformatiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Opleidingsinformaties);
-            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.Docentens' table. You can move, or remove it, as needed.
-            this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
-            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.Docentens' table. You can move, or remove it, as needed.
-            this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
-            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.Deelnemers' table. You can move, or remove it, as needed.
-            this.deelnemersTableAdapter.Fill(this.aanwezigheidslijstDataSet.Deelnemers);
+            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet12.Tijdsregistraties' table. You can move, or remove it, as needed.
+            this.tijdsregistratiesTableAdapter1.Fill(this.aanwezigheidslijstDataSet12.Tijdsregistraties);//RM
+            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet12.NietOpleidingsDagens' table. You can move, or remove it, as needed.
+            this.nietOpleidingsDagensTableAdapter1.Fill(this.aanwezigheidslijstDataSet12.NietOpleidingsDagens);//RM
+            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet12.Opleidingsinformaties' table. You can move, or remove it, as needed.
+            this.opleidingsinformatiesTableAdapter1.Fill(this.aanwezigheidslijstDataSet12.Opleidingsinformaties);//RM
+            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet11.Docentens' table. You can move, or remove it, as needed.
+            this.docentensTableAdapter1.Fill(this.aanwezigheidslijstDataSet11.Docentens);//RM
+            // TODO: This line of code loads data into the 'aanwezigheidslijstDataSet11.Deelnemers' table. You can move, or remove it, as needed.
+            this.deelnemersTableAdapter1.Fill(this.aanwezigheidslijstDataSet11.Deelnemers);//RM
+            //// TODO: This line of code loads data into the 'aanwezigheidslijstDataSet1.Deelnemers' table. You can move, or remove it, as needed.
+            //this.deelnemersTableAdapter.Fill(this.aanwezigheidslijstDataSet1.Deelnemers);
+            //// TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.Tijdsregistraties' table. You can move, or remove it, as needed.
+            //this.tijdsregistratiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Tijdsregistraties);
+            //// TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.DocetenOpleidingens' table. You can move, or remove it, as needed.
+            //this.docetenOpleidingensTableAdapter.Fill(this.aanwezigheidslijstDataSet.DocetenOpleidingens);
+            //// TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.DeelnemersOpleidingens' table. You can move, or remove it, as needed.
+            //this.deelnemersOpleidingensTableAdapter.Fill(this.aanwezigheidslijstDataSet.DeelnemersOpleidingens);
+            //// TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.NietOpleidingsDagens' table. You can move, or remove it, as needed.
+            //this.nietOpleidingsDagensTableAdapter.Fill(this.aanwezigheidslijstDataSet.NietOpleidingsDagens);
+            //// TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.Opleidingsinformaties' table. You can move, or remove it, as needed.
+            //this.opleidingsinformatiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Opleidingsinformaties);
+            //// TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.Docentens' table. You can move, or remove it, as needed.
+            //this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
+            //// TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.Docentens' table. You can move, or remove it, as needed.
+            //this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
+            //// TODO: This line of code loads data into the 'aanwezigheidslijstDataSet.Deelnemers' table. You can move, or remove it, as needed.
+            //this.deelnemersTableAdapter.Fill(this.aanwezigheidslijstDataSet.Deelnemers);
             using (var ctx = new AanwezigheidslijstContext())
             {
                 var oplInfo = ctx.Opleidingsinformaties;
@@ -58,11 +68,11 @@ namespace ProjAanwezigheidslijst
                 var zoekdlnmr = ctx.Deelnemers;
                 foreach (var dlnmr in zoekdlnmr)
                 {
-                    comboBox1.Items.Add(dlnmr);
+                    dlnmrZoekComb.Items.Add(dlnmr);
                 }
             }
-            comboBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
+            dlnmrZoekComb.AutoCompleteMode = AutoCompleteMode.Suggest;
+            dlnmrZoekComb.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void BeheerTabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,7 +80,8 @@ namespace ProjAanwezigheidslijst
             switch (BeheerTabControl.SelectedIndex)
             {
                 case 0:
-                    this.deelnemersTableAdapter.Fill(this.aanwezigheidslijstDataSet.Deelnemers);
+                    this.deelnemersTableAdapter1.Fill(this.aanwezigheidslijstDataSet11.Deelnemers);//RM
+                    //this.deelnemersTableAdapter.Fill(this.aanwezigheidslijstDataSet.Deelnemers);
                     dlnmrOplComB.Items.Clear();
                     using (var ctx = new AanwezigheidslijstContext())
                     {
@@ -87,13 +98,14 @@ namespace ProjAanwezigheidslijst
                         var zoekdlnmr = ctx.Deelnemers;
                         foreach(var dlnmr in zoekdlnmr)
                         {
-                            comboBox1.Items.Add(dlnmr);
+                            dlnmrZoekComb.Items.Add(dlnmr);
                         }
                     }
                     
                     break;
                 case 1:
-                    this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
+                    this.docentensTableAdapter1.Fill(this.aanwezigheidslijstDataSet11.Docentens);//RM
+                    //this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
                     docOplComB.Items.Clear();
                     using (var ctx = new AanwezigheidslijstContext())
                     {
@@ -116,6 +128,7 @@ namespace ProjAanwezigheidslijst
                     docZoekComB.AutoCompleteSource = AutoCompleteSource.ListItems;
                     break;
                 case 2:
+                    this.opleidingsinformatiesTableAdapter1.Fill(this.aanwezigheidslijstDataSet12.Opleidingsinformaties); //RM
                     using (var ctx = new AanwezigheidslijstContext())
                     {
                         var zoekOpl = ctx.Opleidingsinformaties;
@@ -126,10 +139,11 @@ namespace ProjAanwezigheidslijst
                     }
                     oplInfoComB.AutoCompleteMode = AutoCompleteMode.Suggest;
                     oplInfoComB.AutoCompleteSource = AutoCompleteSource.ListItems;
-                    this.opleidingsinformatiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Opleidingsinformaties);
+                    //this.opleidingsinformatiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Opleidingsinformaties);
                     break;
                 case 3:
-                    this.nietOpleidingsDagensTableAdapter.Fill(this.aanwezigheidslijstDataSet.NietOpleidingsDagens);
+                    this.nietOpleidingsDagensTableAdapter1.Fill(this.aanwezigheidslijstDataSet12.NietOpleidingsDagens);//RM
+                    //this.nietOpleidingsDagensTableAdapter.Fill(this.aanwezigheidslijstDataSet.NietOpleidingsDagens);
                     vakdagOplIdComB.Items.Clear();
                     using (var ctx = new AanwezigheidslijstContext())
                     {
@@ -142,7 +156,8 @@ namespace ProjAanwezigheidslijst
                     }
                     break;
                 case 4:
-                    this.tijdsregistratiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Tijdsregistraties);
+                    this.tijdsregistratiesTableAdapter1.Fill(this.aanwezigheidslijstDataSet12.Tijdsregistraties);//RM
+                    //this.tijdsregistratiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Tijdsregistraties);
                     tijdsRegListBox.Items.Clear();
                     using (var context = new AanwezigheidslijstContext())
                     {
@@ -187,7 +202,8 @@ namespace ProjAanwezigheidslijst
 
                     DeelnemerBeheer.ClearDlnmrInput(ref dlnmrNaamTB,ref geboorteDatDtP,ref wnpltsTB,ref bdgNumTB);
                     dlnmrOplComB.ResetText();
-                    this.deelnemersTableAdapter.Fill(this.aanwezigheidslijstDataSet1.Deelnemers);
+                    this.deelnemersTableAdapter1.Fill(this.aanwezigheidslijstDataSet11.Deelnemers);//RM
+                    //this.deelnemersTableAdapter.Fill(this.aanwezigheidslijstDataSet1.Deelnemers);
                 }
             }
         }
@@ -200,13 +216,13 @@ namespace ProjAanwezigheidslijst
 
             if (WijzigRadioB.Checked == true)
             {
-                Deelnemers dl = comboBox1.SelectedItem as Deelnemers;
+                Deelnemers dl = dlnmrZoekComb.SelectedItem as Deelnemers;
 
                 using (var context = new AanwezigheidslijstContext())
                 {
                     var deelnemer = context.Deelnemers.SingleOrDefault(dlnmr => dlnmr.Id == dl.Id);
 
-                    DeelnemerBeheer.UpdateZoekDlnmr(ref comboBox1, ref dlnmrNaamTB, ref geboorteDatDtP, ref wnpltsTB, ref bdgNumTB);
+                    DeelnemerBeheer.UpdateZoekDlnmr(ref dlnmrZoekComb, ref dlnmrNaamTB, ref geboorteDatDtP, ref wnpltsTB, ref bdgNumTB);
                 }
             }
         }
@@ -214,7 +230,7 @@ namespace ProjAanwezigheidslijst
         {
             if (WijzigRadioB.Checked == true)
             {
-                var dl = comboBox1.SelectedItem as Deelnemers;
+                var dl = dlnmrZoekComb.SelectedItem as Deelnemers;
 
                 using (var context = new AanwezigheidslijstContext())
                 {
@@ -225,8 +241,9 @@ namespace ProjAanwezigheidslijst
                     MessageBox.Show("Deelnemer gewijzigd");
                     DeelnemerBeheer.ClearDlnmrInput(ref dlnmrNaamTB, ref geboorteDatDtP, ref wnpltsTB, ref bdgNumTB);
 
-                    wijzigNaamTextBox.Clear();
-                    this.deelnemersTableAdapter.Fill(this.aanwezigheidslijstDataSet1.Deelnemers);
+                    
+                    this.deelnemersTableAdapter1.Fill(this.aanwezigheidslijstDataSet11.Deelnemers);//RM
+                    //this.deelnemersTableAdapter.Fill(this.aanwezigheidslijstDataSet1.Deelnemers);
                 }
             }
         }
@@ -245,8 +262,9 @@ namespace ProjAanwezigheidslijst
                 }
                 context.SaveChanges();
                 MessageBox.Show("Deelnemer verwijderd");
-                wijzigNaamTextBox.Clear();
-                this.deelnemersTableAdapter.Fill(this.aanwezigheidslijstDataSet1.Deelnemers);
+                
+                this.deelnemersTableAdapter1.Fill(this.aanwezigheidslijstDataSet11.Deelnemers);//RM
+                //this.deelnemersTableAdapter.Fill(this.aanwezigheidslijstDataSet1.Deelnemers);
             }
         }
 
@@ -377,7 +395,8 @@ namespace ProjAanwezigheidslijst
                 DocentBeheer.VrwdrDocInput(ref docNaamTB,ref docBedrijfTB);
                 docOplComB.ResetText();
             }
-            this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
+            this.docentensTableAdapter1.Fill(this.aanwezigheidslijstDataSet11.Docentens);//RM
+            //this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
         }
         private void WijzigDocButton_Click(object sender, EventArgs e)
         {
@@ -391,7 +410,6 @@ namespace ProjAanwezigheidslijst
                 var docent = context.Docentens.SingleOrDefault(doc => doc.Id == zoekDoc.Id);
                 DocentBeheer.UpdateZoekDoc(ref docZoekComB ,ref docNaamTB, ref docBedrijfTB);
             }
-            this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
         }
         private void SaveChangeDocButton_Click(object sender, EventArgs e)
         {
@@ -408,7 +426,8 @@ namespace ProjAanwezigheidslijst
                 DocentBeheer.VrwdrDocInput(ref docNaamTB, ref docBedrijfTB);
                 docZoekComB.ResetText();
             }
-            this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
+            this.docentensTableAdapter1.Fill(this.aanwezigheidslijstDataSet11.Docentens);//RM
+            //this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
         }
         private void DeleteDocButton_Click(object sender, EventArgs e)
         {
@@ -431,7 +450,8 @@ namespace ProjAanwezigheidslijst
                     MessageBox.Show("Docent verwijderd");
                     vrwdrDocTB.Clear();
                 }
-                this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
+                this.docentensTableAdapter1.Fill(this.aanwezigheidslijstDataSet11.Docentens);//RM
+                //this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
             }
             
         }
@@ -507,7 +527,8 @@ namespace ProjAanwezigheidslijst
             OpleidingsInfoBeheer.VrwdrOplInfoInput(ref oplInstTB,ref oplTB,ref cntcpTB,ref oplPlTB,ref refOplTB,
                 ref OeNumTB, ref oplCdTB, ref startDatDtP, ref eindDatDtP);
 
-            this.opleidingsinformatiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Opleidingsinformaties);
+            this.opleidingsinformatiesTableAdapter1.Fill(this.aanwezigheidslijstDataSet12.Opleidingsinformaties);//RM
+            //this.opleidingsinformatiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Opleidingsinformaties);
         }
         private void WijzigOplInfobutton_Click(object sender, EventArgs e)
         {
@@ -535,7 +556,8 @@ namespace ProjAanwezigheidslijst
                 ref oplCdTB, ref startDatDtP, ref eindDatDtP);
             oplInfoComB.ResetText();
 
-            this.opleidingsinformatiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Opleidingsinformaties);
+            this.opleidingsinformatiesTableAdapter1.Fill(this.aanwezigheidslijstDataSet12.Opleidingsinformaties);//RM
+            //this.opleidingsinformatiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Opleidingsinformaties);
         }
         private void DeleteOplInfoButton_Click(object sender, EventArgs e)
         {
@@ -543,8 +565,10 @@ namespace ProjAanwezigheidslijst
             MessageBox.Show("Opleidingsinformatie verwijderd");
             oplInfoComB.ResetText();
 
-            this.opleidingsinformatiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Opleidingsinformaties);
+            this.opleidingsinformatiesTableAdapter1.Fill(this.aanwezigheidslijstDataSet12.Opleidingsinformaties);//RM
+            //this.opleidingsinformatiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Opleidingsinformaties);
         }
+
         //// OPLINFO VALIDATIES ////////
         private void OplInstTB_Validating(object sender, CancelEventArgs e)//ENKEL DIT WERKT REST NIET////////////////
         {
@@ -713,7 +737,8 @@ namespace ProjAanwezigheidslijst
 
             NietOplDagBeheer.VrwdrNietOplDInput(ref vakDagDtP, ref vmdgCB, ref nmdgCB, ref vakdagOplIdComB);
 
-            this.nietOpleidingsDagensTableAdapter.Fill(this.aanwezigheidslijstDataSet.NietOpleidingsDagens);
+            this.nietOpleidingsDagensTableAdapter1.Fill(this.aanwezigheidslijstDataSet12.NietOpleidingsDagens);//RM
+            //this.nietOpleidingsDagensTableAdapter.Fill(this.aanwezigheidslijstDataSet.NietOpleidingsDagens);
         }
 
         private void WijzigVakDagZoekButton_Click(object sender, EventArgs e)
@@ -767,7 +792,8 @@ namespace ProjAanwezigheidslijst
                 nmdgCB.ResetText();
                 vakdagOplIdComB.Items.Clear();
             }
-            this.nietOpleidingsDagensTableAdapter.Fill(this.aanwezigheidslijstDataSet.NietOpleidingsDagens);
+            this.nietOpleidingsDagensTableAdapter1.Fill(this.aanwezigheidslijstDataSet12.NietOpleidingsDagens);//RM
+            //this.nietOpleidingsDagensTableAdapter.Fill(this.aanwezigheidslijstDataSet.NietOpleidingsDagens);
         }
         private void DeleteVakDagButton_Click(object sender, EventArgs e)
         {
@@ -781,7 +807,8 @@ namespace ProjAanwezigheidslijst
                 MessageBox.Show("Niet opleidingsdag verwijdered");
                 vakDagVrwdrDTP.ResetText();
             }
-            this.nietOpleidingsDagensTableAdapter.Fill(this.aanwezigheidslijstDataSet.NietOpleidingsDagens);
+            this.nietOpleidingsDagensTableAdapter1.Fill(this.aanwezigheidslijstDataSet12.NietOpleidingsDagens);//RM
+            //this.nietOpleidingsDagensTableAdapter.Fill(this.aanwezigheidslijstDataSet.NietOpleidingsDagens);
         }
         ////////RADIOBUTTON CHECKS///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void WijzigRadioB_CheckedChanged(object sender, EventArgs e)
@@ -789,7 +816,7 @@ namespace ProjAanwezigheidslijst
             if (WijzigRadioB.Checked == true)
             {
                 label21.Visible = true;
-                wijzigNaamTextBox.Visible = true;
+                dlnmrZoekComb.Visible = true;
                 WijzigZoekButton.Visible = true;
                 ToevoegenGrpB.Text = WijzigRadioB.Text;
                 saveChangeDeelnemerButton.Visible = true;
@@ -798,7 +825,7 @@ namespace ProjAanwezigheidslijst
             else if (WijzigRadioB.Checked == false)
             {
                 label21.Visible = false;
-                wijzigNaamTextBox.Visible = false;
+                dlnmrZoekComb.Visible = false;
                 WijzigZoekButton.Visible = false;
                 saveChangeDeelnemerButton.Visible = false;
             }
@@ -814,6 +841,7 @@ namespace ProjAanwezigheidslijst
                 wnpltsTB.Enabled = true;
                 bdgNumTB.Enabled = true;
                 dlnmrOplComB.Enabled = true;
+                
                 createDeelnemerButton.Visible = true;
             }
             else if (ToevRadioB.Checked == false)
@@ -831,6 +859,7 @@ namespace ProjAanwezigheidslijst
         {
             if (DeleteRadioB.Checked == true)
             {
+                dlnmrZoekComb.Visible = false;
                 dlnmrNaamTB.Enabled = false;
                 geboorteDatDtP.Enabled = false;
                 wnpltsTB.Enabled = false;
@@ -856,14 +885,14 @@ namespace ProjAanwezigheidslijst
             {
                 docToevGrpB.Text = toevDocRB.Text;
                 createDocentButton.Visible = true;
-
+                docOplComB.Enabled = true;
                 docNaamTB.Enabled = true;
                 docBedrijfTB.Enabled = true;
             }
             else if (toevDocRB.Checked == false)
             {
                 createDocentButton.Visible = false;
-
+                docOplComB.Enabled = true;
                 docNaamTB.Enabled = false;
                 docBedrijfTB.Enabled = false;
                 docOplComB.Enabled = false;
@@ -874,7 +903,7 @@ namespace ProjAanwezigheidslijst
             if (wijzDocRB.Checked == true)
             {
                 label27.Visible = true;
-                wijzDocTB.Visible = true;
+                docZoekComB.Visible = true;
                 wijzigDocButton.Visible = true;
                 docToevGrpB.Text = wijzDocRB.Text;
                 saveChangeDocButton.Visible = true;
@@ -883,7 +912,7 @@ namespace ProjAanwezigheidslijst
             else if (wijzDocRB.Checked == false)
             {
                 label27.Visible = false;
-                wijzDocTB.Visible = false;
+                docZoekComB.Visible = false;
                 wijzigDocButton.Visible = false;
                 saveChangeDocButton.Visible = false;
             }
@@ -914,6 +943,7 @@ namespace ProjAanwezigheidslijst
                 toevOplInfoGrpB.Text = toevDocRB.Text;
                 CreateOpleidingsInfoButton.Visible = true;
 
+               
                 oplInstTB.Enabled = true;
                 oplTB.Enabled = true;
                 cntcpTB.Enabled = true;
@@ -944,14 +974,14 @@ namespace ProjAanwezigheidslijst
             {
                 toevOplInfoGrpB.Text = oplWijzRB.Text;
                 label25.Visible = true;
-                wijzigOplInfoTextBox.Visible = true;
+                oplInfoComB.Visible = true;
                 wijzigOplInfobutton.Visible = true;
                 saveChangeOplInfoButton.Visible = true;
             }
             else if (oplWijzRB.Checked == false)
             {
                 label25.Visible = false;
-                wijzigOplInfoTextBox.Visible = false;
+                oplInfoComB.Visible = false;
                 wijzigOplInfobutton.Visible = false;
                 saveChangeOplInfoButton.Visible = false;
             }
@@ -1011,6 +1041,11 @@ namespace ProjAanwezigheidslijst
                 WijzigZoekdateTimePicker.Visible = false;
                 label46.Visible = false;
                 wijzigVakDagZoekButton.Visible = false;
+
+                vakDagDtP.Enabled = false;
+                vmdgCB.Enabled = false;
+                nmdgCB.Enabled = false;
+                vakdagOplIdComB.Enabled = false;
             }
         }
         
@@ -1032,20 +1067,20 @@ namespace ProjAanwezigheidslijst
         ////////SEARCH OPTIONS///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            DataView dv = aanwezigheidslijstDataSet1.Deelnemers.DefaultView;
+            DataView dv = aanwezigheidslijstDataSet11.Deelnemers.DefaultView;
             dv.RowFilter = string.Format("Naam like '%{0}%'", searchTB.Text);
             dataGridView1.DataSource = dv.ToTable();
         }
         private void DocZoekBT_Click(object sender, EventArgs e)
         {
-            DataView dv = aanwezigheidslijstDataSet.Docentens.DefaultView;
+            DataView dv = aanwezigheidslijstDataSet11.Docentens.DefaultView;
             dv.RowFilter = string.Format("Naam like '%{0}%'", DocZoekTB.Text);
             dataGridView2.DataSource = dv.ToTable();
         }
 
         private void OplInfoZoekBT_Click(object sender, EventArgs e)
         {
-            DataView dv = aanwezigheidslijstDataSet.Opleidingsinformaties.DefaultView;
+            DataView dv = aanwezigheidslijstDataSet12.Opleidingsinformaties.DefaultView;
             dv.RowFilter = string.Format("Opleiding like '%{0}%'", oplInfoZoekTB.Text);
             dataGridView3.DataSource = dv.ToTable();
         }
