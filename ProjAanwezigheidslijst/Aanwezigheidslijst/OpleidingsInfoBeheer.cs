@@ -44,7 +44,7 @@ namespace Aanwezigheidslijst
         }
 
         public static void OplInfoZoekUpdate(ref ComboBox zoekOplInfo, ref TextBox oplInst, ref TextBox opl, ref TextBox cntctPrsn, ref TextBox oplPlts, ref TextBox refOpl,
-            ref TextBox oeNmr, ref TextBox oplCd, ref DateTimePicker strtDat, ref DateTimePicker eindDat)
+            ref MaskedTextBox oeNmr, ref MaskedTextBox oplCd, ref DateTimePicker strtDat, ref DateTimePicker eindDat)
         {
             var zoekOplI = zoekOplInfo.SelectedItem as Opleidingsinformatie;
 
@@ -63,7 +63,7 @@ namespace Aanwezigheidslijst
             }
         }
         public static void WijzigenOplInfoSave(ref ComboBox zoekOplInfo, ref TextBox oplInst, ref TextBox opl, ref TextBox cntctPrsn, ref TextBox oplPlts, ref TextBox refOpl,
-            ref TextBox oeNmr, ref TextBox oplCd, ref DateTimePicker strtDat, ref DateTimePicker eindDat)
+            ref MaskedTextBox oeNmr, ref MaskedTextBox oplCd, ref DateTimePicker strtDat, ref DateTimePicker eindDat)
         {
             var zoekOplId = zoekOplInfo.SelectedItem as Opleidingsinformatie;
 
@@ -96,7 +96,7 @@ namespace Aanwezigheidslijst
             }
         }
         public static void VrwdrOplInfoInput(ref TextBox oplInst, ref TextBox opl, ref TextBox cntctPrsn, ref TextBox oplPlts, ref TextBox refOpl, 
-            ref TextBox oeNmr, ref TextBox oplCd, ref DateTimePicker strtDat, ref DateTimePicker eindDat)
+            ref MaskedTextBox oeNmr, ref MaskedTextBox oplCd, ref DateTimePicker strtDat, ref DateTimePicker eindDat)
         {
             oplInst.Clear();
             opl.Clear();

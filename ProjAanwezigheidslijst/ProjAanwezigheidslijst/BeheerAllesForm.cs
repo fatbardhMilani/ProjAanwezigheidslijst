@@ -207,39 +207,39 @@ namespace ProjAanwezigheidslijst
         {
             if (BeheerTabControl.SelectedIndex == 0)
             {
-                DeelnemerBeheer.DlnmrNaamTBVal(ref dlnmrNaamTB);
-                //var dlnmrErrors = new List<string>();
+                //DeelnemerBeheer.DlnmrNaamTBVal(ref dlnmrNaamTB);
+                var dlnmrErrors = new List<string>();
 
-                //if (dlnmrNaamTB.Text.Length == 0)
-                //{
-                //    dlnmrErrors.Add("Naam veld mag niet leeg zijn");
-                //}
-                //else
-                //{
-                //    if (dlnmrNaamTB.Text.Length < 2)
-                //    {
-                //        dlnmrErrors.Add("Naam moet minstens 2 letters bevatten");
-                //    }
-                //    if (!char.IsUpper(dlnmrNaamTB.Text[0]))
-                //    {
-                //        dlnmrErrors.Add("Naam moet met hoofdletter beginnen");
-                //    }
-                //    if (!dlnmrNaamTB.Text.Substring(0).All(c => char.IsLetter(c)))
-                //    {
-                //        dlnmrErrors.Add("Naam mag enkel letters bevatten");
-                //    }
-                //    if (!dlnmrNaamTB.Text.Substring(1).All(c => char.IsLower(c)))
-                //    {
-                //        dlnmrErrors.Add("Enkel de eerste letter van naam mag een hoofdletter zijn");
-                //    }
-                //}
-                //string errorMsg = "";
-                //if (dlnmrErrors.Any())
-                //{
-                //    e.Cancel = true;
-                //    errorMsg = dlnmrErrors.Aggregate((a, b) => $"{a}\r\n{b}");
-                //}
-                //dlnmrErrorProvider.SetError((Control)sender, errorMsg);
+                if (dlnmrNaamTB.Text.Length == 0)
+                {
+                    dlnmrErrors.Add("Naam veld mag niet leeg zijn");
+                }
+                else
+                {
+                    if (dlnmrNaamTB.Text.Length < 2)
+                    {
+                        dlnmrErrors.Add("Naam moet minstens 2 letters bevatten");
+                    }
+                    if (!char.IsUpper(dlnmrNaamTB.Text[0]))
+                    {
+                        dlnmrErrors.Add("Naam moet met hoofdletter beginnen");
+                    }
+                    if (!dlnmrNaamTB.Text.Substring(0).All(c => char.IsLetter(c)))
+                    {
+                        dlnmrErrors.Add("Naam mag enkel letters bevatten");
+                    }
+                    if (!dlnmrNaamTB.Text.Substring(1).All(c => char.IsLower(c)))
+                    {
+                        dlnmrErrors.Add("Enkel de eerste letter van naam mag een hoofdletter zijn");
+                    }
+                }
+                string errorMsg = "";
+                if (dlnmrErrors.Any())
+                {
+                    e.Cancel = true;
+                    errorMsg = dlnmrErrors.Aggregate((a, b) => $"{a}\r\n{b}");
+                }
+                dlnmrErrorProvider.SetError((Control)sender, errorMsg);
             }
         }
 
@@ -247,21 +247,21 @@ namespace ProjAanwezigheidslijst
         {
             if (BeheerTabControl.SelectedIndex == 0)
             {
-                DeelnemerBeheer.DlnmrGebrtDTPVal(ref geboorteDatDtP);
-                //var dlnmrErrors = new List<string>();
+                //DeelnemerBeheer.DlnmrGebrtDTPVal(ref geboorteDatDtP);
+                var dlnmrErrors = new List<string>();
 
-                //if (geboorteDatDtP.Value >= DateTime.Now.Date)
-                //{
-                //    dlnmrErrors.Add("Geboorte datum moet in het verleden liggen");
-                //}
+                if (geboorteDatDtP.Value >= DateTime.Now.Date)
+                {
+                    dlnmrErrors.Add("Geboorte datum moet in het verleden liggen");
+                }
 
-                //string errorMsg = "";
-                //if (dlnmrErrors.Any())
-                //{
-                //    e.Cancel = true;
-                //    errorMsg = dlnmrErrors.Aggregate((a, b) => $"{a}\r\n{b}");
-                //}
-                //dlnmrErrorProvider.SetError((Control)sender, errorMsg);
+                string errorMsg = "";
+                if (dlnmrErrors.Any())
+                {
+                    e.Cancel = true;
+                    errorMsg = dlnmrErrors.Aggregate((a, b) => $"{a}\r\n{b}");
+                }
+                dlnmrErrorProvider.SetError((Control)sender, errorMsg);
             }
         }
         private void WnpltsTB_Validating(object sender, CancelEventArgs e)
@@ -313,25 +313,31 @@ namespace ProjAanwezigheidslijst
         private void CreateDocentButton_Click(object sender, EventArgs e)
         {
             docZoekComB.Items.Clear();
-            var docOp = docOplComB.SelectedItem as Opleidingsinformatie;
-            var docOpId = docOp.Id;
+                createDocentButton.Enabled = true;
+                var docOp = docOplComB.SelectedItem as Opleidingsinformatie;
+                var docOpId = docOp.Id;
 
-            using (var ctx = new AanwezigheidslijstContext())
-            {
-
-                Docent = DocentBeheer.DocToev( docNaamTB.Text,  docBedrijfTB.Text);
-
-                var docO = ctx.Opleidingsinformaties.SingleOrDefault(o => o.Id == docOpId);
-                var docOpl = ctx.DocetenOpleidingens.Add(new DocetenOpleidingen
+                using (var ctx = new AanwezigheidslijstContext())
                 {
-                    Docent = Docent,
-                    Opleiding =docO
-                });
-                ctx.SaveChanges();
-                MessageBox.Show("Docent toegevoegd");
-                DocentBeheer.VrwdrDocInput(ref docNaamTB,ref docBedrijfTB);
-                docOplComB.ResetText();
-            }
+
+                    Docent = DocentBeheer.DocToev(docNaamTB.Text, docBedrijfTB.Text);
+
+                    var docO = ctx.Opleidingsinformaties.SingleOrDefault(o => o.Id == docOpId);
+                    var docOpl = ctx.DocetenOpleidingens.Add(new DocetenOpleidingen
+                    {
+                        Docent = Docent,
+                        Opleiding = docO
+                    });
+                    ctx.SaveChanges();
+                    MessageBox.Show("Docent toegevoegd");
+                    DocentBeheer.VrwdrDocInput(ref docNaamTB, ref docBedrijfTB);
+                    docOplComB.ResetText();
+                }
+            //else if (docNaamTB.Text == "" || docBedrijfTB.Text == "" || docOplComB.Text == "")
+            //{
+            //    MessageBox.Show("kan geen lege velden toevoegn");
+            //}
+            
             DocentBeheer.DocNaamComBFill(ref docZoekComB);
             //this.docentensTableAdapter1.Fill(this.aanwezigheidslijstDataSet11.Docentens);//RM
             this.docentensTableAdapter.Fill(this.aanwezigheidslijstDataSet.Docentens);
@@ -429,7 +435,8 @@ namespace ProjAanwezigheidslijst
 
                 if (docErrors.Any())
                 {
-                    e.Cancel = true;
+                    e.Cancel = false;
+                    //createDocentButton.Enabled = false;
                     errorMsg = docErrors.Aggregate((a, b) => $"{a},\r\n{b}");
                 }
                 DocErrorProvider.SetError((Control)sender, errorMsg);
@@ -448,10 +455,32 @@ namespace ProjAanwezigheidslijst
                 string errorMsg = "";
                 if (docErrors.Any())
                 {
-                    e.Cancel = true;
+                    e.Cancel = false;
+                    //createDocentButton.Enabled = false;
                     errorMsg = docErrors.Aggregate((a, b) => $"{a},\r\n{b}");
                 }
                 DocErrorProvider.SetError((Control)sender, errorMsg);
+            }
+        }
+        private void DocOplComB_Validating(object sender, CancelEventArgs e)
+        {
+            if (BeheerTabControl.SelectedIndex == 1)
+            {
+                var docErrors = new List<string>();
+
+                if (docOplComB.Text.Length == 0)
+                {
+                    docErrors.Add("opleiding veld mag niet leeg zijn");
+                }
+                string errorMsg = "";
+                if (docErrors.Any())
+                {
+                    e.Cancel = false;
+                    //createDocentButton.Enabled = false;
+                    errorMsg = docErrors.Aggregate((a, b) => $"{a},\r\n{b}");
+                }
+                DocErrorProvider.SetError((Control)sender, errorMsg);
+                
             }
         }
 
@@ -460,13 +489,13 @@ namespace ProjAanwezigheidslijst
         private void CreateOpleidingsInfoButton_Click_1(object sender, EventArgs e)
         {
 
-            OplInfo = OpleidingsInfoBeheer.OplInfoToev(oplInstTB.Text,oplTB.Text,cntcpTB.Text,oplPlTB.Text,refOplTB.Text,int.Parse(OeNumTB.Text),int.Parse(oplCdTB.Text),
+            OplInfo = OpleidingsInfoBeheer.OplInfoToev(oplInstTB.Text,oplTB.Text,cntcpTB.Text,oplPlTB.Text,refOplTB.Text,int.Parse(oeNmrMTB.Text),int.Parse(oplCdMTB.Text),
                 startDatDtP.Value.Date,eindDatDtP.Value.Date) ;
                
             MessageBox.Show("Opleidingsinformatie toegevoegd");
 
             OpleidingsInfoBeheer.VrwdrOplInfoInput(ref oplInstTB,ref oplTB,ref cntcpTB,ref oplPlTB,ref refOplTB,
-                ref OeNumTB, ref oplCdTB, ref startDatDtP, ref eindDatDtP);
+                ref oeNmrMTB, ref oplCdMTB, ref startDatDtP, ref eindDatDtP);
 
             //this.opleidingsinformatiesTableAdapter1.Fill(this.aanwezigheidslijstDataSet12.Opleidingsinformaties);//RM
             this.opleidingsinformatiesTableAdapter.Fill(this.aanwezigheidslijstDataSet.Opleidingsinformaties);
@@ -478,24 +507,24 @@ namespace ProjAanwezigheidslijst
             cntcpTB.Enabled = true;
             oplPlTB.Enabled = true;
             refOplTB.Enabled = true;
-            OeNumTB.Enabled = true;
-            oplCdTB.Enabled = true;
+            oeNmrMTB.Enabled = true;
+            oplCdMTB.Enabled = true;
             startDatDtP.Enabled = true;
             eindDatDtP.Enabled = true;
             saveChangeOplInfoButton.Visible = true;
 
-            OpleidingsInfoBeheer.OplInfoZoekUpdate(ref oplInfoZoekComB,ref oplInstTB, ref oplTB,ref cntcpTB, ref oplPlTB, ref refOplTB,ref OeNumTB,ref oplCdTB,
+            OpleidingsInfoBeheer.OplInfoZoekUpdate(ref oplInfoZoekComB,ref oplInstTB, ref oplTB,ref cntcpTB, ref oplPlTB, ref refOplTB,ref oeNmrMTB,ref oplCdMTB,
                 ref startDatDtP, ref eindDatDtP);
         }
         private void SaveChangeOplInfoButton_Click(object sender, EventArgs e)
         {
-            OpleidingsInfoBeheer.WijzigenOplInfoSave(ref oplInfoZoekComB, ref oplInstTB, ref oplTB, ref cntcpTB, ref oplPlTB, ref refOplTB, ref OeNumTB,
-                ref oplCdTB, ref startDatDtP, ref eindDatDtP);
+            OpleidingsInfoBeheer.WijzigenOplInfoSave(ref oplInfoZoekComB, ref oplInstTB, ref oplTB, ref cntcpTB, ref oplPlTB, ref refOplTB, ref oeNmrMTB,
+                ref oplCdMTB, ref startDatDtP, ref eindDatDtP);
             oplInfoZoekComB.Items.Clear();
             MessageBox.Show("Opleidingsinformatie gewijzigd");
 
-            OpleidingsInfoBeheer.VrwdrOplInfoInput(ref oplInstTB, ref oplTB, ref cntcpTB, ref oplPlTB, ref refOplTB, ref OeNumTB,
-                ref oplCdTB, ref startDatDtP, ref eindDatDtP);
+            OpleidingsInfoBeheer.VrwdrOplInfoInput(ref oplInstTB, ref oplTB, ref cntcpTB, ref oplPlTB, ref refOplTB, ref oeNmrMTB,
+                ref oplCdMTB, ref startDatDtP, ref eindDatDtP);
             oplInfoZoekComB.ResetText();
             OpleidingsInfoBeheer.OplInfoComBFill(ref oplInfoZoekComB);
 
@@ -600,13 +629,13 @@ namespace ProjAanwezigheidslijst
             if (BeheerTabControl.SelectedIndex == 2)
             {
                 var oeNumErrors = new List<string>();
-                if (OeNumTB.Text.Length == 0)
+                if (oeNmrMTB.Text.Length == 0)
                 {
                     oeNumErrors.Add("Oe-nummer veld mag niet leeg zijn");
                 }
                 else
                 {
-                    if (OeNumTB.Text.Substring(0).All(c => char.IsLetter(c)))
+                    if (oeNmrMTB.Text.Substring(0).All(c => char.IsLetter(c)))
                     {
                         oeNumErrors.Add("Oe-nummer veld mag enkel cijfers bevatten");
                     }
@@ -892,8 +921,8 @@ namespace ProjAanwezigheidslijst
                 cntcpTB.Enabled = true;
                 oplPlTB.Enabled = true;
                 refOplTB.Enabled = true;
-                OeNumTB.Enabled = true;
-                oplCdTB.Enabled = true;
+                oeNmrMTB.Enabled = true;
+                oplCdMTB.Enabled = true;
                 startDatDtP.Enabled = true;
                 eindDatDtP.Enabled = true;
             }
@@ -904,8 +933,8 @@ namespace ProjAanwezigheidslijst
                 cntcpTB.Enabled = false;
                 oplPlTB.Enabled = false;
                 refOplTB.Enabled = false;
-                OeNumTB.Enabled = false;
-                oplCdTB.Enabled = false;
+                oeNmrMTB.Enabled = false;
+                oplCdMTB.Enabled = false;
                 startDatDtP.Enabled = false;
                 eindDatDtP.Enabled = false;
                 CreateOpleidingsInfoButton.Visible = false;
@@ -1035,6 +1064,20 @@ namespace ProjAanwezigheidslijst
 
         private void OplCdTB_Validating(object sender, CancelEventArgs e)
         {
+
+        }
+
+        private void DocOplComB_TextChanged(object sender, EventArgs e)
+        {
+            if (ValidateChildren())
+            {
+
+                if (docNaamTB.Text != "" && docBedrijfTB.Text != "" && docOplComB.Text != "")
+                {
+                    createDocentButton.Enabled = true;
+                }
+
+            }
 
         }
     }
