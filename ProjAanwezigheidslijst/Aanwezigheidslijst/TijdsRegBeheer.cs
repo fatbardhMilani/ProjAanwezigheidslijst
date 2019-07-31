@@ -22,7 +22,7 @@ namespace Aanwezigheidslijst
                 });
                 foreach (var dn in deelnemer)
                 {
-                    tijdReg.Items.Add(dn.Id + " " + dn.DateTime + " " + dn.Opleiding + " " + dn.Naam);
+                    tijdReg.Items.Add(dn.Id + " - " + dn.DateTime + " - " + dn.Opleiding + " - " + dn.Naam);
                 }
             }
         }

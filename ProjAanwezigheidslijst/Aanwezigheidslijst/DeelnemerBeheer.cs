@@ -9,41 +9,40 @@ namespace Aanwezigheidslijst
 {
     public class DeelnemerBeheer
     {
-        public static void DlnmrWnplTBVal(ref TextBox woonplaatst)
+        public static void DlnmrOplLBFill(ref ListBox naam)
         {
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var deelnemer = context.DeelnemersOpleidingens.Select(dlnmr => new
+                {
+                    dlnmr.Deelnemer.Naam,
+                    dlnmr.Opleiding.Opleiding,
+                });
+                foreach (var dn in deelnemer.OrderBy(x => x.Opleiding).ThenBy(x=>x.Naam))
+                {
+                    naam.Items.Add(dn.Opleiding + " - " + dn.Naam );
+                }
+            }
+        }
+        public static void VrwdrDeelnemer(ref TextBox naam)
+        {
+            string verwijderNaam = naam.Text;
 
-        }
-        public static void DlnmrGebrtDTPVal(ref DateTimePicker gebrteDat)
-        {
-            if (gebrteDat.Value.Date >= DateTime.Now.Date)
+            using (var context = new AanwezigheidslijstContext())
             {
-                MessageBox.Show("Geboorte datum moet in het verleden liggen");
-            }
-        }
-        public static void DlnmrNaamTBVal(ref TextBox naam)
-        {
-            if (naam.Text.Length == 0)
-            {
-                MessageBox.Show("Naam veld mag niet leeg zijn");
-            }
-            else
-            {
-                if (naam.Text.Length < 2)
+                var deelnemer = context.Deelnemers.SingleOrDefault(dlnmr => dlnmr.Naam == verwijderNaam);
+                context.Deelnemers.Remove(deelnemer);
+                var opl = context.DeelnemersOpleidingens.Where(dlnmr => dlnmr.Deelnemer.Id == deelnemer.Id);
+                foreach (var dlnmrOplId in opl)
                 {
-                    MessageBox.Show("Naam moet minstens 2 letters bevatten");
+                    context.DeelnemersOpleidingens.Remove(dlnmrOplId);
                 }
-                if (!char.IsUpper(naam.Text[0]))
+                var dlnrTijdreg = context.Tijdsregistraties.Where(d => d.Deelnemer.Id == deelnemer.Id);
+                foreach (var item in dlnrTijdreg)
                 {
-                    MessageBox.Show("Naam moet met hoofdletter beginnen");
+                    context.Tijdsregistraties.Remove(item);
                 }
-                if (!naam.Text.Substring(0).All(c => char.IsLetter(c)))
-                {
-                    MessageBox.Show("Naam mag enkel letters bevatten");
-                }
-                if (!naam.Text.Substring(1).All(c => char.IsLower(c)))
-                {
-                    MessageBox.Show("Enkel de eerste letter van naam mag een hoofdletter zijn");
-                }
+                context.SaveChanges();
             }
         }
         public static void DlnmrZoekComBUpdate(ref ComboBox naam)

@@ -84,14 +84,58 @@ namespace Aanwezigheidslijst
                 ctx.SaveChanges();
             };
         }
-        public static void DeleteOplInfo(ref ComboBox vrwdrOplInfo)
+        public static void DeleteOplInfo(ref TextBox vrwdrOplInfo)
         {
-            var zoekOpl = vrwdrOplInfo.SelectedItem as Opleidingsinformatie;
+            var zoekOpl = vrwdrOplInfo.Text;
 
             using (var ctx = new AanwezigheidslijstContext())
             {
-                var opl = ctx.Opleidingsinformaties.SingleOrDefault(o => o.Id == zoekOpl.Id);
+                var opl = ctx.Opleidingsinformaties.SingleOrDefault(o => o.Opleiding == zoekOpl);
                 ctx.Opleidingsinformaties.Remove(opl);
+                var tijreg = ctx.Tijdsregistraties.Where(t => t.Id == opl.Id);
+                var nietOpld = ctx.NietOpleidingsDagens.Where(n => n.Opleiding.Id == opl.Id);
+
+                var dlnmrOpl = ctx.DeelnemersOpleidingens.Where(o => o.Opleiding.Id == opl.Id);
+                var dlnmrIdOpl = ctx.DeelnemersOpleidingens.Where(o => o.Deelnemer.Id == opl.Id);
+                var dlnmr = ctx.Deelnemers.Where(d => d.Id == opl.Id);
+
+                var docOpl = ctx.DocetenOpleidingens.Where(o => o.Opleiding.Id == opl.Id);
+                var docIdOpl = ctx.DocetenOpleidingens.Where(o => o.Docent.Id == opl.Id);
+                var doc = ctx.Docentens.Where(d => d.Id == opl.Id);
+
+                foreach (var item in tijreg)
+                {
+                    ctx.Tijdsregistraties.Remove(item);
+                }
+                
+                foreach (var item in nietOpld)
+                {
+                    ctx.NietOpleidingsDagens.Remove(item);
+                }
+                foreach (var item in dlnmr)
+                {
+                    ctx.Deelnemers.Remove(item);
+                }
+                foreach (var item in dlnmrOpl)
+                {
+                    ctx.DeelnemersOpleidingens.Remove(item);
+                }
+                foreach (var item in dlnmrIdOpl)
+                {
+                    ctx.DeelnemersOpleidingens.Remove(item);
+                }
+                foreach (var item in doc)
+                {
+                    ctx.Docentens.Remove(item);
+                }
+                foreach (var item in docOpl)
+                {
+                    ctx.DocetenOpleidingens.Remove(item);
+                }
+                foreach (var item in docIdOpl)
+                {
+                    ctx.DocetenOpleidingens.Remove(item);
+                }
                 ctx.SaveChanges();
             }
         }

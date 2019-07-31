@@ -9,6 +9,22 @@ namespace Aanwezigheidslijst
 {
     public class DocentBeheer
     {
+        public static void DocOplLBFill(ref ListBox naam)
+        {
+            using (var context = new AanwezigheidslijstContext())
+            {
+                var deelnemer = context.DocetenOpleidingens.Select(dlnmr => new
+                {
+                    dlnmr.Docent.Naam,
+                    dlnmr.Docent.Bedrijf,
+                    dlnmr.Opleiding.Opleiding,
+                });
+                foreach (var dn in deelnemer.OrderBy(x => x.Opleiding).ThenBy(x => x.Naam))
+                {
+                    naam.Items.Add(dn.Opleiding + " - " + dn.Naam+ " - " +dn.Bedrijf);
+                }
+            }
+        }
         public static void DocNaamComBFill(ref ComboBox naam)
         {
             using (var ctx = new AanwezigheidslijstContext())
