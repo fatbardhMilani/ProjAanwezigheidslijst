@@ -127,6 +127,7 @@ namespace ProjAanwezigheidslijst
                 }
                 this.deelnemersTableAdapter.Fill(this.aanwezigheidslijstDataSet.Deelnemers);
                 DeelnemerBeheer.DlnmrZoekComBUpdate(ref dlnmrZoekComb);
+                OpleidingsInfoBeheer.OplInfoComBFill(ref dlnmrOplComB);
             }
         }
         private void WijzigZoekButton_Click(object sender, EventArgs e)

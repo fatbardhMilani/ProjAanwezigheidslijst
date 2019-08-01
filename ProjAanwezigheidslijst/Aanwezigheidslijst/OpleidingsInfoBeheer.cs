@@ -92,7 +92,11 @@ namespace Aanwezigheidslijst
             {
                 var opl = ctx.Opleidingsinformaties.SingleOrDefault(o => o.Opleiding == zoekOpl);
                 ctx.Opleidingsinformaties.Remove(opl);
+
                 var tijreg = ctx.Tijdsregistraties.Where(t => t.Id == opl.Id);
+                var tijregOplId = ctx.Tijdsregistraties.Where(t => t.Opleiding.Id == opl.Id);
+
+
                 var nietOpld = ctx.NietOpleidingsDagens.Where(n => n.Opleiding.Id == opl.Id);
 
                 var dlnmrOpl = ctx.DeelnemersOpleidingens.Where(o => o.Opleiding.Id == opl.Id);
@@ -107,7 +111,11 @@ namespace Aanwezigheidslijst
                 {
                     ctx.Tijdsregistraties.Remove(item);
                 }
-                
+                foreach (var item in tijregOplId)
+                {
+                    ctx.Tijdsregistraties.Remove(item);
+                }
+
                 foreach (var item in nietOpld)
                 {
                     ctx.NietOpleidingsDagens.Remove(item);

@@ -16,7 +16,6 @@ namespace ProjAanwezigheidslijst
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(/*new BeheerAllesForm() new BeheerForm()*/ new TijdregistratieForm());
             Application.Run(new BeheerAllesForm());
         }
     }

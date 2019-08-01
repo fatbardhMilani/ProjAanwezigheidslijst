@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Aanwezigheidslijst;
-using ProjAanwezigheidslijst;
 
 namespace TijdRegForm
 {
@@ -18,7 +17,7 @@ namespace TijdRegForm
         Timer timer1 = new Timer();
         public TijdregistratieForm()
         {
-
+            
             InitializeComponent();
 
             this.timeLabel.Text = DateTime.Now.ToString();
@@ -38,7 +37,7 @@ namespace TijdRegForm
 
                 foreach (var opl in oplId)
                 {
-                    KiesOplComboBox.Items.Add(opl.Opleiding);
+                    KiesOplComboBox.Items.Add(opl.Opleiding);   
                 }
             }
         }
@@ -46,12 +45,12 @@ namespace TijdRegForm
 
         DateTime beginTijd;
         DateTime eindTijd;
-
+        
         private void DynamicButtonClickEvent(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-
-            if (oplInfolistBox.Text != "")
+            
+            if (oplInfolistBox.Text!="")
             {
 
                 if (btn.BackColor == Color.Red)
@@ -63,7 +62,7 @@ namespace TijdRegForm
                 {
                     btn.BackColor = Color.Red;
                 }
-
+                
             }
             else
             {
@@ -73,7 +72,7 @@ namespace TijdRegForm
             {
                 beginTijd = DateTime.Now;
                 MessageBox.Show(beginTijd.ToString());
-
+                
             }
             else if (btn.BackColor == Color.Red)
             {
@@ -81,10 +80,10 @@ namespace TijdRegForm
                 MessageBox.Show(eindTijd.ToString());
             }
 
-            if (beginTijd != default(DateTime) && eindTijd != default(DateTime))
+            if (beginTijd != default(DateTime) && eindTijd != default(DateTime))        
             {
                 TimeSpan tijdAanwzeig = eindTijd - beginTijd;
-
+                
                 MessageBox.Show(tijdAanwzeig.ToString());
                 eindTijd = default(DateTime);
 
@@ -95,7 +94,7 @@ namespace TijdRegForm
                 var opleidingId = KiesOplComboBox.SelectedItem;
                 var deelnemerNaam = btn.Text;
 
-                using (var context = new AanwezigheidslijstContext())
+                using (var context = new AanwezigheidslijstContext())    
                 {
                     var opleiding = context.Opleidingsinformaties.SingleOrDefault(a => a.Opleiding == opleidingId.ToString());
                     var deelnemer = context.Deelnemers.SingleOrDefault(d => d.Naam == deelnemerNaam);

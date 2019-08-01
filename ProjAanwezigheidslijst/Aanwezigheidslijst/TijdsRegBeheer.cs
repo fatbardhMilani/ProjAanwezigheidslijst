@@ -20,9 +20,9 @@ namespace Aanwezigheidslijst
                     dlnmr.Opleiding.Opleiding,
                     dlnmr.Deelnemer.Naam,
                 });
-                foreach (var dn in deelnemer)
+                foreach (var dn in deelnemer.OrderBy(x => x.DateTime).ThenBy(x=>x.Naam))
                 {
-                    tijdReg.Items.Add(dn.Id + " - " + dn.DateTime + " - " + dn.Opleiding + " - " + dn.Naam);
+                    tijdReg.Items.Add(/*dn.Id + " - " + */dn.DateTime + " - " + dn.Naam  + " - " + dn.Opleiding);
                 }
             }
         }
