@@ -171,6 +171,16 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.searchTB = new System.Windows.Forms.TextBox();
             this.ToevoegenGrpB = new System.Windows.Forms.GroupBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.dlnmrOplComB = new System.Windows.Forms.ComboBox();
+            this.geboorteDatDtP = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.bdgNumTB = new System.Windows.Forms.TextBox();
+            this.wnpltsTB = new System.Windows.Forms.TextBox();
+            this.dlnmrNaamTB = new System.Windows.Forms.TextBox();
             this.dlnmrZoekComb = new System.Windows.Forms.ComboBox();
             this.label56 = new System.Windows.Forms.Label();
             this.deleteDlnmrTB = new System.Windows.Forms.TextBox();
@@ -221,18 +231,12 @@
             this.opleidingsinformatiesTableAdapter = new ProjAanwezigheidslijst.AanwezigheidslijstDataSetTableAdapters.OpleidingsinformatiesTableAdapter();
             this.nietOpleidingsDagensTableAdapter = new ProjAanwezigheidslijst.AanwezigheidslijstDataSetTableAdapters.NietOpleidingsDagensTableAdapter();
             this.tijdsregistratiesTableAdapter = new ProjAanwezigheidslijst.AanwezigheidslijstDataSetTableAdapters.TijdsregistratiesTableAdapter();
-            this.label38 = new System.Windows.Forms.Label();
-            this.dlnmrOplComB = new System.Windows.Forms.ComboBox();
-            this.geboorteDatDtP = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.bdgNumTB = new System.Windows.Forms.TextBox();
-            this.wnpltsTB = new System.Windows.Forms.TextBox();
-            this.dlnmrNaamTB = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DocErrorProvider)).BeginInit();
             this.ExtraTabP.SuspendLayout();
             this.docOplGrpB.SuspendLayout();
@@ -273,22 +277,28 @@
             // ExtraTabP
             // 
             this.ExtraTabP.BackColor = System.Drawing.Color.Silver;
+            this.ExtraTabP.Controls.Add(this.textBox2);
+            this.ExtraTabP.Controls.Add(this.textBox1);
+            this.ExtraTabP.Controls.Add(this.button2);
+            this.ExtraTabP.Controls.Add(this.button1);
             this.ExtraTabP.Controls.Add(this.docOplGrpB);
             this.ExtraTabP.Controls.Add(this.dlnmrOplGrpB);
-            this.ExtraTabP.Location = new System.Drawing.Point(8, 39);
-            this.ExtraTabP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ExtraTabP.Location = new System.Drawing.Point(4, 29);
+            this.ExtraTabP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ExtraTabP.Name = "ExtraTabP";
-            this.ExtraTabP.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ExtraTabP.Size = new System.Drawing.Size(1944, 1191);
+            this.ExtraTabP.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ExtraTabP.Size = new System.Drawing.Size(1462, 957);
             this.ExtraTabP.TabIndex = 7;
             this.ExtraTabP.Text = "Extra";
             // 
             // docOplGrpB
             // 
             this.docOplGrpB.Controls.Add(this.docOplLb);
-            this.docOplGrpB.Location = new System.Drawing.Point(1043, 61);
+            this.docOplGrpB.Location = new System.Drawing.Point(782, 49);
+            this.docOplGrpB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.docOplGrpB.Name = "docOplGrpB";
-            this.docOplGrpB.Size = new System.Drawing.Size(883, 917);
+            this.docOplGrpB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.docOplGrpB.Size = new System.Drawing.Size(662, 734);
             this.docOplGrpB.TabIndex = 1;
             this.docOplGrpB.TabStop = false;
             this.docOplGrpB.Text = "Docenten Opleiding";
@@ -296,18 +306,21 @@
             // docOplLb
             // 
             this.docOplLb.FormattingEnabled = true;
-            this.docOplLb.ItemHeight = 25;
-            this.docOplLb.Location = new System.Drawing.Point(6, 31);
+            this.docOplLb.ItemHeight = 20;
+            this.docOplLb.Location = new System.Drawing.Point(4, 25);
+            this.docOplLb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.docOplLb.Name = "docOplLb";
-            this.docOplLb.Size = new System.Drawing.Size(870, 854);
+            this.docOplLb.Size = new System.Drawing.Size(654, 684);
             this.docOplLb.TabIndex = 1;
             // 
             // dlnmrOplGrpB
             // 
             this.dlnmrOplGrpB.Controls.Add(this.dlnmrOplLB);
-            this.dlnmrOplGrpB.Location = new System.Drawing.Point(16, 61);
+            this.dlnmrOplGrpB.Location = new System.Drawing.Point(12, 49);
+            this.dlnmrOplGrpB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dlnmrOplGrpB.Name = "dlnmrOplGrpB";
-            this.dlnmrOplGrpB.Size = new System.Drawing.Size(883, 917);
+            this.dlnmrOplGrpB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dlnmrOplGrpB.Size = new System.Drawing.Size(662, 734);
             this.dlnmrOplGrpB.TabIndex = 0;
             this.dlnmrOplGrpB.TabStop = false;
             this.dlnmrOplGrpB.Text = "Deelnemer Opleiding";
@@ -315,10 +328,11 @@
             // dlnmrOplLB
             // 
             this.dlnmrOplLB.FormattingEnabled = true;
-            this.dlnmrOplLB.ItemHeight = 25;
-            this.dlnmrOplLB.Location = new System.Drawing.Point(7, 31);
+            this.dlnmrOplLB.ItemHeight = 20;
+            this.dlnmrOplLB.Location = new System.Drawing.Point(5, 25);
+            this.dlnmrOplLB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dlnmrOplLB.Name = "dlnmrOplLB";
-            this.dlnmrOplLB.Size = new System.Drawing.Size(870, 854);
+            this.dlnmrOplLB.Size = new System.Drawing.Size(654, 684);
             this.dlnmrOplLB.TabIndex = 0;
             // 
             // tijdRegTabP
@@ -327,31 +341,31 @@
             this.tijdRegTabP.Controls.Add(this.label31);
             this.tijdRegTabP.Controls.Add(this.tijdsRegListBox);
             this.tijdRegTabP.Controls.Add(this.dataGridView7);
-            this.tijdRegTabP.Location = new System.Drawing.Point(8, 39);
-            this.tijdRegTabP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tijdRegTabP.Location = new System.Drawing.Point(4, 29);
+            this.tijdRegTabP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tijdRegTabP.Name = "tijdRegTabP";
-            this.tijdRegTabP.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tijdRegTabP.Size = new System.Drawing.Size(1944, 1191);
+            this.tijdRegTabP.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tijdRegTabP.Size = new System.Drawing.Size(1462, 957);
             this.tijdRegTabP.TabIndex = 6;
             this.tijdRegTabP.Text = "Tijdsregistratie";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(3, 452);
+            this.label31.Location = new System.Drawing.Point(2, 362);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(191, 25);
+            this.label31.Size = new System.Drawing.Size(137, 20);
             this.label31.TabIndex = 11;
             this.label31.Text = "Tijdsregistratie lijst";
             // 
             // tijdsRegListBox
             // 
             this.tijdsRegListBox.FormattingEnabled = true;
-            this.tijdsRegListBox.ItemHeight = 25;
-            this.tijdsRegListBox.Location = new System.Drawing.Point(7, 481);
-            this.tijdsRegListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.tijdsRegListBox.ItemHeight = 20;
+            this.tijdsRegListBox.Location = new System.Drawing.Point(5, 385);
             this.tijdsRegListBox.Name = "tijdsRegListBox";
-            this.tijdsRegListBox.Size = new System.Drawing.Size(1532, 604);
+            this.tijdsRegListBox.Size = new System.Drawing.Size(1150, 484);
             this.tijdsRegListBox.TabIndex = 10;
             // 
             // dataGridView7
@@ -364,12 +378,12 @@
             this.deelnemerIdDataGridViewTextBoxColumn1,
             this.opleidingIdDataGridViewTextBoxColumn5});
             this.dataGridView7.DataSource = this.tijdsregistratiesBindingSource;
-            this.dataGridView7.Location = new System.Drawing.Point(7, 8);
-            this.dataGridView7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView7.Location = new System.Drawing.Point(5, 6);
+            this.dataGridView7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.RowHeadersWidth = 82;
             this.dataGridView7.RowTemplate.Height = 33;
-            this.dataGridView7.Size = new System.Drawing.Size(1933, 412);
+            this.dataGridView7.Size = new System.Drawing.Size(1450, 330);
             this.dataGridView7.TabIndex = 5;
             // 
             // idDataGridViewTextBoxColumn6
@@ -424,21 +438,21 @@
             this.ntOplDgTabP.Controls.Add(this.vakDagZoekGrpB);
             this.ntOplDgTabP.Controls.Add(this.vakDagGrpB);
             this.ntOplDgTabP.Controls.Add(this.dataGridView4);
-            this.ntOplDgTabP.Location = new System.Drawing.Point(8, 39);
-            this.ntOplDgTabP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ntOplDgTabP.Location = new System.Drawing.Point(4, 29);
+            this.ntOplDgTabP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ntOplDgTabP.Name = "ntOplDgTabP";
-            this.ntOplDgTabP.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ntOplDgTabP.Size = new System.Drawing.Size(1944, 1191);
+            this.ntOplDgTabP.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ntOplDgTabP.Size = new System.Drawing.Size(1462, 957);
             this.ntOplDgTabP.TabIndex = 3;
             this.ntOplDgTabP.Text = "Niet opleidingsdagen";
             // 
             // vakDagVrwdrRB
             // 
             this.vakDagVrwdrRB.AutoSize = true;
-            this.vakDagVrwdrRB.Location = new System.Drawing.Point(893, 888);
-            this.vakDagVrwdrRB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.vakDagVrwdrRB.Location = new System.Drawing.Point(670, 710);
+            this.vakDagVrwdrRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.vakDagVrwdrRB.Name = "vakDagVrwdrRB";
-            this.vakDagVrwdrRB.Size = new System.Drawing.Size(156, 29);
+            this.vakDagVrwdrRB.Size = new System.Drawing.Size(117, 24);
             this.vakDagVrwdrRB.TabIndex = 22;
             this.vakDagVrwdrRB.Text = "Verwijderen";
             this.vakDagVrwdrRB.UseVisualStyleBackColor = true;
@@ -447,10 +461,10 @@
             // VakDagWijzRB
             // 
             this.VakDagWijzRB.AutoSize = true;
-            this.VakDagWijzRB.Location = new System.Drawing.Point(893, 785);
-            this.VakDagWijzRB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.VakDagWijzRB.Location = new System.Drawing.Point(670, 628);
+            this.VakDagWijzRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VakDagWijzRB.Name = "VakDagWijzRB";
-            this.VakDagWijzRB.Size = new System.Drawing.Size(125, 29);
+            this.VakDagWijzRB.Size = new System.Drawing.Size(93, 24);
             this.VakDagWijzRB.TabIndex = 21;
             this.VakDagWijzRB.Text = "Wijzigen";
             this.VakDagWijzRB.UseVisualStyleBackColor = true;
@@ -460,10 +474,10 @@
             // 
             this.vakDagToevRB.AutoSize = true;
             this.vakDagToevRB.Checked = true;
-            this.vakDagToevRB.Location = new System.Drawing.Point(893, 688);
-            this.vakDagToevRB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.vakDagToevRB.Location = new System.Drawing.Point(670, 550);
+            this.vakDagToevRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.vakDagToevRB.Name = "vakDagToevRB";
-            this.vakDagToevRB.Size = new System.Drawing.Size(151, 29);
+            this.vakDagToevRB.Size = new System.Drawing.Size(113, 24);
             this.vakDagToevRB.TabIndex = 20;
             this.vakDagToevRB.TabStop = true;
             this.vakDagToevRB.Text = "Toevoegen";
@@ -478,21 +492,21 @@
             this.vakDagZoekGrpB.Controls.Add(this.vakDagZoekBT);
             this.vakDagZoekGrpB.Controls.Add(this.label41);
             this.vakDagZoekGrpB.Controls.Add(this.vakDagZoekDTP);
-            this.vakDagZoekGrpB.Location = new System.Drawing.Point(1081, 425);
-            this.vakDagZoekGrpB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.vakDagZoekGrpB.Location = new System.Drawing.Point(811, 340);
+            this.vakDagZoekGrpB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.vakDagZoekGrpB.Name = "vakDagZoekGrpB";
-            this.vakDagZoekGrpB.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.vakDagZoekGrpB.Size = new System.Drawing.Size(857, 759);
+            this.vakDagZoekGrpB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.vakDagZoekGrpB.Size = new System.Drawing.Size(643, 607);
             this.vakDagZoekGrpB.TabIndex = 5;
             this.vakDagZoekGrpB.TabStop = false;
             this.vakDagZoekGrpB.Text = "Zoeken";
             // 
             // vakDagZoekBT
             // 
-            this.vakDagZoekBT.Location = new System.Drawing.Point(537, 98);
-            this.vakDagZoekBT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.vakDagZoekBT.Location = new System.Drawing.Point(403, 78);
+            this.vakDagZoekBT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.vakDagZoekBT.Name = "vakDagZoekBT";
-            this.vakDagZoekBT.Size = new System.Drawing.Size(177, 39);
+            this.vakDagZoekBT.Size = new System.Drawing.Size(133, 31);
             this.vakDagZoekBT.TabIndex = 77;
             this.vakDagZoekBT.Text = "Zoek";
             this.vakDagZoekBT.UseVisualStyleBackColor = true;
@@ -500,19 +514,17 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(21, 70);
-            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label41.Location = new System.Drawing.Point(16, 56);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(319, 25);
+            this.label41.Size = new System.Drawing.Size(232, 20);
             this.label41.TabIndex = 75;
             this.label41.Text = "Vink aan indien geen opleiding :";
             // 
             // vakDagZoekDTP
             // 
-            this.vakDagZoekDTP.Location = new System.Drawing.Point(21, 101);
-            this.vakDagZoekDTP.Margin = new System.Windows.Forms.Padding(4);
+            this.vakDagZoekDTP.Location = new System.Drawing.Point(16, 81);
             this.vakDagZoekDTP.Name = "vakDagZoekDTP";
-            this.vakDagZoekDTP.Size = new System.Drawing.Size(505, 31);
+            this.vakDagZoekDTP.Size = new System.Drawing.Size(380, 26);
             this.vakDagZoekDTP.TabIndex = 70;
             // 
             // vakDagGrpB
@@ -536,31 +548,29 @@
             this.vakDagGrpB.Controls.Add(this.label37);
             this.vakDagGrpB.Controls.Add(this.label46);
             this.vakDagGrpB.Controls.Add(this.wijzigVakDagZoekButton);
-            this.vakDagGrpB.Location = new System.Drawing.Point(7, 425);
-            this.vakDagGrpB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.vakDagGrpB.Location = new System.Drawing.Point(5, 340);
+            this.vakDagGrpB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.vakDagGrpB.Name = "vakDagGrpB";
-            this.vakDagGrpB.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.vakDagGrpB.Size = new System.Drawing.Size(857, 759);
+            this.vakDagGrpB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.vakDagGrpB.Size = new System.Drawing.Size(643, 607);
             this.vakDagGrpB.TabIndex = 4;
             this.vakDagGrpB.TabStop = false;
             this.vakDagGrpB.Text = "Toevoegen";
             // 
             // vakDagVrwdrDTP
             // 
-            this.vakDagVrwdrDTP.Location = new System.Drawing.Point(12, 182);
-            this.vakDagVrwdrDTP.Margin = new System.Windows.Forms.Padding(4);
+            this.vakDagVrwdrDTP.Location = new System.Drawing.Point(9, 146);
             this.vakDagVrwdrDTP.Name = "vakDagVrwdrDTP";
-            this.vakDagVrwdrDTP.Size = new System.Drawing.Size(505, 31);
+            this.vakDagVrwdrDTP.Size = new System.Drawing.Size(380, 26);
             this.vakDagVrwdrDTP.TabIndex = 81;
             this.vakDagVrwdrDTP.Visible = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 155);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(9, 124);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(321, 25);
+            this.label9.Size = new System.Drawing.Size(237, 20);
             this.label9.TabIndex = 80;
             this.label9.Text = "Geef datum in om te verwijderen";
             this.label9.Visible = false;
@@ -568,28 +578,25 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(163, 419);
-            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Location = new System.Drawing.Point(122, 335);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(319, 25);
+            this.label32.Size = new System.Drawing.Size(232, 20);
             this.label32.TabIndex = 62;
             this.label32.Text = "Vink aan indien geen opleiding :";
             // 
             // WijzigZoekdateTimePicker
             // 
-            this.WijzigZoekdateTimePicker.Location = new System.Drawing.Point(12, 101);
-            this.WijzigZoekdateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.WijzigZoekdateTimePicker.Location = new System.Drawing.Point(9, 81);
             this.WijzigZoekdateTimePicker.Name = "WijzigZoekdateTimePicker";
-            this.WijzigZoekdateTimePicker.Size = new System.Drawing.Size(505, 31);
+            this.WijzigZoekdateTimePicker.Size = new System.Drawing.Size(380, 26);
             this.WijzigZoekdateTimePicker.TabIndex = 77;
             this.WijzigZoekdateTimePicker.Visible = false;
             // 
             // saveChangeVakDagButton
             // 
-            this.saveChangeVakDagButton.Location = new System.Drawing.Point(12, 511);
-            this.saveChangeVakDagButton.Margin = new System.Windows.Forms.Padding(4);
+            this.saveChangeVakDagButton.Location = new System.Drawing.Point(9, 409);
             this.saveChangeVakDagButton.Name = "saveChangeVakDagButton";
-            this.saveChangeVakDagButton.Size = new System.Drawing.Size(211, 68);
+            this.saveChangeVakDagButton.Size = new System.Drawing.Size(158, 54);
             this.saveChangeVakDagButton.TabIndex = 78;
             this.saveChangeVakDagButton.Text = "Save changes";
             this.saveChangeVakDagButton.UseVisualStyleBackColor = true;
@@ -599,56 +606,50 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(163, 368);
-            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Location = new System.Drawing.Point(122, 294);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(319, 25);
+            this.label33.Size = new System.Drawing.Size(232, 20);
             this.label33.TabIndex = 61;
             this.label33.Text = "Vink aan indien geen opleiding :";
             // 
             // vakdagOplIdComB
             // 
             this.vakdagOplIdComB.FormattingEnabled = true;
-            this.vakdagOplIdComB.Location = new System.Drawing.Point(12, 472);
-            this.vakdagOplIdComB.Margin = new System.Windows.Forms.Padding(4);
+            this.vakdagOplIdComB.Location = new System.Drawing.Point(9, 378);
             this.vakdagOplIdComB.Name = "vakdagOplIdComB";
-            this.vakdagOplIdComB.Size = new System.Drawing.Size(505, 33);
+            this.vakdagOplIdComB.Size = new System.Drawing.Size(380, 28);
             this.vakdagOplIdComB.TabIndex = 60;
             // 
             // nmdgCB
             // 
             this.nmdgCB.AutoSize = true;
-            this.nmdgCB.Location = new System.Drawing.Point(489, 419);
-            this.nmdgCB.Margin = new System.Windows.Forms.Padding(4);
+            this.nmdgCB.Location = new System.Drawing.Point(367, 335);
             this.nmdgCB.Name = "nmdgCB";
-            this.nmdgCB.Size = new System.Drawing.Size(28, 27);
+            this.nmdgCB.Size = new System.Drawing.Size(22, 21);
             this.nmdgCB.TabIndex = 59;
             this.nmdgCB.UseVisualStyleBackColor = true;
             // 
             // vmdgCB
             // 
             this.vmdgCB.AutoSize = true;
-            this.vmdgCB.Location = new System.Drawing.Point(489, 368);
-            this.vmdgCB.Margin = new System.Windows.Forms.Padding(4);
+            this.vmdgCB.Location = new System.Drawing.Point(367, 294);
             this.vmdgCB.Name = "vmdgCB";
-            this.vmdgCB.Size = new System.Drawing.Size(28, 27);
+            this.vmdgCB.Size = new System.Drawing.Size(22, 21);
             this.vmdgCB.TabIndex = 58;
             this.vmdgCB.UseVisualStyleBackColor = true;
             // 
             // vakDagDtP
             // 
-            this.vakDagDtP.Location = new System.Drawing.Point(12, 306);
-            this.vakDagDtP.Margin = new System.Windows.Forms.Padding(4);
+            this.vakDagDtP.Location = new System.Drawing.Point(9, 245);
             this.vakDagDtP.Name = "vakDagDtP";
-            this.vakDagDtP.Size = new System.Drawing.Size(505, 31);
+            this.vakDagDtP.Size = new System.Drawing.Size(380, 26);
             this.vakDagDtP.TabIndex = 57;
             // 
             // createNietOplDagButton
             // 
-            this.createNietOplDagButton.Location = new System.Drawing.Point(12, 684);
-            this.createNietOplDagButton.Margin = new System.Windows.Forms.Padding(4);
+            this.createNietOplDagButton.Location = new System.Drawing.Point(9, 547);
             this.createNietOplDagButton.Name = "createNietOplDagButton";
-            this.createNietOplDagButton.Size = new System.Drawing.Size(211, 68);
+            this.createNietOplDagButton.Size = new System.Drawing.Size(158, 54);
             this.createNietOplDagButton.TabIndex = 56;
             this.createNietOplDagButton.Text = "Create";
             this.createNietOplDagButton.UseVisualStyleBackColor = true;
@@ -657,39 +658,35 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(557, 475);
-            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label34.Location = new System.Drawing.Point(418, 380);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(103, 25);
+            this.label34.Size = new System.Drawing.Size(75, 20);
             this.label34.TabIndex = 55;
             this.label34.Text = "Opleiding";
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(557, 419);
-            this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label35.Location = new System.Drawing.Point(418, 335);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(109, 25);
+            this.label35.Size = new System.Drawing.Size(81, 20);
             this.label35.TabIndex = 54;
             this.label35.Text = "Namiddag";
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(557, 368);
-            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label36.Location = new System.Drawing.Point(418, 294);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(127, 25);
+            this.label36.Size = new System.Drawing.Size(95, 20);
             this.label36.TabIndex = 53;
             this.label36.Text = "Voormiddag";
             // 
             // deleteVakDagButton
             // 
-            this.deleteVakDagButton.Location = new System.Drawing.Point(557, 178);
-            this.deleteVakDagButton.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteVakDagButton.Location = new System.Drawing.Point(418, 142);
             this.deleteVakDagButton.Name = "deleteVakDagButton";
-            this.deleteVakDagButton.Size = new System.Drawing.Size(171, 44);
+            this.deleteVakDagButton.Size = new System.Drawing.Size(128, 35);
             this.deleteVakDagButton.TabIndex = 67;
             this.deleteVakDagButton.Text = "Verwijderen";
             this.deleteVakDagButton.UseVisualStyleBackColor = true;
@@ -699,30 +696,27 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(557, 309);
-            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label37.Location = new System.Drawing.Point(418, 247);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(74, 25);
+            this.label37.Size = new System.Drawing.Size(57, 20);
             this.label37.TabIndex = 52;
             this.label37.Text = "Datum";
             // 
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(12, 72);
-            this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label46.Location = new System.Drawing.Point(9, 58);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(310, 25);
+            this.label46.Size = new System.Drawing.Size(229, 20);
             this.label46.TabIndex = 66;
             this.label46.Text = "Geef datum in van vakantiedag";
             this.label46.Visible = false;
             // 
             // wijzigVakDagZoekButton
             // 
-            this.wijzigVakDagZoekButton.Location = new System.Drawing.Point(557, 96);
-            this.wijzigVakDagZoekButton.Margin = new System.Windows.Forms.Padding(4);
+            this.wijzigVakDagZoekButton.Location = new System.Drawing.Point(418, 77);
             this.wijzigVakDagZoekButton.Name = "wijzigVakDagZoekButton";
-            this.wijzigVakDagZoekButton.Size = new System.Drawing.Size(171, 44);
+            this.wijzigVakDagZoekButton.Size = new System.Drawing.Size(128, 35);
             this.wijzigVakDagZoekButton.TabIndex = 65;
             this.wijzigVakDagZoekButton.Text = "Wijzigen";
             this.wijzigVakDagZoekButton.UseVisualStyleBackColor = true;
@@ -740,12 +734,12 @@
             this.namiddagDataGridViewCheckBoxColumn,
             this.opleidingIdDataGridViewTextBoxColumn4});
             this.dataGridView4.DataSource = this.nietOpleidingsDagensBindingSource;
-            this.dataGridView4.Location = new System.Drawing.Point(7, 8);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView4.Location = new System.Drawing.Point(5, 6);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 82;
             this.dataGridView4.RowTemplate.Height = 33;
-            this.dataGridView4.Size = new System.Drawing.Size(1933, 412);
+            this.dataGridView4.Size = new System.Drawing.Size(1450, 330);
             this.dataGridView4.TabIndex = 2;
             // 
             // idDataGridViewTextBoxColumn3
@@ -803,21 +797,21 @@
             this.oplInfoTabP.Controls.Add(this.WijzOplInfoGrpB);
             this.oplInfoTabP.Controls.Add(this.toevOplInfoGrpB);
             this.oplInfoTabP.Controls.Add(this.dataGridView3);
-            this.oplInfoTabP.Location = new System.Drawing.Point(8, 39);
-            this.oplInfoTabP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.oplInfoTabP.Location = new System.Drawing.Point(4, 29);
+            this.oplInfoTabP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.oplInfoTabP.Name = "oplInfoTabP";
-            this.oplInfoTabP.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.oplInfoTabP.Size = new System.Drawing.Size(1944, 1191);
+            this.oplInfoTabP.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.oplInfoTabP.Size = new System.Drawing.Size(1462, 957);
             this.oplInfoTabP.TabIndex = 2;
             this.oplInfoTabP.Text = "Opleidingsinformatie";
             // 
             // oplVrwdrRB
             // 
             this.oplVrwdrRB.AutoSize = true;
-            this.oplVrwdrRB.Location = new System.Drawing.Point(893, 888);
-            this.oplVrwdrRB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.oplVrwdrRB.Location = new System.Drawing.Point(670, 710);
+            this.oplVrwdrRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.oplVrwdrRB.Name = "oplVrwdrRB";
-            this.oplVrwdrRB.Size = new System.Drawing.Size(156, 29);
+            this.oplVrwdrRB.Size = new System.Drawing.Size(117, 24);
             this.oplVrwdrRB.TabIndex = 19;
             this.oplVrwdrRB.Text = "Verwijderen";
             this.oplVrwdrRB.UseVisualStyleBackColor = true;
@@ -826,10 +820,10 @@
             // oplWijzRB
             // 
             this.oplWijzRB.AutoSize = true;
-            this.oplWijzRB.Location = new System.Drawing.Point(893, 785);
-            this.oplWijzRB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.oplWijzRB.Location = new System.Drawing.Point(670, 628);
+            this.oplWijzRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.oplWijzRB.Name = "oplWijzRB";
-            this.oplWijzRB.Size = new System.Drawing.Size(125, 29);
+            this.oplWijzRB.Size = new System.Drawing.Size(93, 24);
             this.oplWijzRB.TabIndex = 18;
             this.oplWijzRB.Text = "Wijzigen";
             this.oplWijzRB.UseVisualStyleBackColor = true;
@@ -839,10 +833,10 @@
             // 
             this.oplToevRB.AutoSize = true;
             this.oplToevRB.Checked = true;
-            this.oplToevRB.Location = new System.Drawing.Point(893, 688);
-            this.oplToevRB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.oplToevRB.Location = new System.Drawing.Point(670, 550);
+            this.oplToevRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.oplToevRB.Name = "oplToevRB";
-            this.oplToevRB.Size = new System.Drawing.Size(151, 29);
+            this.oplToevRB.Size = new System.Drawing.Size(113, 24);
             this.oplToevRB.TabIndex = 17;
             this.oplToevRB.TabStop = true;
             this.oplToevRB.Text = "Toevoegen";
@@ -857,11 +851,11 @@
             this.WijzOplInfoGrpB.Controls.Add(this.label8);
             this.WijzOplInfoGrpB.Controls.Add(this.oplInfoZoekBT);
             this.WijzOplInfoGrpB.Controls.Add(this.oplInfoZoekTB);
-            this.WijzOplInfoGrpB.Location = new System.Drawing.Point(1081, 425);
-            this.WijzOplInfoGrpB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.WijzOplInfoGrpB.Location = new System.Drawing.Point(811, 340);
+            this.WijzOplInfoGrpB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.WijzOplInfoGrpB.Name = "WijzOplInfoGrpB";
-            this.WijzOplInfoGrpB.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.WijzOplInfoGrpB.Size = new System.Drawing.Size(857, 759);
+            this.WijzOplInfoGrpB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WijzOplInfoGrpB.Size = new System.Drawing.Size(643, 607);
             this.WijzOplInfoGrpB.TabIndex = 4;
             this.WijzOplInfoGrpB.TabStop = false;
             this.WijzOplInfoGrpB.Text = "Zoeken";
@@ -869,18 +863,19 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 70);
+            this.label8.Location = new System.Drawing.Point(16, 56);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(174, 25);
+            this.label8.Size = new System.Drawing.Size(128, 20);
             this.label8.TabIndex = 59;
             this.label8.Text = "Geef opleiding in";
             // 
             // oplInfoZoekBT
             // 
-            this.oplInfoZoekBT.Location = new System.Drawing.Point(537, 98);
-            this.oplInfoZoekBT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.oplInfoZoekBT.Location = new System.Drawing.Point(403, 78);
+            this.oplInfoZoekBT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.oplInfoZoekBT.Name = "oplInfoZoekBT";
-            this.oplInfoZoekBT.Size = new System.Drawing.Size(177, 39);
+            this.oplInfoZoekBT.Size = new System.Drawing.Size(133, 31);
             this.oplInfoZoekBT.TabIndex = 58;
             this.oplInfoZoekBT.Text = "Zoek";
             this.oplInfoZoekBT.UseVisualStyleBackColor = true;
@@ -888,10 +883,10 @@
             // 
             // oplInfoZoekTB
             // 
-            this.oplInfoZoekTB.Location = new System.Drawing.Point(21, 101);
-            this.oplInfoZoekTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.oplInfoZoekTB.Location = new System.Drawing.Point(16, 81);
+            this.oplInfoZoekTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.oplInfoZoekTB.Name = "oplInfoZoekTB";
-            this.oplInfoZoekTB.Size = new System.Drawing.Size(495, 31);
+            this.oplInfoZoekTB.Size = new System.Drawing.Size(372, 26);
             this.oplInfoZoekTB.TabIndex = 57;
             // 
             // toevOplInfoGrpB
@@ -923,49 +918,46 @@
             this.toevOplInfoGrpB.Controls.Add(this.cntcpTB);
             this.toevOplInfoGrpB.Controls.Add(this.oplTB);
             this.toevOplInfoGrpB.Controls.Add(this.oplInstTB);
-            this.toevOplInfoGrpB.Location = new System.Drawing.Point(7, 425);
-            this.toevOplInfoGrpB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.toevOplInfoGrpB.Location = new System.Drawing.Point(5, 340);
+            this.toevOplInfoGrpB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.toevOplInfoGrpB.Name = "toevOplInfoGrpB";
-            this.toevOplInfoGrpB.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.toevOplInfoGrpB.Size = new System.Drawing.Size(857, 759);
+            this.toevOplInfoGrpB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.toevOplInfoGrpB.Size = new System.Drawing.Size(643, 607);
             this.toevOplInfoGrpB.TabIndex = 3;
             this.toevOplInfoGrpB.TabStop = false;
             this.toevOplInfoGrpB.Text = "Toevoegen";
             // 
             // oplCdMTB
             // 
-            this.oplCdMTB.Location = new System.Drawing.Point(12, 519);
-            this.oplCdMTB.Margin = new System.Windows.Forms.Padding(4);
+            this.oplCdMTB.Location = new System.Drawing.Point(9, 415);
             this.oplCdMTB.Mask = "000000";
             this.oplCdMTB.Name = "oplCdMTB";
-            this.oplCdMTB.Size = new System.Drawing.Size(507, 31);
+            this.oplCdMTB.Size = new System.Drawing.Size(381, 26);
             this.oplCdMTB.TabIndex = 60;
             // 
             // oeNmrMTB
             // 
-            this.oeNmrMTB.Location = new System.Drawing.Point(12, 469);
-            this.oeNmrMTB.Margin = new System.Windows.Forms.Padding(4);
+            this.oeNmrMTB.Location = new System.Drawing.Point(9, 375);
             this.oeNmrMTB.Mask = "000";
             this.oeNmrMTB.Name = "oeNmrMTB";
-            this.oeNmrMTB.Size = new System.Drawing.Size(507, 31);
+            this.oeNmrMTB.Size = new System.Drawing.Size(381, 26);
             this.oeNmrMTB.TabIndex = 60;
             // 
             // oplInfoZoekComB
             // 
             this.oplInfoZoekComB.FormattingEnabled = true;
-            this.oplInfoZoekComB.Location = new System.Drawing.Point(12, 64);
-            this.oplInfoZoekComB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.oplInfoZoekComB.Location = new System.Drawing.Point(9, 51);
+            this.oplInfoZoekComB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.oplInfoZoekComB.Name = "oplInfoZoekComB";
-            this.oplInfoZoekComB.Size = new System.Drawing.Size(507, 33);
+            this.oplInfoZoekComB.Size = new System.Drawing.Size(381, 28);
             this.oplInfoZoekComB.TabIndex = 60;
             this.oplInfoZoekComB.Visible = false;
             // 
             // saveChangeOplInfoButton
             // 
-            this.saveChangeOplInfoButton.Location = new System.Drawing.Point(284, 684);
-            this.saveChangeOplInfoButton.Margin = new System.Windows.Forms.Padding(4);
+            this.saveChangeOplInfoButton.Location = new System.Drawing.Point(213, 547);
             this.saveChangeOplInfoButton.Name = "saveChangeOplInfoButton";
-            this.saveChangeOplInfoButton.Size = new System.Drawing.Size(211, 68);
+            this.saveChangeOplInfoButton.Size = new System.Drawing.Size(158, 54);
             this.saveChangeOplInfoButton.TabIndex = 79;
             this.saveChangeOplInfoButton.Text = "Save changes";
             this.saveChangeOplInfoButton.UseVisualStyleBackColor = true;
@@ -975,10 +967,9 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 108);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(9, 86);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(449, 25);
+            this.label12.Size = new System.Drawing.Size(328, 20);
             this.label12.TabIndex = 85;
             this.label12.Text = "Geef naam in van opleiding om te verwijderen";
             this.label12.Visible = false;
@@ -986,19 +977,17 @@
             // oplVrwdrTB
             // 
             this.oplVrwdrTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oplVrwdrTB.Location = new System.Drawing.Point(12, 136);
-            this.oplVrwdrTB.Margin = new System.Windows.Forms.Padding(4);
+            this.oplVrwdrTB.Location = new System.Drawing.Point(9, 109);
             this.oplVrwdrTB.Name = "oplVrwdrTB";
-            this.oplVrwdrTB.Size = new System.Drawing.Size(507, 32);
+            this.oplVrwdrTB.Size = new System.Drawing.Size(381, 26);
             this.oplVrwdrTB.TabIndex = 84;
             this.oplVrwdrTB.Visible = false;
             // 
             // deleteOplInfoButton
             // 
-            this.deleteOplInfoButton.Location = new System.Drawing.Point(557, 129);
-            this.deleteOplInfoButton.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteOplInfoButton.Location = new System.Drawing.Point(418, 103);
             this.deleteOplInfoButton.Name = "deleteOplInfoButton";
-            this.deleteOplInfoButton.Size = new System.Drawing.Size(171, 44);
+            this.deleteOplInfoButton.Size = new System.Drawing.Size(128, 35);
             this.deleteOplInfoButton.TabIndex = 83;
             this.deleteOplInfoButton.Text = "Verwijderen";
             this.deleteOplInfoButton.UseVisualStyleBackColor = true;
@@ -1008,10 +997,9 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(12, 32);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Location = new System.Drawing.Point(9, 26);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(416, 25);
+            this.label25.Size = new System.Drawing.Size(304, 20);
             this.label25.TabIndex = 82;
             this.label25.Text = "Geef naam in van opleiding om te wijzigen";
             this.label25.Visible = false;
@@ -1019,10 +1007,9 @@
             // CreateOpleidingsInfoButton
             // 
             this.CreateOpleidingsInfoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateOpleidingsInfoButton.Location = new System.Drawing.Point(12, 684);
-            this.CreateOpleidingsInfoButton.Margin = new System.Windows.Forms.Padding(4);
+            this.CreateOpleidingsInfoButton.Location = new System.Drawing.Point(9, 547);
             this.CreateOpleidingsInfoButton.Name = "CreateOpleidingsInfoButton";
-            this.CreateOpleidingsInfoButton.Size = new System.Drawing.Size(211, 68);
+            this.CreateOpleidingsInfoButton.Size = new System.Drawing.Size(158, 54);
             this.CreateOpleidingsInfoButton.TabIndex = 57;
             this.CreateOpleidingsInfoButton.Text = "Create";
             this.CreateOpleidingsInfoButton.UseVisualStyleBackColor = true;
@@ -1030,10 +1017,9 @@
             // 
             // wijzigOplInfobutton
             // 
-            this.wijzigOplInfobutton.Location = new System.Drawing.Point(557, 55);
-            this.wijzigOplInfobutton.Margin = new System.Windows.Forms.Padding(4);
+            this.wijzigOplInfobutton.Location = new System.Drawing.Point(418, 44);
             this.wijzigOplInfobutton.Name = "wijzigOplInfobutton";
-            this.wijzigOplInfobutton.Size = new System.Drawing.Size(171, 44);
+            this.wijzigOplInfobutton.Size = new System.Drawing.Size(128, 35);
             this.wijzigOplInfobutton.TabIndex = 81;
             this.wijzigOplInfobutton.Text = "Wijzigen";
             this.wijzigOplInfobutton.UseVisualStyleBackColor = true;
@@ -1044,10 +1030,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(557, 632);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(418, 506);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 26);
+            this.label6.Size = new System.Drawing.Size(90, 20);
             this.label6.TabIndex = 56;
             this.label6.Text = "Eind datum";
             // 
@@ -1055,10 +1040,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(557, 579);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(418, 463);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 26);
+            this.label7.Size = new System.Drawing.Size(93, 20);
             this.label7.TabIndex = 55;
             this.label7.Text = "Start datum";
             // 
@@ -1066,10 +1050,9 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(557, 522);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(418, 418);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(162, 26);
+            this.label15.Size = new System.Drawing.Size(118, 20);
             this.label15.TabIndex = 54;
             this.label15.Text = "Opleidingscode";
             // 
@@ -1077,10 +1060,9 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(557, 469);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(418, 375);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(133, 26);
+            this.label16.Size = new System.Drawing.Size(95, 20);
             this.label16.TabIndex = 53;
             this.label16.Text = "Oe-Nummer";
             // 
@@ -1089,10 +1071,9 @@
             this.label17.AutoSize = true;
             this.label17.Cursor = System.Windows.Forms.Cursors.Default;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(557, 412);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(418, 330);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(279, 26);
+            this.label17.Size = new System.Drawing.Size(205, 20);
             this.label17.TabIndex = 52;
             this.label17.Text = "Referentie Opleidingsplaats";
             // 
@@ -1100,10 +1081,9 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(557, 360);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(418, 288);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(173, 26);
+            this.label18.Size = new System.Drawing.Size(126, 20);
             this.label18.TabIndex = 51;
             this.label18.Text = "Opleidingsplaats";
             // 
@@ -1111,10 +1091,9 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(557, 304);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Location = new System.Drawing.Point(418, 243);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(165, 26);
+            this.label19.Size = new System.Drawing.Size(123, 20);
             this.label19.TabIndex = 50;
             this.label19.Text = "Contactpersoon";
             // 
@@ -1122,10 +1101,9 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(557, 250);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Location = new System.Drawing.Point(418, 200);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(104, 26);
+            this.label22.Size = new System.Drawing.Size(75, 20);
             this.label22.TabIndex = 49;
             this.label22.Text = "Opleiding";
             // 
@@ -1133,80 +1111,72 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(557, 194);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Location = new System.Drawing.Point(418, 155);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(200, 26);
+            this.label23.Size = new System.Drawing.Size(144, 20);
             this.label23.TabIndex = 48;
             this.label23.Text = "Opleidingsinstelling";
             // 
             // eindDatDtP
             // 
             this.eindDatDtP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eindDatDtP.Location = new System.Drawing.Point(12, 628);
-            this.eindDatDtP.Margin = new System.Windows.Forms.Padding(4);
+            this.eindDatDtP.Location = new System.Drawing.Point(9, 502);
             this.eindDatDtP.Name = "eindDatDtP";
-            this.eindDatDtP.Size = new System.Drawing.Size(507, 32);
+            this.eindDatDtP.Size = new System.Drawing.Size(381, 26);
             this.eindDatDtP.TabIndex = 47;
             this.eindDatDtP.Validating += new System.ComponentModel.CancelEventHandler(this.EindDatDtP_Validating);
             // 
             // startDatDtP
             // 
             this.startDatDtP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startDatDtP.Location = new System.Drawing.Point(12, 572);
-            this.startDatDtP.Margin = new System.Windows.Forms.Padding(4);
+            this.startDatDtP.Location = new System.Drawing.Point(9, 458);
             this.startDatDtP.Name = "startDatDtP";
-            this.startDatDtP.Size = new System.Drawing.Size(507, 32);
+            this.startDatDtP.Size = new System.Drawing.Size(381, 26);
             this.startDatDtP.TabIndex = 46;
             this.startDatDtP.Validating += new System.ComponentModel.CancelEventHandler(this.StartDatDtP_Validating);
             // 
             // refOplTB
             // 
             this.refOplTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refOplTB.Location = new System.Drawing.Point(12, 410);
-            this.refOplTB.Margin = new System.Windows.Forms.Padding(4);
+            this.refOplTB.Location = new System.Drawing.Point(9, 328);
             this.refOplTB.Name = "refOplTB";
-            this.refOplTB.Size = new System.Drawing.Size(507, 32);
+            this.refOplTB.Size = new System.Drawing.Size(381, 26);
             this.refOplTB.TabIndex = 43;
             this.refOplTB.Validating += new System.ComponentModel.CancelEventHandler(this.RefOplTB_Validating);
             // 
             // oplPlTB
             // 
             this.oplPlTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oplPlTB.Location = new System.Drawing.Point(12, 358);
-            this.oplPlTB.Margin = new System.Windows.Forms.Padding(4);
+            this.oplPlTB.Location = new System.Drawing.Point(9, 286);
             this.oplPlTB.Name = "oplPlTB";
-            this.oplPlTB.Size = new System.Drawing.Size(507, 32);
+            this.oplPlTB.Size = new System.Drawing.Size(381, 26);
             this.oplPlTB.TabIndex = 42;
             this.oplPlTB.Validating += new System.ComponentModel.CancelEventHandler(this.OplPlTB_Validating);
             // 
             // cntcpTB
             // 
             this.cntcpTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cntcpTB.Location = new System.Drawing.Point(12, 301);
-            this.cntcpTB.Margin = new System.Windows.Forms.Padding(4);
+            this.cntcpTB.Location = new System.Drawing.Point(9, 241);
             this.cntcpTB.Name = "cntcpTB";
-            this.cntcpTB.Size = new System.Drawing.Size(507, 32);
+            this.cntcpTB.Size = new System.Drawing.Size(381, 26);
             this.cntcpTB.TabIndex = 41;
             this.cntcpTB.Validating += new System.ComponentModel.CancelEventHandler(this.CntcpTB_Validating);
             // 
             // oplTB
             // 
             this.oplTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oplTB.Location = new System.Drawing.Point(12, 248);
-            this.oplTB.Margin = new System.Windows.Forms.Padding(4);
+            this.oplTB.Location = new System.Drawing.Point(9, 198);
             this.oplTB.Name = "oplTB";
-            this.oplTB.Size = new System.Drawing.Size(507, 32);
+            this.oplTB.Size = new System.Drawing.Size(381, 26);
             this.oplTB.TabIndex = 40;
             this.oplTB.Validating += new System.ComponentModel.CancelEventHandler(this.OplTB_Validating);
             // 
             // oplInstTB
             // 
             this.oplInstTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oplInstTB.Location = new System.Drawing.Point(12, 191);
-            this.oplInstTB.Margin = new System.Windows.Forms.Padding(4);
+            this.oplInstTB.Location = new System.Drawing.Point(9, 153);
             this.oplInstTB.Name = "oplInstTB";
-            this.oplInstTB.Size = new System.Drawing.Size(507, 32);
+            this.oplInstTB.Size = new System.Drawing.Size(381, 26);
             this.oplInstTB.TabIndex = 39;
             this.oplInstTB.Validating += new System.ComponentModel.CancelEventHandler(this.OplInstTB_Validating);
             // 
@@ -1226,12 +1196,12 @@
             this.startDatumDataGridViewTextBoxColumn,
             this.eindDatumeDataGridViewTextBoxColumn});
             this.dataGridView3.DataSource = this.opleidingsinformatiesBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(7, 8);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView3.Location = new System.Drawing.Point(5, 6);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 82;
             this.dataGridView3.RowTemplate.Height = 33;
-            this.dataGridView3.Size = new System.Drawing.Size(1933, 412);
+            this.dataGridView3.Size = new System.Drawing.Size(1450, 330);
             this.dataGridView3.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn2
@@ -1329,21 +1299,21 @@
             this.DocTabP.Controls.Add(this.docZoekGrpB);
             this.DocTabP.Controls.Add(this.docToevGrpB);
             this.DocTabP.Controls.Add(this.dataGridView2);
-            this.DocTabP.Location = new System.Drawing.Point(8, 39);
-            this.DocTabP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DocTabP.Location = new System.Drawing.Point(4, 29);
+            this.DocTabP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DocTabP.Name = "DocTabP";
-            this.DocTabP.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DocTabP.Size = new System.Drawing.Size(1944, 1191);
+            this.DocTabP.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DocTabP.Size = new System.Drawing.Size(1462, 957);
             this.DocTabP.TabIndex = 1;
             this.DocTabP.Text = "Docenten";
             // 
             // vrwdrDocRB
             // 
             this.vrwdrDocRB.AutoSize = true;
-            this.vrwdrDocRB.Location = new System.Drawing.Point(893, 888);
-            this.vrwdrDocRB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.vrwdrDocRB.Location = new System.Drawing.Point(670, 710);
+            this.vrwdrDocRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.vrwdrDocRB.Name = "vrwdrDocRB";
-            this.vrwdrDocRB.Size = new System.Drawing.Size(156, 29);
+            this.vrwdrDocRB.Size = new System.Drawing.Size(117, 24);
             this.vrwdrDocRB.TabIndex = 16;
             this.vrwdrDocRB.Text = "Verwijderen";
             this.vrwdrDocRB.UseVisualStyleBackColor = true;
@@ -1352,10 +1322,10 @@
             // wijzDocRB
             // 
             this.wijzDocRB.AutoSize = true;
-            this.wijzDocRB.Location = new System.Drawing.Point(893, 785);
-            this.wijzDocRB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.wijzDocRB.Location = new System.Drawing.Point(670, 628);
+            this.wijzDocRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.wijzDocRB.Name = "wijzDocRB";
-            this.wijzDocRB.Size = new System.Drawing.Size(125, 29);
+            this.wijzDocRB.Size = new System.Drawing.Size(93, 24);
             this.wijzDocRB.TabIndex = 15;
             this.wijzDocRB.Text = "Wijzigen";
             this.wijzDocRB.UseVisualStyleBackColor = true;
@@ -1365,10 +1335,10 @@
             // 
             this.toevDocRB.AutoSize = true;
             this.toevDocRB.Checked = true;
-            this.toevDocRB.Location = new System.Drawing.Point(893, 688);
-            this.toevDocRB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.toevDocRB.Location = new System.Drawing.Point(670, 550);
+            this.toevDocRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.toevDocRB.Name = "toevDocRB";
-            this.toevDocRB.Size = new System.Drawing.Size(151, 29);
+            this.toevDocRB.Size = new System.Drawing.Size(113, 24);
             this.toevDocRB.TabIndex = 14;
             this.toevDocRB.TabStop = true;
             this.toevDocRB.Text = "Toevoegen";
@@ -1383,11 +1353,11 @@
             this.docZoekGrpB.Controls.Add(this.label11);
             this.docZoekGrpB.Controls.Add(this.docZoekBT);
             this.docZoekGrpB.Controls.Add(this.DocZoekTB);
-            this.docZoekGrpB.Location = new System.Drawing.Point(1081, 425);
-            this.docZoekGrpB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.docZoekGrpB.Location = new System.Drawing.Point(811, 340);
+            this.docZoekGrpB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.docZoekGrpB.Name = "docZoekGrpB";
-            this.docZoekGrpB.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.docZoekGrpB.Size = new System.Drawing.Size(857, 759);
+            this.docZoekGrpB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.docZoekGrpB.Size = new System.Drawing.Size(643, 607);
             this.docZoekGrpB.TabIndex = 3;
             this.docZoekGrpB.TabStop = false;
             this.docZoekGrpB.Text = "Zoeken";
@@ -1395,18 +1365,19 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(21, 70);
+            this.label11.Location = new System.Drawing.Point(16, 56);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(252, 25);
+            this.label11.Size = new System.Drawing.Size(187, 20);
             this.label11.TabIndex = 59;
             this.label11.Text = "Geef naam van docent in";
             // 
             // docZoekBT
             // 
-            this.docZoekBT.Location = new System.Drawing.Point(537, 98);
-            this.docZoekBT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.docZoekBT.Location = new System.Drawing.Point(403, 78);
+            this.docZoekBT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.docZoekBT.Name = "docZoekBT";
-            this.docZoekBT.Size = new System.Drawing.Size(177, 39);
+            this.docZoekBT.Size = new System.Drawing.Size(133, 31);
             this.docZoekBT.TabIndex = 58;
             this.docZoekBT.Text = "Zoek";
             this.docZoekBT.UseVisualStyleBackColor = true;
@@ -1414,10 +1385,10 @@
             // 
             // DocZoekTB
             // 
-            this.DocZoekTB.Location = new System.Drawing.Point(21, 101);
-            this.DocZoekTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DocZoekTB.Location = new System.Drawing.Point(16, 81);
+            this.DocZoekTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DocZoekTB.Name = "DocZoekTB";
-            this.DocZoekTB.Size = new System.Drawing.Size(495, 31);
+            this.DocZoekTB.Size = new System.Drawing.Size(372, 26);
             this.DocZoekTB.TabIndex = 57;
             // 
             // docToevGrpB
@@ -1437,11 +1408,11 @@
             this.docToevGrpB.Controls.Add(this.deleteDocButton);
             this.docToevGrpB.Controls.Add(this.label27);
             this.docToevGrpB.Controls.Add(this.wijzigDocButton);
-            this.docToevGrpB.Location = new System.Drawing.Point(7, 425);
-            this.docToevGrpB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.docToevGrpB.Location = new System.Drawing.Point(5, 340);
+            this.docToevGrpB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.docToevGrpB.Name = "docToevGrpB";
-            this.docToevGrpB.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.docToevGrpB.Size = new System.Drawing.Size(857, 759);
+            this.docToevGrpB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.docToevGrpB.Size = new System.Drawing.Size(643, 607);
             this.docToevGrpB.TabIndex = 2;
             this.docToevGrpB.TabStop = false;
             this.docToevGrpB.Text = "Toevoegen";
@@ -1449,30 +1420,29 @@
             // docZoekComB
             // 
             this.docZoekComB.FormattingEnabled = true;
-            this.docZoekComB.Location = new System.Drawing.Point(12, 101);
-            this.docZoekComB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.docZoekComB.Location = new System.Drawing.Point(9, 81);
+            this.docZoekComB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.docZoekComB.Name = "docZoekComB";
-            this.docZoekComB.Size = new System.Drawing.Size(507, 33);
+            this.docZoekComB.Size = new System.Drawing.Size(381, 28);
             this.docZoekComB.TabIndex = 76;
             this.docZoekComB.Visible = false;
             // 
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(557, 425);
-            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label39.Location = new System.Drawing.Point(418, 340);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(103, 25);
+            this.label39.Size = new System.Drawing.Size(75, 20);
             this.label39.TabIndex = 75;
             this.label39.Text = "Opleiding";
             // 
             // docOplComB
             // 
             this.docOplComB.FormattingEnabled = true;
-            this.docOplComB.Location = new System.Drawing.Point(12, 422);
-            this.docOplComB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.docOplComB.Location = new System.Drawing.Point(9, 338);
+            this.docOplComB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.docOplComB.Name = "docOplComB";
-            this.docOplComB.Size = new System.Drawing.Size(507, 33);
+            this.docOplComB.Size = new System.Drawing.Size(381, 28);
             this.docOplComB.TabIndex = 74;
             this.docOplComB.TextChanged += new System.EventHandler(this.DocOplComB_TextChanged);
             this.docOplComB.Validating += new System.ComponentModel.CancelEventHandler(this.DocOplComB_Validating);
@@ -1480,29 +1450,26 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 155);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(9, 124);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(427, 25);
+            this.label10.Size = new System.Drawing.Size(314, 20);
             this.label10.TabIndex = 73;
             this.label10.Text = "Geef naam in van docent om te verwijderen";
             this.label10.Visible = false;
             // 
             // vrwdrDocTB
             // 
-            this.vrwdrDocTB.Location = new System.Drawing.Point(12, 184);
-            this.vrwdrDocTB.Margin = new System.Windows.Forms.Padding(4);
+            this.vrwdrDocTB.Location = new System.Drawing.Point(9, 147);
             this.vrwdrDocTB.Name = "vrwdrDocTB";
-            this.vrwdrDocTB.Size = new System.Drawing.Size(505, 31);
+            this.vrwdrDocTB.Size = new System.Drawing.Size(380, 26);
             this.vrwdrDocTB.TabIndex = 72;
             this.vrwdrDocTB.Visible = false;
             // 
             // saveChangeDocButton
             // 
-            this.saveChangeDocButton.Location = new System.Drawing.Point(12, 526);
-            this.saveChangeDocButton.Margin = new System.Windows.Forms.Padding(4);
+            this.saveChangeDocButton.Location = new System.Drawing.Point(9, 421);
             this.saveChangeDocButton.Name = "saveChangeDocButton";
-            this.saveChangeDocButton.Size = new System.Drawing.Size(211, 68);
+            this.saveChangeDocButton.Size = new System.Drawing.Size(158, 54);
             this.saveChangeDocButton.TabIndex = 71;
             this.saveChangeDocButton.Text = "Save changes";
             this.saveChangeDocButton.UseVisualStyleBackColor = true;
@@ -1511,10 +1478,9 @@
             // 
             // createDocentButton
             // 
-            this.createDocentButton.Location = new System.Drawing.Point(12, 684);
-            this.createDocentButton.Margin = new System.Windows.Forms.Padding(4);
+            this.createDocentButton.Location = new System.Drawing.Point(9, 547);
             this.createDocentButton.Name = "createDocentButton";
-            this.createDocentButton.Size = new System.Drawing.Size(211, 68);
+            this.createDocentButton.Size = new System.Drawing.Size(158, 54);
             this.createDocentButton.TabIndex = 39;
             this.createDocentButton.Text = "Create";
             this.createDocentButton.UseVisualStyleBackColor = true;
@@ -1523,49 +1489,44 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(557, 365);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Location = new System.Drawing.Point(418, 292);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(73, 25);
+            this.label20.Size = new System.Drawing.Size(54, 20);
             this.label20.TabIndex = 38;
             this.label20.Text = "Bedrijf";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(557, 309);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(418, 247);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 25);
+            this.label5.Size = new System.Drawing.Size(51, 20);
             this.label5.TabIndex = 37;
             this.label5.Text = "Naam";
             // 
             // docBedrijfTB
             // 
-            this.docBedrijfTB.Location = new System.Drawing.Point(12, 362);
-            this.docBedrijfTB.Margin = new System.Windows.Forms.Padding(4);
+            this.docBedrijfTB.Location = new System.Drawing.Point(9, 290);
             this.docBedrijfTB.Name = "docBedrijfTB";
-            this.docBedrijfTB.Size = new System.Drawing.Size(507, 31);
+            this.docBedrijfTB.Size = new System.Drawing.Size(381, 26);
             this.docBedrijfTB.TabIndex = 36;
             this.docBedrijfTB.TextChanged += new System.EventHandler(this.DocOplComB_TextChanged);
             this.docBedrijfTB.Validating += new System.ComponentModel.CancelEventHandler(this.DocBedrijfTB_Validating);
             // 
             // docNaamTB
             // 
-            this.docNaamTB.Location = new System.Drawing.Point(12, 306);
-            this.docNaamTB.Margin = new System.Windows.Forms.Padding(4);
+            this.docNaamTB.Location = new System.Drawing.Point(9, 245);
             this.docNaamTB.Name = "docNaamTB";
-            this.docNaamTB.Size = new System.Drawing.Size(507, 31);
+            this.docNaamTB.Size = new System.Drawing.Size(381, 26);
             this.docNaamTB.TabIndex = 35;
             this.docNaamTB.TextChanged += new System.EventHandler(this.DocOplComB_TextChanged);
             this.docNaamTB.Validating += new System.ComponentModel.CancelEventHandler(this.DocNaamTB_Validating);
             // 
             // deleteDocButton
             // 
-            this.deleteDocButton.Location = new System.Drawing.Point(557, 178);
-            this.deleteDocButton.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteDocButton.Location = new System.Drawing.Point(418, 142);
             this.deleteDocButton.Name = "deleteDocButton";
-            this.deleteDocButton.Size = new System.Drawing.Size(171, 44);
+            this.deleteDocButton.Size = new System.Drawing.Size(128, 35);
             this.deleteDocButton.TabIndex = 66;
             this.deleteDocButton.Text = "Verwijderen";
             this.deleteDocButton.UseVisualStyleBackColor = true;
@@ -1575,20 +1536,18 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(12, 72);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Location = new System.Drawing.Point(9, 58);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(394, 25);
+            this.label27.Size = new System.Drawing.Size(290, 20);
             this.label27.TabIndex = 65;
             this.label27.Text = "Geef naam in van docent om te wijzigen";
             this.label27.Visible = false;
             // 
             // wijzigDocButton
             // 
-            this.wijzigDocButton.Location = new System.Drawing.Point(557, 96);
-            this.wijzigDocButton.Margin = new System.Windows.Forms.Padding(4);
+            this.wijzigDocButton.Location = new System.Drawing.Point(418, 77);
             this.wijzigDocButton.Name = "wijzigDocButton";
-            this.wijzigDocButton.Size = new System.Drawing.Size(171, 44);
+            this.wijzigDocButton.Size = new System.Drawing.Size(128, 35);
             this.wijzigDocButton.TabIndex = 64;
             this.wijzigDocButton.Text = "Wijzigen";
             this.wijzigDocButton.UseVisualStyleBackColor = true;
@@ -1604,12 +1563,12 @@
             this.naamDataGridViewTextBoxColumn1,
             this.bedrijfDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.docentensBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 8);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Location = new System.Drawing.Point(5, 6);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 82;
             this.dataGridView2.RowTemplate.Height = 33;
-            this.dataGridView2.Size = new System.Drawing.Size(1933, 412);
+            this.dataGridView2.Size = new System.Drawing.Size(1450, 330);
             this.dataGridView2.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn1
@@ -1652,11 +1611,11 @@
             this.dlnmrTabP.Controls.Add(this.ToevRadioB);
             this.dlnmrTabP.Controls.Add(this.WijzigenGrpB);
             this.dlnmrTabP.Controls.Add(this.ToevoegenGrpB);
-            this.dlnmrTabP.Location = new System.Drawing.Point(8, 39);
-            this.dlnmrTabP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dlnmrTabP.Location = new System.Drawing.Point(4, 29);
+            this.dlnmrTabP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dlnmrTabP.Name = "dlnmrTabP";
-            this.dlnmrTabP.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dlnmrTabP.Size = new System.Drawing.Size(1944, 1191);
+            this.dlnmrTabP.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dlnmrTabP.Size = new System.Drawing.Size(1462, 957);
             this.dlnmrTabP.TabIndex = 0;
             this.dlnmrTabP.Text = "Deelnemer";
             // 
@@ -1671,12 +1630,12 @@
             this.woonplaatsDataGridViewTextBoxColumn,
             this.badgeNummerDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.deelnemersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 4);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(5, 3);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1931, 415);
+            this.dataGridView1.Size = new System.Drawing.Size(1448, 332);
             this.dataGridView1.TabIndex = 14;
             // 
             // idDataGridViewTextBoxColumn
@@ -1728,10 +1687,10 @@
             // DeleteRadioB
             // 
             this.DeleteRadioB.AutoSize = true;
-            this.DeleteRadioB.Location = new System.Drawing.Point(893, 888);
-            this.DeleteRadioB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DeleteRadioB.Location = new System.Drawing.Point(670, 710);
+            this.DeleteRadioB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DeleteRadioB.Name = "DeleteRadioB";
-            this.DeleteRadioB.Size = new System.Drawing.Size(156, 29);
+            this.DeleteRadioB.Size = new System.Drawing.Size(117, 24);
             this.DeleteRadioB.TabIndex = 13;
             this.DeleteRadioB.Text = "Verwijderen";
             this.DeleteRadioB.UseVisualStyleBackColor = true;
@@ -1740,10 +1699,10 @@
             // WijzigRadioB
             // 
             this.WijzigRadioB.AutoSize = true;
-            this.WijzigRadioB.Location = new System.Drawing.Point(893, 785);
-            this.WijzigRadioB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.WijzigRadioB.Location = new System.Drawing.Point(670, 628);
+            this.WijzigRadioB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.WijzigRadioB.Name = "WijzigRadioB";
-            this.WijzigRadioB.Size = new System.Drawing.Size(125, 29);
+            this.WijzigRadioB.Size = new System.Drawing.Size(93, 24);
             this.WijzigRadioB.TabIndex = 12;
             this.WijzigRadioB.Text = "Wijzigen";
             this.WijzigRadioB.UseVisualStyleBackColor = true;
@@ -1753,10 +1712,10 @@
             // 
             this.ToevRadioB.AutoSize = true;
             this.ToevRadioB.Checked = true;
-            this.ToevRadioB.Location = new System.Drawing.Point(893, 688);
-            this.ToevRadioB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ToevRadioB.Location = new System.Drawing.Point(670, 550);
+            this.ToevRadioB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ToevRadioB.Name = "ToevRadioB";
-            this.ToevRadioB.Size = new System.Drawing.Size(151, 29);
+            this.ToevRadioB.Size = new System.Drawing.Size(113, 24);
             this.ToevRadioB.TabIndex = 11;
             this.ToevRadioB.TabStop = true;
             this.ToevRadioB.Text = "Toevoegen";
@@ -1771,11 +1730,11 @@
             this.WijzigenGrpB.Controls.Add(this.label55);
             this.WijzigenGrpB.Controls.Add(this.searchButton);
             this.WijzigenGrpB.Controls.Add(this.searchTB);
-            this.WijzigenGrpB.Location = new System.Drawing.Point(1081, 425);
-            this.WijzigenGrpB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.WijzigenGrpB.Location = new System.Drawing.Point(811, 340);
+            this.WijzigenGrpB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.WijzigenGrpB.Name = "WijzigenGrpB";
-            this.WijzigenGrpB.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.WijzigenGrpB.Size = new System.Drawing.Size(857, 759);
+            this.WijzigenGrpB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WijzigenGrpB.Size = new System.Drawing.Size(643, 607);
             this.WijzigenGrpB.TabIndex = 2;
             this.WijzigenGrpB.TabStop = false;
             this.WijzigenGrpB.Text = "Zoeken";
@@ -1783,18 +1742,19 @@
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(21, 70);
+            this.label55.Location = new System.Drawing.Point(16, 56);
+            this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(288, 25);
+            this.label55.Size = new System.Drawing.Size(213, 20);
             this.label55.TabIndex = 56;
             this.label55.Text = "Geef naam van deelnemer in";
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(537, 98);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchButton.Location = new System.Drawing.Point(403, 78);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(177, 39);
+            this.searchButton.Size = new System.Drawing.Size(133, 31);
             this.searchButton.TabIndex = 55;
             this.searchButton.Text = "Zoek";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -1802,10 +1762,10 @@
             // 
             // searchTB
             // 
-            this.searchTB.Location = new System.Drawing.Point(21, 101);
-            this.searchTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchTB.Location = new System.Drawing.Point(16, 81);
+            this.searchTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(495, 31);
+            this.searchTB.Size = new System.Drawing.Size(372, 26);
             this.searchTB.TabIndex = 54;
             // 
             // ToevoegenGrpB
@@ -1829,51 +1789,135 @@
             this.ToevoegenGrpB.Controls.Add(this.label21);
             this.ToevoegenGrpB.Controls.Add(this.createDeelnemerButton);
             this.ToevoegenGrpB.Controls.Add(this.WijzigZoekButton);
-            this.ToevoegenGrpB.Location = new System.Drawing.Point(7, 425);
-            this.ToevoegenGrpB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ToevoegenGrpB.Location = new System.Drawing.Point(5, 340);
+            this.ToevoegenGrpB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ToevoegenGrpB.Name = "ToevoegenGrpB";
-            this.ToevoegenGrpB.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ToevoegenGrpB.Size = new System.Drawing.Size(857, 759);
+            this.ToevoegenGrpB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ToevoegenGrpB.Size = new System.Drawing.Size(643, 607);
             this.ToevoegenGrpB.TabIndex = 1;
             this.ToevoegenGrpB.TabStop = false;
             this.ToevoegenGrpB.Text = "Toevoegen";
             // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(414, 379);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(75, 20);
+            this.label38.TabIndex = 82;
+            this.label38.Text = "Opleiding";
+            // 
+            // dlnmrOplComB
+            // 
+            this.dlnmrOplComB.FormattingEnabled = true;
+            this.dlnmrOplComB.Location = new System.Drawing.Point(5, 376);
+            this.dlnmrOplComB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dlnmrOplComB.Name = "dlnmrOplComB";
+            this.dlnmrOplComB.Size = new System.Drawing.Size(380, 28);
+            this.dlnmrOplComB.TabIndex = 81;
+            this.dlnmrOplComB.Validating += new System.ComponentModel.CancelEventHandler(this.DlnmrOplComB_Validating);
+            // 
+            // geboorteDatDtP
+            // 
+            this.geboorteDatDtP.Location = new System.Drawing.Point(5, 246);
+            this.geboorteDatDtP.Name = "geboorteDatDtP";
+            this.geboorteDatDtP.Size = new System.Drawing.Size(380, 26);
+            this.geboorteDatDtP.TabIndex = 80;
+            this.geboorteDatDtP.Validating += new System.ComponentModel.CancelEventHandler(this.GeboorteDatDtP_Validating);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(414, 337);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 20);
+            this.label1.TabIndex = 79;
+            this.label1.Text = "Badge nummer";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(414, 292);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 20);
+            this.label2.TabIndex = 78;
+            this.label2.Text = "Woonplaats";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(414, 251);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 20);
+            this.label3.TabIndex = 77;
+            this.label3.Text = "Geboortedatum";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(414, 204);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.TabIndex = 76;
+            this.label4.Text = "Naam";
+            // 
+            // bdgNumTB
+            // 
+            this.bdgNumTB.Location = new System.Drawing.Point(5, 334);
+            this.bdgNumTB.Name = "bdgNumTB";
+            this.bdgNumTB.Size = new System.Drawing.Size(380, 26);
+            this.bdgNumTB.TabIndex = 75;
+            this.bdgNumTB.Validating += new System.ComponentModel.CancelEventHandler(this.BdgNumTB_Validating);
+            // 
+            // wnpltsTB
+            // 
+            this.wnpltsTB.Location = new System.Drawing.Point(5, 289);
+            this.wnpltsTB.Name = "wnpltsTB";
+            this.wnpltsTB.Size = new System.Drawing.Size(380, 26);
+            this.wnpltsTB.TabIndex = 74;
+            this.wnpltsTB.Validating += new System.ComponentModel.CancelEventHandler(this.WnpltsTB_Validating);
+            // 
+            // dlnmrNaamTB
+            // 
+            this.dlnmrNaamTB.Location = new System.Drawing.Point(5, 201);
+            this.dlnmrNaamTB.Name = "dlnmrNaamTB";
+            this.dlnmrNaamTB.Size = new System.Drawing.Size(380, 26);
+            this.dlnmrNaamTB.TabIndex = 73;
+            this.dlnmrNaamTB.Validating += new System.ComponentModel.CancelEventHandler(this.DlnmrNaamTB_Validating);
+            // 
             // dlnmrZoekComb
             // 
             this.dlnmrZoekComb.FormattingEnabled = true;
-            this.dlnmrZoekComb.Location = new System.Drawing.Point(12, 101);
-            this.dlnmrZoekComb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dlnmrZoekComb.Location = new System.Drawing.Point(9, 81);
+            this.dlnmrZoekComb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dlnmrZoekComb.Name = "dlnmrZoekComb";
-            this.dlnmrZoekComb.Size = new System.Drawing.Size(505, 33);
+            this.dlnmrZoekComb.Size = new System.Drawing.Size(380, 28);
             this.dlnmrZoekComb.TabIndex = 63;
             this.dlnmrZoekComb.Visible = false;
             // 
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(12, 155);
-            this.label56.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label56.Location = new System.Drawing.Point(9, 124);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(463, 25);
+            this.label56.Size = new System.Drawing.Size(340, 20);
             this.label56.TabIndex = 60;
             this.label56.Text = "Geef naam in van deelnemer om te verwijderen";
             this.label56.Visible = false;
             // 
             // deleteDlnmrTB
             // 
-            this.deleteDlnmrTB.Location = new System.Drawing.Point(12, 184);
-            this.deleteDlnmrTB.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteDlnmrTB.Location = new System.Drawing.Point(9, 147);
             this.deleteDlnmrTB.Name = "deleteDlnmrTB";
-            this.deleteDlnmrTB.Size = new System.Drawing.Size(505, 31);
+            this.deleteDlnmrTB.Size = new System.Drawing.Size(380, 26);
             this.deleteDlnmrTB.TabIndex = 59;
             this.deleteDlnmrTB.Visible = false;
             // 
             // saveChangeDeelnemerButton
             // 
-            this.saveChangeDeelnemerButton.Location = new System.Drawing.Point(12, 608);
-            this.saveChangeDeelnemerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.saveChangeDeelnemerButton.Location = new System.Drawing.Point(9, 486);
             this.saveChangeDeelnemerButton.Name = "saveChangeDeelnemerButton";
-            this.saveChangeDeelnemerButton.Size = new System.Drawing.Size(211, 68);
+            this.saveChangeDeelnemerButton.Size = new System.Drawing.Size(158, 54);
             this.saveChangeDeelnemerButton.TabIndex = 54;
             this.saveChangeDeelnemerButton.Text = "Save changes";
             this.saveChangeDeelnemerButton.UseVisualStyleBackColor = true;
@@ -1882,10 +1926,9 @@
             // 
             // deleteDeelnemerButton
             // 
-            this.deleteDeelnemerButton.Location = new System.Drawing.Point(557, 178);
-            this.deleteDeelnemerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteDeelnemerButton.Location = new System.Drawing.Point(418, 142);
             this.deleteDeelnemerButton.Name = "deleteDeelnemerButton";
-            this.deleteDeelnemerButton.Size = new System.Drawing.Size(171, 44);
+            this.deleteDeelnemerButton.Size = new System.Drawing.Size(128, 35);
             this.deleteDeelnemerButton.TabIndex = 58;
             this.deleteDeelnemerButton.Text = "Verwijderen";
             this.deleteDeelnemerButton.UseVisualStyleBackColor = true;
@@ -1895,20 +1938,18 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(12, 72);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Location = new System.Drawing.Point(9, 58);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(430, 25);
+            this.label21.Size = new System.Drawing.Size(316, 20);
             this.label21.TabIndex = 57;
             this.label21.Text = "Geef naam in van deelnemer om te wijzigen";
             this.label21.Visible = false;
             // 
             // createDeelnemerButton
             // 
-            this.createDeelnemerButton.Location = new System.Drawing.Point(12, 684);
-            this.createDeelnemerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.createDeelnemerButton.Location = new System.Drawing.Point(9, 547);
             this.createDeelnemerButton.Name = "createDeelnemerButton";
-            this.createDeelnemerButton.Size = new System.Drawing.Size(211, 68);
+            this.createDeelnemerButton.Size = new System.Drawing.Size(158, 54);
             this.createDeelnemerButton.TabIndex = 41;
             this.createDeelnemerButton.Text = "Create";
             this.createDeelnemerButton.UseVisualStyleBackColor = true;
@@ -1916,10 +1957,9 @@
             // 
             // WijzigZoekButton
             // 
-            this.WijzigZoekButton.Location = new System.Drawing.Point(557, 96);
-            this.WijzigZoekButton.Margin = new System.Windows.Forms.Padding(4);
+            this.WijzigZoekButton.Location = new System.Drawing.Point(418, 77);
             this.WijzigZoekButton.Name = "WijzigZoekButton";
-            this.WijzigZoekButton.Size = new System.Drawing.Size(171, 44);
+            this.WijzigZoekButton.Size = new System.Drawing.Size(128, 35);
             this.WijzigZoekButton.TabIndex = 56;
             this.WijzigZoekButton.Text = "Wijzigen";
             this.WijzigZoekButton.UseVisualStyleBackColor = true;
@@ -1934,11 +1974,11 @@
             this.BeheerTabControl.Controls.Add(this.ntOplDgTabP);
             this.BeheerTabControl.Controls.Add(this.tijdRegTabP);
             this.BeheerTabControl.Controls.Add(this.ExtraTabP);
-            this.BeheerTabControl.Location = new System.Drawing.Point(13, 12);
-            this.BeheerTabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BeheerTabControl.Location = new System.Drawing.Point(10, 10);
+            this.BeheerTabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BeheerTabControl.Name = "BeheerTabControl";
             this.BeheerTabControl.SelectedIndex = 0;
-            this.BeheerTabControl.Size = new System.Drawing.Size(1960, 1238);
+            this.BeheerTabControl.Size = new System.Drawing.Size(1470, 990);
             this.BeheerTabControl.TabIndex = 0;
             this.BeheerTabControl.SelectedIndexChanged += new System.EventHandler(this.BeheerTabControl_SelectedIndexChanged);
             // 
@@ -1983,7 +2023,7 @@
             this.docOpl1ComB.Location = new System.Drawing.Point(12, 362);
             this.docOpl1ComB.Margin = new System.Windows.Forms.Padding(4);
             this.docOpl1ComB.Name = "docOpl1ComB";
-            this.docOpl1ComB.Size = new System.Drawing.Size(507, 33);
+            this.docOpl1ComB.Size = new System.Drawing.Size(507, 28);
             this.docOpl1ComB.TabIndex = 48;
             // 
             // docNaamComB
@@ -1992,7 +2032,7 @@
             this.docNaamComB.Location = new System.Drawing.Point(12, 306);
             this.docNaamComB.Margin = new System.Windows.Forms.Padding(4);
             this.docNaamComB.Name = "docNaamComB";
-            this.docNaamComB.Size = new System.Drawing.Size(507, 33);
+            this.docNaamComB.Size = new System.Drawing.Size(507, 28);
             this.docNaamComB.TabIndex = 49;
             // 
             // saveChangeDocOplButton
@@ -2011,7 +2051,7 @@
             this.docOplWijzTB.Location = new System.Drawing.Point(12, 101);
             this.docOplWijzTB.Margin = new System.Windows.Forms.Padding(4);
             this.docOplWijzTB.Name = "docOplWijzTB";
-            this.docOplWijzTB.Size = new System.Drawing.Size(505, 31);
+            this.docOplWijzTB.Size = new System.Drawing.Size(505, 26);
             this.docOplWijzTB.TabIndex = 68;
             this.docOplWijzTB.Visible = false;
             // 
@@ -2052,7 +2092,7 @@
             this.docOplvrwdrTb.Location = new System.Drawing.Point(12, 184);
             this.docOplvrwdrTb.Margin = new System.Windows.Forms.Padding(4);
             this.docOplvrwdrTb.Name = "docOplvrwdrTb";
-            this.docOplvrwdrTb.Size = new System.Drawing.Size(505, 31);
+            this.docOplvrwdrTb.Size = new System.Drawing.Size(505, 26);
             this.docOplvrwdrTb.TabIndex = 72;
             this.docOplvrwdrTb.Visible = false;
             // 
@@ -2089,7 +2129,7 @@
             this.docOplZoekTB.Location = new System.Drawing.Point(21, 101);
             this.docOplZoekTB.Margin = new System.Windows.Forms.Padding(4);
             this.docOplZoekTB.Name = "docOplZoekTB";
-            this.docOplZoekTB.Size = new System.Drawing.Size(505, 31);
+            this.docOplZoekTB.Size = new System.Drawing.Size(505, 26);
             this.docOplZoekTB.TabIndex = 69;
             // 
             // docOplZoekBT
@@ -2140,7 +2180,7 @@
             this.wijzigDlnmrOplZoekTextBox.Location = new System.Drawing.Point(12, 101);
             this.wijzigDlnmrOplZoekTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.wijzigDlnmrOplZoekTextBox.Name = "wijzigDlnmrOplZoekTextBox";
-            this.wijzigDlnmrOplZoekTextBox.Size = new System.Drawing.Size(505, 31);
+            this.wijzigDlnmrOplZoekTextBox.Size = new System.Drawing.Size(505, 26);
             this.wijzigDlnmrOplZoekTextBox.TabIndex = 57;
             this.wijzigDlnmrOplZoekTextBox.Visible = false;
             // 
@@ -2221,7 +2261,7 @@
             this.dlnmrOplOplComB.Location = new System.Drawing.Point(12, 362);
             this.dlnmrOplOplComB.Margin = new System.Windows.Forms.Padding(4);
             this.dlnmrOplOplComB.Name = "dlnmrOplOplComB";
-            this.dlnmrOplOplComB.Size = new System.Drawing.Size(507, 33);
+            this.dlnmrOplOplComB.Size = new System.Drawing.Size(507, 28);
             this.dlnmrOplOplComB.TabIndex = 45;
             // 
             // dlnmrOplNaamComB
@@ -2230,7 +2270,7 @@
             this.dlnmrOplNaamComB.Location = new System.Drawing.Point(12, 306);
             this.dlnmrOplNaamComB.Margin = new System.Windows.Forms.Padding(4);
             this.dlnmrOplNaamComB.Name = "dlnmrOplNaamComB";
-            this.dlnmrOplNaamComB.Size = new System.Drawing.Size(507, 33);
+            this.dlnmrOplNaamComB.Size = new System.Drawing.Size(507, 28);
             this.dlnmrOplNaamComB.TabIndex = 46;
             // 
             // dlnmrOplVrwdrTB
@@ -2238,7 +2278,7 @@
             this.dlnmrOplVrwdrTB.Location = new System.Drawing.Point(12, 184);
             this.dlnmrOplVrwdrTB.Margin = new System.Windows.Forms.Padding(4);
             this.dlnmrOplVrwdrTB.Name = "dlnmrOplVrwdrTB";
-            this.dlnmrOplVrwdrTB.Size = new System.Drawing.Size(505, 31);
+            this.dlnmrOplVrwdrTB.Size = new System.Drawing.Size(505, 26);
             this.dlnmrOplVrwdrTB.TabIndex = 64;
             this.dlnmrOplVrwdrTB.Visible = false;
             // 
@@ -2257,7 +2297,7 @@
             this.dlnmrOplZoekTB.Location = new System.Drawing.Point(21, 101);
             this.dlnmrOplZoekTB.Margin = new System.Windows.Forms.Padding(4);
             this.dlnmrOplZoekTB.Name = "dlnmrOplZoekTB";
-            this.dlnmrOplZoekTB.Size = new System.Drawing.Size(505, 31);
+            this.dlnmrOplZoekTB.Size = new System.Drawing.Size(505, 26);
             this.dlnmrOplZoekTB.TabIndex = 66;
             // 
             // dlnmrOplZoekBT
@@ -2298,102 +2338,6 @@
             // 
             this.tijdsregistratiesTableAdapter.ClearBeforeFill = true;
             // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(552, 474);
-            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(103, 25);
-            this.label38.TabIndex = 82;
-            this.label38.Text = "Opleiding";
-            // 
-            // dlnmrOplComB
-            // 
-            this.dlnmrOplComB.FormattingEnabled = true;
-            this.dlnmrOplComB.Location = new System.Drawing.Point(7, 470);
-            this.dlnmrOplComB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dlnmrOplComB.Name = "dlnmrOplComB";
-            this.dlnmrOplComB.Size = new System.Drawing.Size(505, 33);
-            this.dlnmrOplComB.TabIndex = 81;
-            this.dlnmrOplComB.Validating += new System.ComponentModel.CancelEventHandler(this.DlnmrOplComB_Validating);
-            // 
-            // geboorteDatDtP
-            // 
-            this.geboorteDatDtP.Location = new System.Drawing.Point(7, 308);
-            this.geboorteDatDtP.Margin = new System.Windows.Forms.Padding(4);
-            this.geboorteDatDtP.Name = "geboorteDatDtP";
-            this.geboorteDatDtP.Size = new System.Drawing.Size(505, 31);
-            this.geboorteDatDtP.TabIndex = 80;
-            this.geboorteDatDtP.Validating += new System.ComponentModel.CancelEventHandler(this.GeboorteDatDtP_Validating);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(552, 421);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 25);
-            this.label1.TabIndex = 79;
-            this.label1.Text = "Badge nummer";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(552, 365);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 25);
-            this.label2.TabIndex = 78;
-            this.label2.Text = "Woonplaats";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(552, 314);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 25);
-            this.label3.TabIndex = 77;
-            this.label3.Text = "Geboortedatum";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(552, 255);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 25);
-            this.label4.TabIndex = 76;
-            this.label4.Text = "Naam";
-            // 
-            // bdgNumTB
-            // 
-            this.bdgNumTB.Location = new System.Drawing.Point(7, 418);
-            this.bdgNumTB.Margin = new System.Windows.Forms.Padding(4);
-            this.bdgNumTB.Name = "bdgNumTB";
-            this.bdgNumTB.Size = new System.Drawing.Size(505, 31);
-            this.bdgNumTB.TabIndex = 75;
-            this.bdgNumTB.Validating += new System.ComponentModel.CancelEventHandler(this.BdgNumTB_Validating);
-            // 
-            // wnpltsTB
-            // 
-            this.wnpltsTB.Location = new System.Drawing.Point(7, 361);
-            this.wnpltsTB.Margin = new System.Windows.Forms.Padding(4);
-            this.wnpltsTB.Name = "wnpltsTB";
-            this.wnpltsTB.Size = new System.Drawing.Size(505, 31);
-            this.wnpltsTB.TabIndex = 74;
-            this.wnpltsTB.Validating += new System.ComponentModel.CancelEventHandler(this.WnpltsTB_Validating);
-            // 
-            // dlnmrNaamTB
-            // 
-            this.dlnmrNaamTB.Location = new System.Drawing.Point(7, 251);
-            this.dlnmrNaamTB.Margin = new System.Windows.Forms.Padding(4);
-            this.dlnmrNaamTB.Name = "dlnmrNaamTB";
-            this.dlnmrNaamTB.Size = new System.Drawing.Size(505, 31);
-            this.dlnmrNaamTB.TabIndex = 73;
-            this.dlnmrNaamTB.Validating += new System.ComponentModel.CancelEventHandler(this.DlnmrNaamTB_Validating);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -2402,19 +2346,52 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(26, 827);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 47);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(786, 827);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(148, 47);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(181, 840);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(359, 26);
+            this.textBox1.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(940, 840);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(359, 26);
+            this.textBox2.TabIndex = 5;
+            // 
             // BeheerAllesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1985, 1322);
+            this.ClientSize = new System.Drawing.Size(1489, 1058);
             this.Controls.Add(this.BeheerTabControl);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BeheerAllesForm";
             this.Text = "BeheerAllesForm";
             this.Load += new System.EventHandler(this.BeheerAllesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DocErrorProvider)).EndInit();
             this.ExtraTabP.ResumeLayout(false);
+            this.ExtraTabP.PerformLayout();
             this.docOplGrpB.ResumeLayout(false);
             this.dlnmrOplGrpB.ResumeLayout(false);
             this.tijdRegTabP.ResumeLayout(false);
@@ -2665,5 +2642,9 @@
         private System.Windows.Forms.TextBox dlnmrNaamTB;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

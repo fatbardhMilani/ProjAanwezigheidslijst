@@ -1045,11 +1045,6 @@ namespace ProjAanwezigheidslijst
 
         }
 
-        private void OplCdTB_Validating(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void DocOplComB_TextChanged(object sender, EventArgs e)
         {
             //if (ValidateChildren())
