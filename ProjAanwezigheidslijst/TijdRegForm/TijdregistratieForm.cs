@@ -118,6 +118,9 @@ namespace TijdRegForm
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            flowLayoutPanel1.Controls.Clear();
+            oplInfolistBox.Items.Clear();
+
             var selectOpl = KiesOplComboBox.Text;
 
             var opleidingId = KiesOplComboBox.SelectedItem;
